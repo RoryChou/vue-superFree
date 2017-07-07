@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4def0a86-10e9-4574-b9a3-bc8920aeadb9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/alpha.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/banner-title.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/banner-title@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/banner.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart-hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart-hover@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bubble.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bubble@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/changlong.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/changlong@2x.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change-hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change-hover@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-choose.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-choose@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-not.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-not@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-calendar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-calendar@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart-num.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart-num@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-loaction.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-loaction@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add-not.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add-not@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus-not.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus-not@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-select.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-select@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo-cur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo-cur@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight-cur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight-cur@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel-cur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel-cur@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket-cur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket-cur@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/pro-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/pro-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/pro-icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/sanya.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/sanya@2x.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/search-btn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/search-btn@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xiamen.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xiamen@2x.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xian.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xian@2x.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xian@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/cart.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys-error.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/comboCitys.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/keywords.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="516" column="13" lean-forward="false" selection-start-line="516" selection-start-column="13" selection-end-line="516" selection-end-column="13" />
+              <folding>
+                <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#14354#14641#0" expanded="false" />
+                <element signature="e#14657#14794#0" expanded="false" />
+                <element signature="e#14810#15184#0" expanded="false" />
+                <element signature="n#style#0;n#!!top" expanded="false" />
+                <element signature="e#17941#18323#0" expanded="false" />
+                <element signature="e#21165#25963#0" expanded="false" />
+                <element signature="e#25993#27027#0" expanded="false" />
+                <element signature="e#27058#29597#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="citys.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="613" column="21" lean-forward="true" selection-start-line="613" selection-start-column="21" selection-end-line="613" selection-end-column="21" />
+              <folding>
+                <element signature="e#11#5316#0" expanded="false" />
+                <element signature="e#5325#6082#0" expanded="false" />
+                <element signature="e#6091#7855#0" expanded="false" />
+                <element signature="e#7864#9638#0" expanded="false" />
+                <element signature="e#9647#11410#0" expanded="false" />
+                <element signature="e#11430#12438#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-webpack-simple/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-webpack-simple/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>../../imgs/home</find>
+      <find>search-contents-flight</find>
+      <find>drop-suggestion-citys</find>
+      <find>drop-complete</find>
+      <find>citys</find>
+      <find>l</find>
+      <find>classObject</find>
+      <find>isShowSuggestBox</find>
+      <find>joinLetters</find>
+      <find>showSuggestBox</find>
+      <find>currentSuggestBox</find>
+      <find>comboToContent</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>assets/imgs</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/test-webpack-simple/webpack.config.js" />
+        <option value="$PROJECT_DIR$/test-webpack/promise-test.css" />
+        <option value="$PROJECT_DIR$/test-webpack/src/main.js" />
+        <option value="$PROJECT_DIR$/test-webpack/src/router/index.js" />
+        <option value="$PROJECT_DIR$/test-webpack/dist/index.html" />
+        <option value="$PROJECT_DIR$/test-webpack-simple/index.html" />
+        <option value="$PROJECT_DIR$/test-webpack-simple/src/main.js" />
+        <option value="$PROJECT_DIR$/test-webpack-simple/src/App.vue" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/test-webpack-simple/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/test-webpack-simple/node_modules" />
+    <handled-path value="$PROJECT_DIR$/test-webpack/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="260" />
+    <option name="y" value="3" />
+    <option name="width" value="1526" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-webpack-simple" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-webpack-simple" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-webpack-simple" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-webpack-simple" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../superFree" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myproject\github\vue-sf\test-webpack-simple\dist" />
+      <recent name="E:\myproject\github\vue-sf\test-webpack-simple\src\assets\data" />
+      <recent name="E:\myproject\github\vue-sf\test-webpack-simple\src\assets\imgs" />
+      <recent name="E:\myproject\github\vue-sf\test-webpack-simple\src\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\myproject\github\vue-sf\test-webpack-simple\src\assets\imgs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="false" name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/test-webpack-simple/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/test-webpack-simple/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="npm.dev" />
+      <item index="1" class="java.lang.String" itemvalue="npm.build" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="npm.dev" />
+        <item index="1" class="java.lang.String" itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4def0a86-10e9-4574-b9a3-bc8920aeadb9" name="Default" comment="" />
+      <created>1499139962148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1499139962148</updated>
+      <workItem from="1499139963574" duration="8005000" />
+      <workItem from="1499236993207" duration="1159000" />
+      <workItem from="1499238281592" duration="164000" />
+      <workItem from="1499238453297" duration="1897000" />
+      <workItem from="1499242805165" duration="223000" />
+      <workItem from="1499311809508" duration="10782000" />
+      <workItem from="1499328334397" duration="26730000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="48960000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="260" y="3" width="1526" height="1056" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18615592" sideWeight="0.49187434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18124342" sideWeight="0.50812566" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18124342" sideWeight="0.50812566" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18124342" sideWeight="0.49187434" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/dev-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/dev-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#14354#14641#0" expanded="false" />
+            <element signature="e#14657#14794#0" expanded="false" />
+            <element signature="e#14810#15184#0" expanded="false" />
+            <element signature="n#style#0;n#!!top" expanded="false" />
+            <element signature="e#17941#18323#0" expanded="false" />
+            <element signature="e#21165#25963#0" expanded="false" />
+            <element signature="e#25993#27027#0" expanded="false" />
+            <element signature="e#27058#29597#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#14354#14641#0" expanded="false" />
+            <element signature="e#14657#14794#0" expanded="false" />
+            <element signature="e#14810#15184#0" expanded="false" />
+            <element signature="n#style#0;n#!!top" expanded="false" />
+            <element signature="e#17941#18323#0" expanded="false" />
+            <element signature="e#21165#25963#0" expanded="false" />
+            <element signature="e#25993#27027#0" expanded="false" />
+            <element signature="e#27058#29597#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="-3">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json" />
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/.postcssrc.js" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/.eslintrc.js" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/README.md" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/webpack.dev.conf.js" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/utils.js" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/webpack.base.conf.js" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/config/prod.env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/promise-test.css" />
+    <entry file="file://$PROJECT_DIR$/test-webpack/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/dist/static/css/app.dcfb05c7141cc3274d174cb1e4c39f12.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="910" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/dist/static/css/app.dcfb05c7141cc3274d174cb1e4c39f12.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="363" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/dist/static/js/app.5211b9ca937c2346a99e.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2331">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/dist/static/js/manifest.4626eabdee7700c43957.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/dist/static/js/vendor.4e561224e1f68ab595ac.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1122">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/config/dev.env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-simple/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-browserify-simple/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-browserify-simple/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-browserify-simple/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/build/dev-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/dist/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="613" column="21" lean-forward="true" selection-start-line="613" selection-start-column="21" selection-end-line="613" selection-end-column="21" />
+          <folding>
+            <element signature="e#11#5316#0" expanded="false" />
+            <element signature="e#5325#6082#0" expanded="false" />
+            <element signature="e#6091#7855#0" expanded="false" />
+            <element signature="e#7864#9638#0" expanded="false" />
+            <element signature="e#9647#11410#0" expanded="false" />
+            <element signature="e#11430#12438#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="516" column="13" lean-forward="false" selection-start-line="516" selection-start-column="13" selection-end-line="516" selection-end-column="13" />
+          <folding>
+            <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#14354#14641#0" expanded="false" />
+            <element signature="e#14657#14794#0" expanded="false" />
+            <element signature="e#14810#15184#0" expanded="false" />
+            <element signature="n#style#0;n#!!top" expanded="false" />
+            <element signature="e#17941#18323#0" expanded="false" />
+            <element signature="e#21165#25963#0" expanded="false" />
+            <element signature="e#25993#27027#0" expanded="false" />
+            <element signature="e#27058#29597#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

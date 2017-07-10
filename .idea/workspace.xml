@@ -2,81 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4def0a86-10e9-4574-b9a3-bc8920aeadb9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/alpha.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/banner-title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/banner-title@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/banner.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart-hover@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bg-cart@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bubble.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/bubble@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/changlong.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/changlong@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change-hover@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-change@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-choose.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-choose@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/flight-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-calendar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-calendar@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart-num.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart-num@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-cart@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-loaction.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-loaction@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-add@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-num-minus@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-select.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-select@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo-cur.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo-cur@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-combo@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight-cur.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight-cur@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-flight@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel-cur.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel-cur@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-hotel@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket-cur.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket-cur@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/icon-tab-ticket@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/pro-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/pro-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/pro-icon@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/sanya.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/sanya@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/search-btn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/search-btn@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xiamen.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xiamen@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xian.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xian@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/imgs/xian@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/cart.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys-error.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/comboCitys.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/assets/data/keywords.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-webpack-simple/src/tips.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-webpack-simple/package.json" afterPath="$PROJECT_DIR$/test-webpack-simple/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-webpack-simple/src/App.vue" afterPath="$PROJECT_DIR$/test-webpack-simple/src/App.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,29 +23,59 @@
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="516" column="13" lean-forward="false" selection-start-line="516" selection-start-column="13" selection-end-line="516" selection-end-column="13" />
+            <state relative-caret-position="594">
+              <caret line="556" column="48" lean-forward="false" selection-start-line="556" selection-start-column="48" selection-end-line="556" selection-end-column="48" />
               <folding>
                 <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#14354#14641#0" expanded="false" />
-                <element signature="e#14657#14794#0" expanded="false" />
-                <element signature="e#14810#15184#0" expanded="false" />
+                <element signature="e#14971#14996#0" expanded="true" />
+                <element signature="e#16070#16529#0" expanded="false" />
+                <element signature="e#16545#16682#0" expanded="false" />
+                <element signature="e#16698#17431#0" expanded="false" />
+                <element signature="e#16736#16929#0" expanded="false" />
+                <element signature="e#16981#17425#0" expanded="false" />
+                <element signature="e#17892#18293#0" expanded="false" />
+                <element signature="e#18330#18376#0" expanded="false" />
+                <element signature="e#20015#20306#0" expanded="false" />
+                <element signature="e#20344#20487#0" expanded="false" />
+                <element signature="e#20527#20798#0" expanded="false" />
+                <element signature="e#20835#21187#0" expanded="false" />
+                <element signature="e#21226#21478#0" expanded="false" />
+                <element signature="e#21514#22220#0" expanded="false" />
+                <element signature="e#22269#22549#0" expanded="false" />
+                <element signature="e#22600#22787#0" expanded="false" />
+                <element signature="e#22825#22890#0" expanded="false" />
+                <element signature="e#22933#23025#0" expanded="false" />
+                <element signature="e#23072#23167#0" expanded="false" />
+                <element signature="e#23200#24034#0" expanded="false" />
                 <element signature="n#style#0;n#!!top" expanded="false" />
-                <element signature="e#17941#18323#0" expanded="false" />
-                <element signature="e#21165#25963#0" expanded="false" />
-                <element signature="e#25993#27027#0" expanded="false" />
-                <element signature="e#27058#29597#0" expanded="false" />
+                <marker date="1499681282105" expanded="false" signature="24738:25120" ph="{...}" />
+                <marker date="1499681282105" expanded="false" signature="32798:33832" ph="{...}" />
+                <marker date="1499681282105" expanded="false" signature="33863:36402" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tips.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/tips.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="242">
+                <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -125,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="613" column="21" lean-forward="true" selection-start-line="613" selection-start-column="21" selection-end-line="613" selection-end-column="21" />
+              <caret line="613" column="21" lean-forward="false" selection-start-line="613" selection-start-column="21" selection-end-line="613" selection-end-column="21" />
               <folding>
                 <element signature="e#11#5316#0" expanded="false" />
                 <element signature="e#5325#6082#0" expanded="false" />
@@ -152,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/test-webpack-simple/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
-              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -162,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -185,15 +144,20 @@
       <find>drop-complete</find>
       <find>citys</find>
       <find>l</find>
-      <find>classObject</find>
       <find>isShowSuggestBox</find>
       <find>joinLetters</find>
       <find>showSuggestBox</find>
       <find>currentSuggestBox</find>
       <find>comboToContent</find>
+      <find>search-contents-selections</find>
+      <find>classObject</find>
+      <find>nova-tip-form</find>
+      <find>nova-icon-warning</find>
+      <find>isShowCompleteBox</find>
     </findStrings>
     <replaceStrings>
       <replace>assets/imgs</replace>
+      <replace>isShowSelections</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -210,6 +174,7 @@
         <option value="$PROJECT_DIR$/test-webpack/dist/index.html" />
         <option value="$PROJECT_DIR$/test-webpack-simple/index.html" />
         <option value="$PROJECT_DIR$/test-webpack-simple/src/main.js" />
+        <option value="$PROJECT_DIR$/test-webpack-simple/src/tips.md" />
         <option value="$PROJECT_DIR$/test-webpack-simple/src/App.vue" />
       </list>
     </option>
@@ -233,8 +198,8 @@
     <handled-path value="$PROJECT_DIR$/test-webpack/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="260" />
-    <option name="y" value="3" />
+    <option name="x" value="404" />
+    <option name="y" value="14" />
     <option name="width" value="1526" />
     <option name="height" value="1056" />
   </component>
@@ -285,54 +250,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue-sf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue-sf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-webpack-simple" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue-sf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue-sf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-webpack-simple" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -498,15 +415,15 @@
       <workItem from="1499238453297" duration="1897000" />
       <workItem from="1499242805165" duration="223000" />
       <workItem from="1499311809508" duration="10782000" />
-      <workItem from="1499328334397" duration="26730000" />
+      <workItem from="1499328334397" duration="50442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48960000" />
+    <option name="totallyTimeSpent" value="72672000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="3" width="1526" height="1056" extended-state="0" />
+    <frame x="404" y="14" width="1526" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18615592" sideWeight="0.49187434" order="0" side_tool="false" content_ui="combo" />
@@ -555,19 +472,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test-webpack/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
@@ -619,22 +528,39 @@
             <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#14354#14641#0" expanded="false" />
-            <element signature="e#14657#14794#0" expanded="false" />
-            <element signature="e#14810#15184#0" expanded="false" />
+            <element signature="e#14971#14996#0" expanded="true" />
+            <element signature="e#16070#16529#0" expanded="false" />
+            <element signature="e#16545#16682#0" expanded="false" />
+            <element signature="e#16698#17431#0" expanded="false" />
+            <element signature="e#16736#16929#0" expanded="false" />
+            <element signature="e#16981#17425#0" expanded="false" />
+            <element signature="e#17892#18293#0" expanded="false" />
+            <element signature="e#18330#18376#0" expanded="false" />
+            <element signature="e#20015#20306#0" expanded="false" />
+            <element signature="e#20344#20487#0" expanded="false" />
+            <element signature="e#20527#20798#0" expanded="false" />
+            <element signature="e#20835#21187#0" expanded="false" />
+            <element signature="e#21226#21478#0" expanded="false" />
+            <element signature="e#21514#22220#0" expanded="false" />
+            <element signature="e#22269#22549#0" expanded="false" />
+            <element signature="e#22600#22787#0" expanded="false" />
+            <element signature="e#22825#22890#0" expanded="false" />
+            <element signature="e#22933#23025#0" expanded="false" />
+            <element signature="e#23072#23167#0" expanded="false" />
+            <element signature="e#23200#24034#0" expanded="false" />
             <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="e#17941#18323#0" expanded="false" />
-            <element signature="e#21165#25963#0" expanded="false" />
-            <element signature="e#25993#27027#0" expanded="false" />
-            <element signature="e#27058#29597#0" expanded="false" />
+            <marker date="1499681282105" expanded="false" signature="24738:25120" ph="{...}" />
+            <marker date="1499681282105" expanded="false" signature="32798:33832" ph="{...}" />
+            <marker date="1499681282105" expanded="false" signature="33863:36402" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -655,22 +581,39 @@
             <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#14354#14641#0" expanded="false" />
-            <element signature="e#14657#14794#0" expanded="false" />
-            <element signature="e#14810#15184#0" expanded="false" />
+            <element signature="e#14971#14996#0" expanded="true" />
+            <element signature="e#16070#16529#0" expanded="false" />
+            <element signature="e#16545#16682#0" expanded="false" />
+            <element signature="e#16698#17431#0" expanded="false" />
+            <element signature="e#16736#16929#0" expanded="false" />
+            <element signature="e#16981#17425#0" expanded="false" />
+            <element signature="e#17892#18293#0" expanded="false" />
+            <element signature="e#18330#18376#0" expanded="false" />
+            <element signature="e#20015#20306#0" expanded="false" />
+            <element signature="e#20344#20487#0" expanded="false" />
+            <element signature="e#20527#20798#0" expanded="false" />
+            <element signature="e#20835#21187#0" expanded="false" />
+            <element signature="e#21226#21478#0" expanded="false" />
+            <element signature="e#21514#22220#0" expanded="false" />
+            <element signature="e#22269#22549#0" expanded="false" />
+            <element signature="e#22600#22787#0" expanded="false" />
+            <element signature="e#22825#22890#0" expanded="false" />
+            <element signature="e#22933#23025#0" expanded="false" />
+            <element signature="e#23072#23167#0" expanded="false" />
+            <element signature="e#23200#24034#0" expanded="false" />
             <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="e#17941#18323#0" expanded="false" />
-            <element signature="e#21165#25963#0" expanded="false" />
-            <element signature="e#25993#27027#0" expanded="false" />
-            <element signature="e#27058#29597#0" expanded="false" />
+            <marker date="1499681282105" expanded="false" signature="24738:25120" ph="{...}" />
+            <marker date="1499681282105" expanded="false" signature="32798:33832" ph="{...}" />
+            <marker date="1499681282105" expanded="false" signature="33863:36402" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -890,7 +833,7 @@
     <entry file="file://$PROJECT_DIR$/test-webpack-simple/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -898,7 +841,7 @@
     <entry file="file://$PROJECT_DIR$/test-webpack-simple/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -914,7 +857,7 @@
     <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/assets/data/citys.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="613" column="21" lean-forward="true" selection-start-line="613" selection-start-column="21" selection-end-line="613" selection-end-column="21" />
+          <caret line="613" column="21" lean-forward="false" selection-start-line="613" selection-start-column="21" selection-end-line="613" selection-end-column="21" />
           <folding>
             <element signature="e#11#5316#0" expanded="false" />
             <element signature="e#5325#6082#0" expanded="false" />
@@ -926,30 +869,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/tips.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="242">
+            <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test-webpack-simple/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="516" column="13" lean-forward="false" selection-start-line="516" selection-start-column="13" selection-end-line="516" selection-end-column="13" />
+        <state relative-caret-position="594">
+          <caret line="556" column="48" lean-forward="false" selection-start-line="556" selection-start-column="48" selection-end-line="556" selection-end-column="48" />
           <folding>
             <element signature="n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#li#0;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#14354#14641#0" expanded="false" />
-            <element signature="e#14657#14794#0" expanded="false" />
-            <element signature="e#14810#15184#0" expanded="false" />
+            <element signature="e#14971#14996#0" expanded="true" />
+            <element signature="e#16070#16529#0" expanded="false" />
+            <element signature="e#16545#16682#0" expanded="false" />
+            <element signature="e#16698#17431#0" expanded="false" />
+            <element signature="e#16736#16929#0" expanded="false" />
+            <element signature="e#16981#17425#0" expanded="false" />
+            <element signature="e#17892#18293#0" expanded="false" />
+            <element signature="e#18330#18376#0" expanded="false" />
+            <element signature="e#20015#20306#0" expanded="false" />
+            <element signature="e#20344#20487#0" expanded="false" />
+            <element signature="e#20527#20798#0" expanded="false" />
+            <element signature="e#20835#21187#0" expanded="false" />
+            <element signature="e#21226#21478#0" expanded="false" />
+            <element signature="e#21514#22220#0" expanded="false" />
+            <element signature="e#22269#22549#0" expanded="false" />
+            <element signature="e#22600#22787#0" expanded="false" />
+            <element signature="e#22825#22890#0" expanded="false" />
+            <element signature="e#22933#23025#0" expanded="false" />
+            <element signature="e#23072#23167#0" expanded="false" />
+            <element signature="e#23200#24034#0" expanded="false" />
             <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="e#17941#18323#0" expanded="false" />
-            <element signature="e#21165#25963#0" expanded="false" />
-            <element signature="e#25993#27027#0" expanded="false" />
-            <element signature="e#27058#29597#0" expanded="false" />
+            <marker date="1499681282105" expanded="false" signature="24738:25120" ph="{...}" />
+            <marker date="1499681282105" expanded="false" signature="32798:33832" ph="{...}" />
+            <marker date="1499681282105" expanded="false" signature="33863:36402" ph="{...}" />
           </folding>
         </state>
       </provider>

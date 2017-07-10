@@ -22,15 +22,16 @@
     </ul>
     <ul class="search-contents">
       <li class="search-contents-combo" v-show="currentLi === 'combo'">
-        <div class="combo-from section-input search-city">
+        <div class="combo-from section-input search-city" :class="{error:isErrorComboFrom}">
           <div class="search-contents-title">出发地</div>
           <div class="search-contents-icon-location"></div>
           <input type="text" class="input-city-from" placeholder="请输入出发地"
                  @focus="showSuggestBox('combo-from')"
                  @blur="hideSuggestBox()"
+                 @input="showCompleteBox('combo-from')"
                  v-model="comboFromContent">
         </div>
-        <div class="combo-to section-input search-city">
+        <div class="combo-to section-input search-city" :class="{error:isErrorComboTo}">
           <div class="search-contents-title">目的地</div>
           <input type="text" placeholder="请输入目的地" class="input-city-to"
                  @focus="showSuggestBox('combo-to')"
@@ -40,45 +41,47 @@
         <div class="combo-date section-input search-date search-calendar-common">
           <div class="search-contents-title">出发日期</div>
           <div class="search-contents-icon-calendar"></div>
-          <div class="search-contents-info"></div>
-          <input type="text" readonly="readonly">
+          <div class="search-contents-info">{{comboFromDate|getWeekday}}</div>
+          <input type="text" readonly="readonly"
+                 @click="showCalendar()"
+                 v-model="comboFromDate">
         </div>
         <div class="combo-days section-input">
           <div class="search-contents-title">游玩天数</div>
-          <div class="search-contents-info"></div>
-          <div class="num-minus"></div>
-          <div class="num-add"></div>
-          <input type="text" data-max="20" data-min="1" value="4天">
+          <div class="search-contents-info">{{comboFromDate|returnDateCalc(comboDays)}}</div>
+          <div class="num-minus"
+               @click="numCalc(-1,1,20) " :class="{disabled:comboDays==='1天'}"></div>
+          <div class="num-add"
+               @click="numCalc(1,1,20)" :class="{disabled:comboDays==='20天'}"></div>
+          <input type="text"
+                 v-model="comboDays"
+                 @blur="numCalc(0,1,20)"
+                 @input="inputComboDays(1,20)"
+                 @focus="focusComboDays">
         </div>
-        <div class="combo-persons-adult section-input">
+        <div class="combo-persons-adult section-input" :class="{error:isErrorComboAdults}">
           <div class="search-contents-title">成人数</div>
-          <input class="search-contents-select" value="2" readonly="readonly">
-          <b></b>
-          <ul class="search-contents-selections">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
+          <input class="search-contents-select" value="2" readonly="readonly"
+                 @click="isShowSelections = !isShowSelections"
+                 @blur="isShowSelections = false"
+                 v-model="comboAdultNum">
+          <b :class="{active:isShowSelections}"></b>
+          <ul class="search-contents-selections" v-show="isShowSelections">
+            <li v-for="n in 9"
+                @mousedown="chooseSelections(n)">{{n}}</li>
           </ul>
         </div>
-        <div class="combo-persons-children section-input">
+        <div class="combo-persons-children section-input" :class="{error:isErrorComboKids}">
           <div class="search-contents-title">儿童数</div>
           <div class="search-contents-info">2-12岁</div>
-          <input class="search-contents-select" value="0" readonly="readonly">
-          <b></b>
-          <ul class="search-contents-selections">
-            <li>0</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
+          <input class="search-contents-select" value="0" readonly="readonly"
+                 @click="isShowSelectionsKids = !isShowSelectionsKids"
+                 @blur="isShowSelectionsKids = false"
+                 v-model="comboKidsNum">
+          <b :class="{active:isShowSelectionsKids}"></b>
+          <ul class="search-contents-selections" v-show="isShowSelectionsKids">
+              <li v-for="n in 7"
+                  @mousedown="chooseSelectionsKids(n-1)">{{n-1}}</li>
           </ul>
         </div>
         <div class="drop-suggestion-citys"
@@ -111,9 +114,13 @@
             </li>
           </ul>
         </div>
-        <div class="nova-tip-form">
+        <div class="nova-tip-form" v-show="isError">
           <span class="nova-icon-xs nova-icon-warning"></span>
           <ul class="tip-content">
+              <li v-show="isErrorComboFrom">出发地不能为空</li>
+              <li v-show="isErrorComboTo">目的地不能为空</li>
+              <li v-show="isErrorComboAdults">总人数不能超过9人哦</li>
+              <li v-show="isErrorComboKids">儿童数最多为{{comboAdultNum*2}}人哦</li>
           </ul>
         </div>
       </li >
@@ -397,11 +404,15 @@
         </div>
       </li>
     </ul>
-    <ul class="drop-complete" v-show="isShowCompleteBox"></ul>
+    <ul class="drop-complete" v-show="isShowCompleteBox">
+        <!--<li v-for="item in completeResults"
+            :class="{current:false}">{{item}}</li>-->
+    </ul>
     <div class="search-btn-wrapper">
       <a class="search-btn btn btn-pink">
         <span class="icon"></span>
-        <span class="search-btn-words">搜索自由行套餐</span>
+        <span class="search-btn-words"
+              @click="checkForm">搜索自由行套餐</span>
       </a>
     </div>
   </div>
@@ -409,6 +420,7 @@
 
 <script>
     import axios from 'axios'
+    import jsonp from 'jsonp'
   export default {
     name: 'app',
     data : function () {
@@ -420,6 +432,17 @@
             isShowCompleteBox: false,
             comboFromContent: '',
             comboToContent: '',
+            comboFromDate: '',
+            comboDays: '4天',
+            comboAdultNum: 2,
+            comboKidsNum: 0,
+            isShowSelections: false,
+            isShowSelectionsKids: false,
+            isError: false,
+            isErrorComboFrom: false,
+            isErrorComboTo: false,
+            isErrorComboAdults: false,
+            isErrorComboKids: false,
             citys: {},
             suggestCitysLi: 0,
             triggerBlur: true,
@@ -438,7 +461,12 @@
                 vm.triggerBlur = true;
                 vm.hideSuggestBox();
             }
-        })
+            this.isShowSelections = false
+        });
+        //初始化日期
+        this.comboFromDate = this.getDate((new Date()),0);
+        //初始化出发地
+        this.comboFromContent = '上海'
     },
     computed: {
         classObject: function () {
@@ -448,20 +476,48 @@
         }
     },
     filters : {
-        joinLettersF: function (index) {
-            /*let newArr = this.citysArr.map(function (x) {
-                let str = '';
-                for(let i=0;i<x.length;i++){
-                    str += x[i]
-                }
-                return str
-            });
-            return newArr[index];*/
-            console.log(this)
-            return 1;
+        getWeekday: function (date) {
+            const week = ['周日','周一','周二','周三','周四','周五','周六']
+            let dateObj = new Date(date);
+            let weekDay = week[dateObj.getDay()];
+            return weekDay;
+        },
+        returnDateCalc: function (date,comboDays) {
+            let daysTime = parseInt(comboDays)*86400000;
+            let dateObj = new Date(date);
+            let $date = new Date(dateObj.getTime()+daysTime);
+            let dateArr = [$date.getFullYear(),$date.getMonth()+1,$date.getDate()];
+            //+0
+            dateArr[1] = dateArr[1]<10?'0'+dateArr[1]:dateArr[1];
+            dateArr[2] = dateArr[2]<10?'0'+dateArr[2]:dateArr[2];
+            return dateArr.join('-');
+
         }
     },
+    watch: {
+        comboFromContent: function () {
+            this.isError?this.checkForm():'';
+        },
+        comboToContent: function () {
+            this.isError?this.checkForm():'';
+        },
+        comboAdultNum: function () {
+            this.isError?this.checkForm():'';
+        },
+        comboKidsNum: function () {
+            this.isError?this.checkForm():'';
+        },
+    },
     methods:{
+        getDate: function (dateObj,daysAfter) {
+            let daysTime = parseInt(daysAfter)*86400000;
+            let $date = new Date(dateObj.getTime()+daysTime);
+            let dateArr = [$date.getFullYear(),$date.getMonth()+1,$date.getDate()];
+            //+0
+            dateArr[1] = dateArr[1]<10?'0'+dateArr[1]:dateArr[1];
+            dateArr[2] = dateArr[2]<10?'0'+dateArr[2]:dateArr[2];
+            return dateArr.join('-');
+        },
         tabSwitch : function (name){
             this.currentLi = name;
         },
@@ -479,6 +535,34 @@
             },function (error) {
                 console.log('error',error)
             })
+        },
+        showCompleteBox: function () {
+            //发送ajax请求
+            var vm = this;
+            /*axios.get('http://s.lvmama.com/autocomplete/autoCompleteNew.do',{
+                type:'TICKET',
+                keyword: '上'
+            }).then(function (res) {
+                console.log('showCompleteBox',res)
+                /!*vm.citys = res.data;
+                //初始化tab切换
+                vm.suggestCitysLi = 0;
+                //计算位置
+                vm.getPosition(className);
+                vm.isShowSuggestBox = true;
+                vm.currentSuggestBox = className;*!/
+            },function (error) {
+                console.log('error',error)
+            })*/
+            let keyword = this.comboFromContent;
+            jsonp('http://s.lvmama.com/autocomplete/autoCompleteNew.do?'+'type=TICKET&keyword='+keyword, function (err, data) {
+                if (err) {
+                    console.error(err.message);
+                } else {
+                    console.log('showCompleteBox',data);
+                }
+            });
+
         },
         getPosition: function (className) {
             let targetBox = document.querySelector('.'+className);
@@ -526,6 +610,75 @@
                 }
             }
 
+        },
+        showCalendar: function () {
+            var vm = this;
+            lv.calendar({
+                //date: self.dateNow(),
+                autoRender: false,
+                trigger: ".search-calendar-common",
+                triggerEvent: "click",
+                bimonthly: true,
+                //定位偏移
+                monthNext: 10,
+                monthPrev: 10,
+                dayPrev: 0,
+                template: "small",
+                //点击选择日期后的回调函数 默认返回值: calendar对象
+                selectDateCallback: function () {
+                    for(var i in this.selected){
+                        //self.getWeekday();
+                        vm.comboFromDate = i;
+                    }
+                }
+            });
+        },
+        numCalc: function (move,least,maximum) {
+            let comboDaysNum = parseInt(this.comboDays);
+            comboDaysNum = comboDaysNum + move;
+            if(comboDaysNum>=maximum) comboDaysNum = maximum;
+            if(comboDaysNum<=least) comboDaysNum=least;
+            this.comboDays = comboDaysNum+'天'
+        },
+        inputComboDays: function (least,maximum) {
+            this.comboDays = parseInt(this.comboDays)||0;
+            if(this.comboDays>=maximum) this.comboDays = maximum;
+            if(this.comboDays<=0) this.comboDays=0;
+        },
+        focusComboDays: function () {
+            this.comboDays = parseInt(this.comboDays)
+        },
+        chooseSelections: function (num) {
+            this.comboAdultNum = num;
+            this.isShowSelections = false;
+        },
+        chooseSelectionsKids: function (num) {
+            this.comboKidsNum = num;
+            this.isShowSelectionsKids = false;
+        },
+        checkForm: function () {
+            //检查是否为空
+            this.isError = false;
+            this.isErrorComboFrom = false;
+            this.isErrorComboTo = false;
+            this.isErrorComboAdults = false;
+            this.isErrorComboKids = false;
+            if(this.comboFromContent === ''){
+                this.isErrorComboFrom = true;
+                this.isError = true;
+            }
+            if(this.comboToContent === ''){
+                this.isErrorComboTo = true;
+                this.isError = true;
+            }
+            if((this.comboAdultNum+this.comboKidsNum)>=9){
+                this.isErrorComboAdults = true;
+                this.isError = true;
+            }
+            if(this.comboKidsNum >= this.comboAdultNum*2){
+                this.isErrorComboKids = true;
+                this.isError = true;
+            }
         }
     }
 }
@@ -560,6 +713,12 @@
     &:hover {
       transform: translateY($height);
     }
+  }
+  .ui-calendar {
+      z-index: 10;
+  }
+  .cal-number-of-days {
+      z-index: 10;
   }
   .search-wrapper {
       position: relative;
@@ -750,7 +909,7 @@
                   right: 10px;
                   background: url("assets/imgs/icon-num-add.png");
                   &.disabled {
-                      background: url("assets/imgs/icon-num-add.png");
+                      background: url("assets/imgs/icon-num-add-not.png");
                   }
               }
               .num-minus {
@@ -766,7 +925,7 @@
                   padding-right: 100px;
               }
               .search-contents-selections {
-                  display: none;
+                  //display: none;
                   position: absolute;
                   top: 41px;
                   background-color: #fff;
@@ -803,7 +962,7 @@
               }
           }
           .nova-tip-form {
-              display: none;
+              //display: none;
               position: absolute;
               top:244px;
               left: 50px;

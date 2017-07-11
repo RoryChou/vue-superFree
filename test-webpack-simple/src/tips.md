@@ -10,6 +10,14 @@
 ##3.filter中的this是Undefined,需要用的东西应该通过传参传过来
 
 ##4.使用watch来监听input会不会有什么副作用？还有没有更好的办法？
+
+##5.可以在指定位置写多句表达式
+```html
+ <input class="search-contents-select" value="0" readonly="readonly"
+                 @click="isShowSelectionsKids = !isShowSelectionsKids;currentCompleteIndex = 1;"
+                 @blur="isShowSelectionsKids = false"
+                 v-model="comboKidsNum">
+```
 #三.html
 
 #四.tool

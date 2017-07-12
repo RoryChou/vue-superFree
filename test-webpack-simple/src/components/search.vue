@@ -221,153 +221,101 @@
                 </div>
             </li>
             <li class="search-contents-hotel" v-show="currentLi === 'hotel'">
-                <div class="hotel-to section-input search-city">
+                <div class="hotel-to section-input search-city" :class="{error:isErrorHotelTo}">
                     <div class="search-contents-title">目的地</div>
-                    <input type="text" class="input-city-to" placeholder="请输入目的地">
+                    <input type="text" class="input-city-to" placeholder="请输入目的地"
+                           @focus="showSuggestBox('hotel-to')"
+                           @blur="hideSuggestBox()"
+                           @input="showCompleteBox('hotel-to')"
+                           v-model="hotelToContent">
                 </div>
                 <div class="hotel-keywords section-input search-keywords">
                     <div class="search-contents-title">关键字</div>
-                    <input type="text" placeholder="酒店名称/商圈/地标" class="input-hotel-keywords">
+                    <input type="text" placeholder="酒店名称/商圈/地标" class="input-hotel-keywords"
+                           @focus="showKeywordsBox('hotel-keywords')"
+                           @blur="hideKeywordsBox()"
+                           @input="showCompleteBox('hotel-keywords')"
+                           v-model="hotelKeywordsContent">
                 </div>
                 <div class="hotel-date-start section-input search-date search-cascading-hotel">
                     <div class="search-contents-title">入住日期</div>
                     <div class="search-contents-icon-calendar"></div>
-                    <div class="search-contents-info"></div>
-                    <input type="text" readonly="readonly">
+                    <div class="search-contents-info">{{hotelFromDate | getWeekday}}</div>
+                    <input type="text" readonly="readonly"
+                           v-model="hotelFromDate">
                 </div>
                 <div class="hotel-date-end section-input search-date search-cascading-hotel">
                     <div class="search-contents-title">退房日期</div>
-                    <div class="search-contents-info"></div>
+                    <div class="search-contents-info">{{hotelToDate | getWeekday}}</div>
                     <div class="search-contents-icon-calendar"></div>
-                    <input type="text" readonly="readonly">
+                    <input type="text" readonly="readonly"
+                           v-model="hotelToDate">
                 </div>
-                <div class="drop-suggestion-citys">
+                <div class="drop-suggestion-citys"
+                     v-show="isShowSuggestBox"
+                     :style="suggestBoxStyle">
                     <div class="drop-title">热门城市</div>
                     <ul class="city-hot clearfix">
+                        <li class="drop-city"
+                            v-for="city in citys.hot"
+                            @mousedown="chooseCity(city.districtName,city.districtId)">{{city.districtName}}
+                        </li>
                     </ul>
                     <ul class="letter-tabs clearfix">
-                        <li class="current">
-                            ABCD
-                            <i></i>
+                        <li class="no-blur"
+                            v-for="n in citysArr.length"
+                            @mousedown="suggestCitysLi=(n-1);triggerBlur=false"
+                            :class="{current:suggestCitysLi===(n-1)}">
+                            {{joinLetters(n - 1)}}<i></i>
                         </li>
-                        <li>EFGH<i></i></li>
-                        <li>JKLM<i></i></li>
-                        <li>NPQRS<i></i></li>
-                        <li>TUVWX<i></i></li>
-                        <li>YZ<i></i></li>
                     </ul>
                     <ul class="letter-city-contents">
-                        <li>
-                            <dl class="clearfix">
-                                <dt>A</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>B</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>C</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>D</dt>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl class="clearfix">
-                                <dt>E</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>F</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>G</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>H</dt>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl class="clearfix">
-                                <dt>J</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>K</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>L</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>M</dt>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl class="clearfix">
-                                <dt>N</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>P</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>Q</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>R</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>S</dt>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl class="clearfix">
-                                <dt>T</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>U</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>V</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>W</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>S</dt>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl class="clearfix">
-                                <dt>Y</dt>
-                            </dl>
-                            <dl class="clearfix">
-                                <dt>Z</dt>
+                        <li v-for="n in citysArr.length"
+                            v-show="suggestCitysLi === (n-1)">
+                            <dl class="clearfix"
+                                v-for="item in citysArr[(n-1)]"
+                                v-show="isDlFilled(item)">
+                                <dt>{{item}}</dt>
+                                <dd class="drop-city"
+                                    v-for="city in citys[item]"
+                                    @mousedown="chooseCity(city.districtName,city.districtId)">{{city.districtName}}
+                                </dd>
                             </dl>
                         </li>
                     </ul>
                 </div>
-                <div class="drop-suggestion-keywords">
+                <div class="drop-suggestion-keywords"
+                     v-show="isShowKeywordsBox"
+                     :style="keywordsBoxStyle">
                     <div class="keywords-transport clearfix">
                         <p class="keywords-title">交通枢纽</p>
                         <p class="keywords-details">
-
+                            <span v-for="item in keywordsObj.metro"
+                                  @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}</span>
                         </p>
                     </div>
                     <div class="keywords-subway">
                         <p class="keywords-title">地铁站</p>
                         <p class="keywords-details">
-
+                            <span v-for="item in keywordsObj.traffic"
+                                  @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}</span>
                         </p>
                     </div>
                 </div>
-                <div class="nova-tip-form">
+                <div class="nova-tip-form" v-show="isHotelError">
                     <span class="nova-icon-xs nova-icon-warning"></span>
-                    <ul class="tip-content"></ul>
+                    <ul class="tip-content">
+                        <li v-show="isErrorHotelTo">目的地不能为空</li>
+                    </ul>
                 </div>
             </li>
         </ul>
         <ul class="drop-complete"
             v-show="isShowCompleteBox"
             :style="compelteBoxStyle">
-            <li v-for="(item,index) in completeResults" :class="{current:currentCompleteIndex === index}"
-                @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}
+            <li class="drop-city" v-for="(item,index) in completeResults" :class="{current:currentCompleteIndex === index}"
+                @mousedown="chooseCity(item.searchValue||item.name)">{{item.searchValue}}
+                <span class="name" v-show="currentCompleteBox==='hotel-keywords'">{{item.name}}</span><span class="hotelCount" v-show="currentCompleteBox==='hotel-keywords'&&item.hotelCount!==0">约{{item.hotelCount}}家酒店</span><span class="type" v-show="currentCompleteBox==='hotel-keywords'">{{item.type}}</span>
             </li>
         </ul>
         <div class="search-btn-wrapper">
@@ -384,40 +332,49 @@
     import axios from 'axios'
     import jsonp from 'jsonp'
     export default {
-        name: 'app',
+        name: 'search',
         data: function () {
             return {
                 currentLi: 'combo',
                 currentSuggestBox: '',
                 currentCompleteBox: '',
+                currentKeywordsBox: '',
                 currentCompleteIndex: 0,
                 isShowSuggestBox: false,
                 isShowCompleteBox: false,
-                comboFromContent: '',
+                isShowKeywordsBox: false,
+                comboFromContent: '上海',
                 comboToContent: '',
                 comboFromDate: '',
                 comboDays: '4天',
                 comboAdultNum: 2,
                 comboKidsNum: 0,
-                flightFromContent: '',
+                flightFromContent: '上海',
                 flightToContent: '',
                 flightType: 'single',
                 flightFromDate: '',
                 flightToDate: '',
+                hotelToContent: '上海',
+                hotelFromDate: '',
+                hotelToDate: '',
+                districtId: 9,//hotel keywords专用
+                hotelKeywordsContent: '',
                 isShowSelections: false,
                 isShowSelectionsKids: false,
                 isComboError: false,
                 isFlightError: false,
-                isTicketError: false,
+                isHotelError: false,
                 isErrorComboFrom: false,
                 isErrorComboTo: false,
                 isErrorComboAdults: false,
                 isErrorComboKids: false,
                 isErrorFlightFrom: false,
                 isErrorFlightTo: false,
+                isErrorHotelTo: false,
                 calendarFlightReturn: null,
                 citys: {},
                 completeResults: [],
+                keywordsObj: {},
                 suggestCitysLi: 0,
                 triggerBlur: true,
                 citysArr: [['A', 'B', 'C', 'D'], ['E', 'F', 'G', 'H'], ['J', 'K', 'L', 'M'], ['N', 'P', 'Q', 'R', 'S'], ['T', 'U', 'V', 'W', 'X'], ['Y', 'Z']],
@@ -429,6 +386,10 @@
                     top: '0',
                     left: '0',
                     width: '0'
+                },
+                keywordsBoxStyle: {
+                    top: '0',
+                    left: '0'
                 }
             }
         },
@@ -479,13 +440,12 @@
                 //enter
                 if (which === 13) {
                     if (vm.isShowCompleteBox) {
-                        vm.chooseCity(vm.completeResults[vm.currentCompleteIndex].searchValue);
+                        vm.chooseCity(vm.completeResults[vm.currentCompleteIndex].searchValue||vm.completeResults[vm.currentCompleteIndex].name);
                     } else if (vm.isShowSelections) {
                         vm.chooseSelections(vm.currentCompleteIndex + 1);
                     } else {
                         vm.chooseSelectionsKids(vm.currentCompleteIndex);
                     }
-
                 }
             });
             //初始化日历
@@ -493,9 +453,8 @@
             //初始化日期
             this.comboFromDate = this.getDate((new Date()), 0);
             this.flightFromDate = this.getDate((new Date()), 0);
-            //初始化出发地
-            this.comboFromContent = '上海';
-            this.flightFromContent = '上海'
+            this.hotelFromDate = this.getDate((new Date()), 0);
+            this.hotelToDate = this.getDate((new Date()), 3);
         },
         computed: {
             classObject: function () {
@@ -542,6 +501,9 @@
             flightToContent: function () {
                 this.isFlightError ? this.checkForm() : '';
             },
+            hotelToContent: function () {
+                this.isHotelError ? this.checkForm() : '';
+            }
         },
         methods: {
             getDate: function (dateObj, daysAfter) {
@@ -551,7 +513,6 @@
                 //+0
                 dateArr[1] = dateArr[1] < 10 ? '0' + dateArr[1] : dateArr[1];
                 dateArr[2] = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2];
-                console.log('1111',dateArr.join('-'))
                 return dateArr.join('-');
             },
             tabSwitch: function (name) {
@@ -572,12 +533,15 @@
                     console.log('error', error)
                 })
             },
-            showCompleteBox: function (className) {
+            showCompleteBox: function (className)  {
                 //发送ajax请求
                 var vm = this;
                 //初始化index
                 vm.currentCompleteIndex = 0;
                 let keyword = this.comboFromContent;
+                let type = 'TICKET';
+                let url = 'http://s.lvmama.com/autocomplete/autoCompleteNew.do';
+                let districtId = '';
                 switch (className) {
                     case 'combo-from':
                         keyword = this.comboFromContent;
@@ -591,6 +555,15 @@
                     case 'flight-to':
                         keyword = this.flightToContent;
                         break;
+                    case 'hotel-to':
+                        keyword = this.hotelToContent;
+                        break;
+                    case 'hotel-keywords':
+                        keyword = this.hotelKeywordsContent;
+                        type = 'HOTEL';
+                        url = 'http://s.lvmama.com/autocomplete/autoCompleteHotel.do';
+                        districtId = '&districtId='+vm.districtId;
+                        break;
                     default:
                         return
                 }
@@ -598,9 +571,13 @@
                 if (keyword === '') {
                     //关闭suggestBox,completeBOx
                     vm.isShowCompleteBox = false;
-                    this.showSuggestBox(className)
+                    if(className === 'hotel-keywords'){
+                        this.showKeywordsBox(className)
+                    }else {
+                        this.showSuggestBox(className)
+                    }
                 } else {
-                    jsonp('http://s.lvmama.com/autocomplete/autoCompleteNew.do?' + 'type=TICKET&keyword=' + keyword, function (err, data) {
+                    jsonp(url + '?' + 'type='+ type +'&keyword=' + keyword + districtId, function (err, data) {
                         if (err) {
                             console.error(err.message);
                         } else {
@@ -620,20 +597,48 @@
                     });
                 }
             },
+            showKeywordsBox: function (className) {
+                //发送ajax请求
+                var vm = this;
+                jsonp('http://s.lvmama.com/autocomplete/autoCompleteHotel.do?' + 'type=REC&districtId=' + vm.districtId, function (err, data) {
+                    if (err) {
+                        console.error(err.message);
+                    } else {
+                        vm.keywordsObj = data;
+                        vm.currentKeywordsBox = className;
+                        //计算位置
+                        vm.getPosition(className);
+                        vm.isShowKeywordsBox = true;
+                    }
+                });
+            },
             getPosition: function (className) {
                 let targetBox = document.querySelector('.' + className);
                 let top = targetBox.offsetTop + targetBox.clientHeight + 3;
                 let left = targetBox.offsetLeft;
-                let width = targetBox.offsetWidth;
+                let width=0;
+                if(className === 'hotel-keywords') {
+                    width = 418;
+                }else {
+                    width = targetBox.offsetWidth;
+                }
                 this.suggestBoxStyle.top = top + 'px';
                 this.suggestBoxStyle.left = left + 'px';
                 this.compelteBoxStyle.top = top + 'px';
                 this.compelteBoxStyle.left = left + 'px';
                 this.compelteBoxStyle.width = width + 'px';
+                this.keywordsBoxStyle.top = top + 'px';
+                this.keywordsBoxStyle.left = left + 'px';
             },
             hideSuggestBox: function () {
                 if (this.triggerBlur) {
                     this.isShowSuggestBox = false;
+                }
+                this.triggerBlur = true;
+            },
+            hideKeywordsBox: function () {
+                if (this.triggerBlur) {
+                    this.isShowKeywordsBox = false;
                 }
                 this.triggerBlur = true;
             },
@@ -647,12 +652,14 @@
                 });
                 return newArr[index];
             },
-            chooseCity: function (res) {
+            chooseCity: function (res,districtId) {
                 let targetBox = '';
                 if (this.isShowSuggestBox) {
                     targetBox = this.currentSuggestBox
-                } else {
+                } else if(this.isShowCompleteBox) {
                     targetBox = this.currentCompleteBox
+                }else {
+                    targetBox = this.currentKeywordsBox
                 }
                 switch (targetBox) {
                     case 'combo-from':
@@ -667,10 +674,21 @@
                     case 'flight-to':
                         this.flightToContent = res;
                         break;
+                    case 'hotel-to':
+                        this.hotelToContent = res;
+                        break;
+                    case 'hotel-keywords':
+                        this.hotelKeywordsContent = res;
+                        break;
                     default:
                         return
                 }
+                //处理hotel keywords中的districtId
+                if(districtId){
+                    this.districtId = districtId;
+                }
                 this.isShowCompleteBox = false;
+                this.isShowKeywordsBox = false;
             },
             isDlFilled: function (index) {
                 let arr = this.citys.hot && this.citys[index];
@@ -710,8 +728,8 @@
                     selectDateCallback: function () {
                         let self = this;
                         setTimeout(function () {
-                            vm.flightFromDate = self.cascadingSelected.start;
-                            vm.flightToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
+                            vm.flightFromhotelFromDateDate = self.cascadingSelected.start;
+                            vm.hotelToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
                         },0);
                         if(className === 'flight-to'){
                             vm.changeFlightType('double')
@@ -758,7 +776,11 @@
                     showNumberOfDays: true,
                     //点击选择日期后的回调函数 默认返回值: calendar对象
                     selectDateCallback: function () {
-
+                        let self = this;
+                        setTimeout(function () {
+                            vm.hotelFromDate = self.cascadingSelected.start;
+                            vm.hotelToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
+                        },0);
                     }
                 })
             },
@@ -804,13 +826,14 @@
                 //检查是否为空
                 this.isComboError = false;
                 this.isFlightError = false;
-                this.isTicketError = false;
+                this.isHotelError = false;
                 this.isErrorComboFrom = false;
                 this.isErrorComboTo = false;
                 this.isErrorComboAdults = false;
                 this.isErrorComboKids = false;
                 this.isErrorFlightFrom = false;
                 this.isErrorFlightTo = false;
+                this.isErrorHotelTo = false;
                 if(this.currentLi === 'combo'){
                     if (this.comboFromContent === '') {
                         this.isErrorComboFrom = true;
@@ -824,7 +847,7 @@
                         this.isErrorComboAdults = true;
                         this.isComboError = true;
                     }
-                    if (this.comboKidsNum >= this.comboAdultNum * 2) {
+                    if (this.comboKidsNum > this.comboAdultNum * 2) {
                         this.isErrorComboKids = true;
                         this.isComboError = true;
                     }
@@ -844,8 +867,12 @@
                         alert('flight pass!')
                     }
                 }else {
-                    if (!this.isTicketError&&name) {
-                        //alert('ticket pass!')
+                    if (this.hotelToContent === '') {
+                        this.isErrorHotelTo = true;
+                        this.isHotelError = true;
+                    }
+                    if (!this.isHotelError&&name) {
+                        alert('Hotel pass!')
                     }
                 }
             }
@@ -855,36 +882,7 @@
 
 
 <style lang="scss">
-    $color-lv-pink: #e38;
-    $color-lv-pink-hover: #a81c54;
-    $color-lv-orange: #f90;
-    $color-hover-orange: #f60;
-    $color-bg-orange: #fff9ef;
-
-    @mixin etc() {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    @mixin inlineblock() {
-        display: inline-block;
-        *display: inline;
-        *zoom: 1
-    }
-
-    @mixin opacity($per) {
-        opacity: $per;
-        filter: alpha(opacity=$per*100);
-        *zoom: 1;
-    }
-
-    @mixin hover($height:-5px,$time:0.3s) {
-        transition: all $time;
-        &:hover {
-            transform: translateY($height);
-        }
-    }
+    @import "../assets/scss/_var.scss";
 
     .ui-calendar {
         z-index: 10;
@@ -903,11 +901,11 @@
             left: 50%;
             margin-left: -110px;
             top: 32px;
-            background: url("assets/imgs/banner-title.png");
+            background: url("../assets/imgs/banner-title.png");
             width: 209px;
             height: 49px;
         }
-        background: url("assets/imgs/banner.jpg") no-repeat center;
+        background: url("../assets/imgs/banner.jpg") no-repeat center;
     }
 
     .search-container {
@@ -963,47 +961,47 @@
             }
             .tab-combo {
                 i {
-                    background: url("assets/imgs/icon-tab-combo.png");
+                    background: url("../assets/imgs/icon-tab-combo.png");
                 }
                 &.current {
                     i {
-                        background: url("assets/imgs/icon-tab-combo-cur.png");
+                        background: url("../assets/imgs/icon-tab-combo-cur.png");
                     }
                 }
             }
             .tab-flight {
                 i {
-                    background: url("assets/imgs/icon-tab-flight.png");
+                    background: url("../assets/imgs/icon-tab-flight.png");
                 }
                 &.current {
                     i {
-                        background: url("assets/imgs/icon-tab-flight-cur.png");
+                        background: url("../assets/imgs/icon-tab-flight-cur.png");
                     }
                 }
             }
             .tab-hotel {
                 border: 0;
                 i {
-                    background: url("assets/imgs/icon-tab-hotel.png");
+                    background: url("../assets/imgs/icon-tab-hotel.png");
                     height: 25px;
                     width: 23px;
                 }
                 &.current {
                     i {
-                        background: url("assets/imgs/icon-tab-hotel-cur.png");
+                        background: url("../assets/imgs/icon-tab-hotel-cur.png");
                     }
                 }
             }
             .tab-ticket {
                 border: 0;
                 i {
-                    background: url("assets/imgs/icon-tab-ticket.png");
+                    background: url("../assets/imgs/icon-tab-ticket.png");
                     width: 26px;
                     height: 26px;
                 }
                 &.current {
                     i {
-                        background: url("assets/imgs/icon-tab-ticket-cur.png");
+                        background: url("../assets/imgs/icon-tab-ticket-cur.png");
                     }
                 }
             }
@@ -1035,7 +1033,7 @@
                     top: 0;
                     height: 38px;
                     line-height: 38px;
-                    background: url(assets/imgs/alpha.gif) repeat;
+                    background: url(../assets/imgs/alpha.gif) repeat;
                     font-size: 16px;
                     width: 137px;
                     color: #333;
@@ -1048,13 +1046,13 @@
                     z-index: 9;
                     right: 10px;
                     width: 16px;
-                    background: url("assets/imgs/icon-loaction.png");
+                    background: url("../assets/imgs/icon-loaction.png");
                 }
                 .search-contents-icon-calendar {
                     @extend .search-contents-icon-location;
                     top: 13px;
                     height: 15px;
-                    background: url("assets/imgs/icon-calendar.png");
+                    background: url("../assets/imgs/icon-calendar.png");
                 }
                 .search-contents-title {
                     position: absolute;
@@ -1083,17 +1081,17 @@
                     height: 26px;
                     top: 6px;
                     right: 10px;
-                    background: url("assets/imgs/icon-num-add.png");
+                    background: url("../assets/imgs/icon-num-add.png");
                     &.disabled {
-                        background: url("assets/imgs/icon-num-add-not.png");
+                        background: url("../assets/imgs/icon-num-add-not.png");
                     }
                 }
                 .num-minus {
                     @extend .num-add;
                     right: 175px;
-                    background: url("assets/imgs/icon-num-minus.png");
+                    background: url("../assets/imgs/icon-num-minus.png");
                     &.disabled {
-                        background: url("assets/imgs/icon-num-minus-not.png");
+                        background: url("../assets/imgs/icon-num-minus-not.png");
                     }
                 }
                 .search-contents-select {
@@ -1181,7 +1179,7 @@
                     position: absolute;
                     top: 17px;
                     right: 10px;
-                    background: url("assets/imgs/icon-select.png");
+                    background: url("../assets/imgs/icon-select.png");
                     width: 12px;
                     height: 8px;
                     transition: all 0.3s;
@@ -1217,7 +1215,7 @@
                 color: #fff;
                 cursor: pointer;
                 span {
-                    background: url("assets/imgs/flight-not.png");
+                    background: url("../assets/imgs/flight-not.png");
                     @include inlineblock;
                     width: 22px;
                     height: 22px;
@@ -1225,7 +1223,7 @@
                 }
                 &.current {
                     span {
-                        background: url("assets/imgs/flight-choose.png");
+                        background: url("../assets/imgs/flight-choose.png");
                     }
                 }
             }
@@ -1244,9 +1242,9 @@
                     top: 150px;
                     color: #fff;
                     cursor: pointer;
-                    background: url("assets/imgs/flight-change.png");
+                    background: url("../assets/imgs/flight-change.png");
                     &:hover {
-                        background: url("assets/imgs/flight-change-hover.png");
+                        background: url("../assets/imgs/flight-change-hover.png");
                     }
                 }
             }
@@ -1256,7 +1254,7 @@
                 .flight-date-return {
                     &.search-cascading {
                         input {
-                            background: url(assets/imgs/alpha.gif) repeat;
+                            background: url(../assets/imgs/alpha.gif) repeat;
                         }
                         color: #333;
                         .search-contents-icon-calendar, .search-contents-info {
@@ -1329,7 +1327,7 @@
                 cursor: pointer;
                 .icon {
                     @include inlineblock;
-                    background: url("assets/imgs/search-btn.png");
+                    background: url("../assets/imgs/search-btn.png");
                     width: 16px;
                     height: 19px;
                     vertical-align: middle;
@@ -1390,7 +1388,7 @@
                         position: absolute;
                         bottom: -2px;
                         left: 30px;
-                        background: url("assets/imgs/icon-arrow.png");
+                        background: url("../assets/imgs/icon-arrow.png");
                         width: 11px;
                         height: 6px;
                     }

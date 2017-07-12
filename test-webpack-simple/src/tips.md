@@ -1,5 +1,6 @@
 #一.CSS
-
+##1.import变量scss看来没什么问题，不会造成重复加载。
+##2.importscss代码段是会造成重复加载问题的，如何解决css模块化呢？
 #二.js
 ##1.v-model中不能使用filter，可以用computed，但是就没有双向绑定了。
 ```js

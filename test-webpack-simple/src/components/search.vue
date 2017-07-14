@@ -521,7 +521,7 @@
             showSuggestBox: function (className) {
                 //发送ajax请求
                 var vm = this;
-                axios.get('src/assets/data/citys.json').then(function (res) {
+                axios.get('static/data/citys.json').then(function (res) {
                     vm.citys = res.data;
                     //初始化tab切换
                     vm.suggestCitysLi = 0;

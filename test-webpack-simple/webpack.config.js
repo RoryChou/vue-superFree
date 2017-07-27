@@ -37,6 +37,12 @@ module.exports = {
                             use: ['css-loader','sass-loader'],
                             fallback: 'vue-style-loader'
                         })
+                    },
+                    transformToRequire: {
+                        video: 'src',
+                        source: 'src',
+                        img: 'src',
+                        image: 'xlink:href'
                     }
                     // other vue-loader options go here
                 }
@@ -65,7 +71,8 @@ module.exports = {
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js'
-        }
+        },
+        modules: ["node_modules", "spritesmith-generated"]
     },
     devServer: {
         historyApiFallback: true,
@@ -162,8 +169,9 @@ if (process.env.NODE_ENV === 'production') {
                 css: path.resolve(__dirname, 'src/spritesmith-generated/_sprite.scss')
             },
             apiOptions: {
-                cssImageRef: "~sprite.png"
-            }
+                cssImageRef: "../spritesmith-generated/sprite.png"
+            },
+            retina:  '@2x'
         })
     ])
 }

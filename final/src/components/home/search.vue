@@ -863,7 +863,7 @@
                         this.isComboError = true;
                     }
                     if (!this.isComboError&&name) {
-                        alert('combo pass!')
+                        this.$router.push('/combo')
                     }
                 }else if(this.currentLi === 'flight'){
                     if (this.flightFromContent === '') {

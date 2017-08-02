@@ -341,6 +341,7 @@
     import SearchTitle from './search-title.vue'
     import Cart from './cart.vue'
     import HotCitys from './hot-citys.vue'
+    import {store} from '../../main.js'
     export default {
         name: 'search',
         components:{History,SearchTitle,Cart,HotCitys},
@@ -863,7 +864,9 @@
                         this.isComboError = true;
                     }
                     if (!this.isComboError&&name) {
-                        this.$router.push('/combo')
+                        this.$router.push({ name: 'combo', params: { currentSec: 'combo'}})
+                      //发送搜索信息到后台
+                      //store.$emit('currentSec','combo')
                     }
                 }else if(this.currentLi === 'flight'){
                     if (this.flightFromContent === '') {
@@ -875,7 +878,8 @@
                         this.isFlightError = true;
                     }
                     if (!this.isFlightError&&name) {
-                        alert('flight pass!')
+                      //发送搜索信息到后台
+                      this.$router.push({ name: 'flight', params: { currentSec: 'flight'}})
                     }
                 }else {
                     if (this.hotelToContent === '') {
@@ -883,7 +887,8 @@
                         this.isHotelError = true;
                     }
                     if (!this.isHotelError&&name) {
-                        alert('Hotel pass!')
+                      //发送搜索信息到后台
+                      this.$router.push({ name: 'hotel', params: { currentSec: 'hotel'}})
                     }
                 }
             }

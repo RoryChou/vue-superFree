@@ -21,6 +21,9 @@
 ```js
 import SearchTitle from './search-title.vue' //此处的SearchTitle就不能乱写，必须是这个名字
 ```
+##7.组件中的data必须是函数的原因：保证每次使用组件时，data都是唯一的
+##8.在引用了重复的组件之前进行路由切换，重复部分依然会重新渲染，造成性能浪费
+
 #三.html
 
 #四.tool

@@ -1,0 +1,28 @@
+{
+  "currentSec": "combo",
+  "comboData": {
+    "fromCity": "上海",
+    "toCity":"厦门",
+    "isReturn": true,
+    "fromDate": "2017-08-14",
+    "toDate": "2017-08-17",
+    "days": 3,
+    "adultNum": 2,
+    "kidsNum": 1
+  },
+  "flightData": {
+    "fromCity": "上海",
+    "toCity":"厦门",
+    "isReturn": false,
+    "fromDate": "2017-08-14",
+    "toDate": "2017-08-17",
+    "days": 3
+  },
+  "hotelData": {
+    "city": "上海",
+    "keywords":"上海迪士尼乐园",
+    "fromDate": "2017-08-14",
+    "toDate": "2017-08-17",
+    "days": 3
+  }
+}

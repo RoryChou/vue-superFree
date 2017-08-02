@@ -1,0 +1,3762 @@
+<template>
+  <div class="wrap ft-list">
+
+    <list-top></list-top>
+    <!-- 搜索框 -->
+    <div class="ticket_search">
+      <div class="search_nav_box">
+        <ul class="search_nav">
+          <li>
+            <router-link to="combo">优选套餐</router-link>
+          </li>
+          <li class="search_li">
+            <router-link to="flight">机票</router-link>
+          </li>
+          <li>
+            <router-link to="hotel">酒店</router-link>
+          </li>
+        </ul>
+      </div>
+
+      <div class="head-wrapper">
+        <div class="main_search search-contents-flight">
+          <div class="search-bar-wrapper">
+            <div class="default-box clearfix">
+              <div class="city">
+                <i class="icon"></i>
+                <p class="flight-from">
+                  <span class="city-from-str">上海</span>
+                  <span><b class="date-from-str">2017-07-14</b>出发</span>
+                </p>
+                <i class="icon-flight-single"></i>
+                <!--单程icon-->
+                <!--<i class="icon-flight-single"></i>-->
+                <!--单程icon END-->
+                <p class="flight-to">
+                  <span class="city-to-str">厦门</span>
+                  <span> <b class="date-to-str">2017-07-17</b>返回</span>
+                </p>
+              </div>
+              <div class="date">
+                <i class="icon"></i>
+                <span>
+                                <b class="hotel-days">3</b>天
+                            </span>
+              </div>
+              <div class="btn-wrapper">
+                <div class="btn btn-change btn-pink">
+                  更改行程
+              </div>
+              </div>
+            </div>
+            <div class="change-box clearfix">
+              <div class="city">
+                <i class="icon"></i>
+                <div class="input-wrapper">
+                  <div class="flight-tabs">
+                    <div class="flight-single current">
+                      <span></span>
+                      单程
+                  </div>
+                    <div class="flight-double">
+                      <span></span>
+                      往返
+                  </div>
+                  </div>
+                  <div class="flight-from section-input search-city">
+                    <div class="search-contents-title">出发地</div>
+                    <input type="text" class="input-city-from" placeholder="请输入出发地">
+                    <div class="error-box">
+                      <div class="tip-arrow tip-arrow-left">
+                        <em>◆</em>
+                        <i>◆</i>
+                      </div>
+                      <i class="error-icon"></i>
+                      <p>总人数不能超过9人哦！</p>
+                    </div>
+                    <!--<div class="error-box error-box-bottom">
+                        <div class="tip-arrow tip-arrow-top">
+                            <em>◆</em>
+                            <i>◆</i>
+                        </div>
+                        <i class="error-icon"></i>
+                        <p>总人数不能超过9人哦！</p>
+                    </div>-->
+                  </div>
+                  <div class="flight-to section-input search-city">
+                    <div class="search-contents-title">目的地</div>
+                    <input type="text" class="input-city-to" placeholder="请输入目的地">
+                    <div class="error-box">
+                      <div class="tip-arrow tip-arrow-left">
+                        <em>◆</em>
+                        <i>◆</i>
+                      </div>
+                      <i class="error-icon"></i>
+                      <p>总人数不能超过9人哦！</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="date">
+                <i class="icon"></i>
+                <div class="input-wrapper">
+                  <div class="flight-date-start section-input search-date search-cascading search-date-from">
+                    <div class="search-contents-title">出发日期</div>
+                    <div class="search-contents-info"></div>
+                    <input type="text" readonly="readonly" class="input-date-from">
+                  </div>
+                  <div class="flight-date-return section-input search-date search-cascading search-date-to">
+                    <div class="search-contents-title">返回日期</div>
+                    <div class="search-contents-info"></div>
+                    <input type="text" readonly="readonly" class="input-date-to">
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrapper">
+                <div class="btn btn-pink search-btn">
+                  搜索
+              </div>
+                <div class="btn cancle search-btn-cancle">
+                  取消
+              </div>
+              </div>
+              <div class="drop-suggestion-citys">
+                <div class="drop-title">支持中文/拼音/简拼/三字码输入</div>
+                <ul class="city-hot clearfix">
+                </ul>
+                <ul class="letter-tabs clearfix">
+                  <li class="current">
+                    ABCD
+                    <i></i>
+                  </li>
+                  <li>EFGH<i></i></li>
+                  <li>JKLM<i></i></li>
+                  <li>NPQRS<i></i></li>
+                  <li>TUVWX<i></i></li>
+                  <li>YZ<i></i></li>
+                </ul>
+                <ul class="letter-city-contents">
+                  <li>
+                    <dl class="clearfix">
+                      <dt>A</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>B</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>C</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>D</dt>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl class="clearfix">
+                      <dt>E</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>F</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>G</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>H</dt>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl class="clearfix">
+                      <dt>J</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>K</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>L</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>M</dt>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl class="clearfix">
+                      <dt>N</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>P</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>Q</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>R</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>S</dt>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl class="clearfix">
+                      <dt>T</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>U</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>V</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>W</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>S</dt>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl class="clearfix">
+                      <dt>Y</dt>
+                    </dl>
+                    <dl class="clearfix">
+                      <dt>Z</dt>
+                    </dl>
+                  </li>
+                </ul>
+              </div>
+              <div class="drop-suggestion-keywords">
+                <div class="keywords-transport clearfix">
+                  <p class="keywords-title">交通枢纽</p>
+                  <p class="keywords-details">
+
+                  </p>
+                </div>
+                <div class="keywords-subway">
+                  <p class="keywords-title">地铁站</p>
+                  <p class="keywords-details">
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <ul class="drop-complete"></ul>
+          </div>
+        </div>
+
+        <!--去返程tab-->
+        <div class="flight-switch-tabs clearfix">
+          <a href="" class="current">
+            去：
+            <span class="city-from">上海</span>
+            -
+            <span class="city-to">厦门</span>
+          </a>
+          <a href="">
+            返：
+            <span class="city-to">厦门</span>
+            -
+            <span class="city-from">上海</span>
+          </a>
+        </div>
+        <!--去返程tab END-->
+
+        <!-- 价格日历 ft-price-calendar -->
+        <div class="ft-price-calendar clearfix">
+          <a href="javascript:;" class="slider-btn-left nomore-calendar"><i></i></a>
+          <div class="ft-price-box">
+            <div class="ft-price-box-inner clearfix">
+              <ul class="clearfix">
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-more">点击查看</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li class="active">
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起<span>低</span></p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+                <li>
+                  <p class="date-info">01-26<span>周日</span></p>
+                  <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                  <i class="arrow-top"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="javascript:;" class="slider-btn-right"><i></i></a>
+          <div class="ft-pc js-pop-calender">
+            <i></i>
+            <p>价格日历</p>
+          </div>
+        </div><!-- //价格日历 ft-price-calendar结束 -->
+        <!-- 筛选部分 ft-filter-->
+
+        <div class="search_sort clearfix">
+          <div class="search_list clearfix">
+            <div class="search_theme">航空公司</div>
+            <dl class="search_theme_list clearfix">
+              <dt><a class="select" href="javascript:;">不限</a></dt>
+              <dd>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>春秋航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>厦门航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>上海航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>东方航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+              </dd>
+            </dl>
+            <a class="seach_gd_btn js_moreOpt_btn">更多<i class="arrow"></i></a>
+          </div>
+          <div class="search_list clearfix">
+            <div class="search_theme">起飞时段</div>
+            <dl class="search_theme_list clearfix">
+              <dt><a class="select" href="javascript:;">不限</a></dt>
+              <dd>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>06:00-18:00</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>08:00-12:00</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>12:00-24:00</a></span>
+              </dd>
+            </dl>
+          </div>
+          <div class="search_list clearfix">
+            <div class="search_theme">出发机场</div>
+            <dl class="search_theme_list clearfix">
+              <dt><a class="select" href="javascript:;">不限</a></dt>
+              <dd>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>虹桥机场</a></span>
+                <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>浦东机场</a></span>
+              </dd>
+            </dl>
+          </div>
+          <div class="search_list result_sort clearfix">
+            <div class="search_theme">排&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序</div>
+            <ul class="search_theme_list rank_box clearfix">
+              <li title="按起飞时间从早到晚排序" class="active">当地起飞时间<i></i><b>|</b></li>
+              <li title="按票价从低到高排序" class="tl-col-down">票价<em class="no-tax">(不含税)</em><i></i><b>|</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 搜索框END -->
+    <div class="search-num">
+      为您找到<span>520</span>份套餐
+        <i></i>（提供的总价中包含机票机场建设费&燃油费）
+    </div>
+
+    <!--商品列表-->
+    <div class="main-box">
+      <div class="loading_box">
+        <i class="icon_loading"></i>
+        <span>请稍候，正在为您查询</span>
+      </div>
+      <!-- 列表开始 -->
+      <div class="ticket-list">
+        <div id="tickets">
+          <!-- 已经加载过的加js-tl-loaded -->
+          <div class="tl-item tl-item-open js-tl-loaded">
+            <div class="tl-detail clearfix">
+              <div class="tl-col tl-info">
+                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                <!-- TODO 机型信息填在对应的data属性中 -->
+                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+              </div>
+              <div class="tl-col tl-time tl-time-left">
+                <div class="tl-top">06:15</div>
+                <div class="tl-bottom">
+                  <em title="浦东国际机场够了">浦东国际机场够了</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+              <div class="tl-col tl-time">
+                <div class="tl-top">
+                  12:30
+                  <em class="add-one-day" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                </div>
+                <div class="tl-bottom">
+                  <em>虹桥机场</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                立即确认
+            </div>
+              <div class="tl-col tl-duration">
+                <em>6.7</em>折
+                    </div>
+              <div class="tl-col tl-price">
+                <i>&yen;</i><em>711</em>起
+                    </div>
+              <span class="select-btn-flight"></span>
+            </div>
+            <div class="tl-all clearfix">
+              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+              <div class="tl-tips">
+                <span>机建燃油：<em>￥50/人</em></span>
+                <span>餐食：<em>有</em></span>
+                <span>准点率：<em>80%</em></span>
+              </div>
+              <!-- 航司产品 data-num=3 默认显示3条 航司产品加JS-tl-ac-part-->
+              <div class="tl-part JS-tl-ac-part clearfix" data-num="2">
+                <ul>
+                  <li>
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li>
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- 商务优选 data-num=2 默认显示2条-->
+              <div class="tl-part clearfix" data-num="2">
+                <ul>
+                  <li>
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li>
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- 商务优选 data-num=2 默认显示2条-->
+              <div class="tl-part clearfix" data-num="1">
+                <ul>
+                  <li>
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- 尊贵专享 data-num=1 默认显示1条-->
+              <div class="tl-part clearfix" data-num="0" style="display:none;">
+                <ul>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                  <li style="display: none;">
+                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                    <span class="tlp-remain">余<i>3</i></span>
+                    <span class="tlp-class">经济舱</span>
+                    <p class="tip-part">
+                      <span class="tui-gai-qian">退改签</span>
+                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                    </p>
+                    <span class="tlp-discount">6.7<i>折</i></span>
+                    <p class="reduce-price">
+                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                      <span class="tlp-price"><i>&yen;</i>1711</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!--提示语句-->
+              <div class="tl-part-tips">
+                <div class="nova-tip nova-tip-normal">
+                  <span class="nova-icon-xs nova-icon-info"></span>
+                  该航班为隔夜航班，请留意您的出行安排
+              </div>
+                <a class="tl-more-btn" href="javascript:;">更多舱位（共<em>8</em>个）<i></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-detail clearfix">
+              <div class="tl-col tl-info">
+                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                <!-- TODO 机型信息填在对应的data属性中 -->
+                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+              </div>
+              <div class="tl-col tl-time tl-time-left">
+                <div class="tl-top">06:15</div>
+                <div class="tl-bottom">
+                  <em title="浦东国际机场够了">浦东国际机场够了</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+              <div class="tl-col tl-time">
+                <div class="tl-top">12:30</div>
+                <div class="tl-bottom">
+                  <em>虹桥机场</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                立即确认
+            </div>
+              <div class="tl-col tl-duration">
+                <em>6.7</em>折
+                    </div>
+              <div class="tl-col tl-price">
+                <i>&yen;</i><em>711</em>起
+                    </div>
+              <span class="select-btn-flight"></span>
+            </div>
+            <div class="tl-item-loading clearfix">
+              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+              <i class="loading-img"></i>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-detail clearfix">
+              <div class="tl-col tl-info">
+                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                <!-- TODO 机型信息填在对应的data属性中 -->
+                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+              </div>
+              <div class="tl-col tl-time tl-time-left">
+                <div class="tl-top">06:15</div>
+                <div class="tl-bottom">
+                  <em title="浦东国际机场够了">浦东国际机场够了</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+              <div class="tl-col tl-time">
+                <div class="tl-top">12:30</div>
+                <div class="tl-bottom">
+                  <em>虹桥机场</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                立即确认
+            </div>
+              <div class="tl-col tl-duration">
+                <em>6.7</em>折
+                    </div>
+              <div class="tl-col tl-price">
+                <i>&yen;</i><em>711</em>起
+                    </div>
+              <span class="select-btn-flight"></span>
+            </div>
+            <div class="tl-item-loading clearfix">
+              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+              <i class="loading-img"></i>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-detail clearfix">
+              <div class="tl-col tl-info">
+                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                <!-- TODO 机型信息填在对应的data属性中 -->
+                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+              </div>
+              <div class="tl-col tl-time tl-time-left">
+                <div class="tl-top">06:15</div>
+                <div class="tl-bottom">
+                  <em title="浦东国际机场够了">浦东国际机场够了</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+              <div class="tl-col tl-time">
+                <div class="tl-top">12:30</div>
+                <div class="tl-bottom">
+                  <em>虹桥机场</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                立即确认
+            </div>
+              <div class="tl-col tl-duration">
+                <em>6.7</em>折
+                    </div>
+              <div class="tl-col tl-price">
+                <i>&yen;</i><em>711</em>起
+                    </div>
+              <span class="select-btn-flight"></span>
+            </div>
+            <div class="tl-item-loading clearfix">
+              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+              <i class="loading-img"></i>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-detail clearfix">
+              <div class="tl-col tl-info">
+                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                <!-- TODO 机型信息填在对应的data属性中 -->
+                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+              </div>
+              <div class="tl-col tl-time tl-time-left">
+                <div class="tl-top">06:15</div>
+                <div class="tl-bottom">
+                  <em title="浦东国际机场够了">浦东国际机场够了</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+              <div class="tl-col tl-time">
+                <div class="tl-top">12:30</div>
+                <div class="tl-bottom">
+                  <em>虹桥机场</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                立即确认
+            </div>
+              <div class="tl-col tl-duration">
+                <em>6.7</em>折
+                    </div>
+              <div class="tl-col tl-price">
+                <i>&yen;</i><em>711</em>起
+                    </div>
+              <span class="select-btn-flight"></span>
+            </div>
+            <div class="tl-item-loading clearfix">
+              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+              <i class="loading-img"></i>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-detail clearfix">
+              <div class="tl-col tl-info">
+                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                <!-- TODO 机型信息填在对应的data属性中 -->
+                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+              </div>
+              <div class="tl-col tl-time tl-time-left">
+                <div class="tl-top">06:15</div>
+                <div class="tl-bottom">
+                  <em title="浦东国际机场够了">浦东国际机场够了</em>
+                  <span>T2</span>
+                </div>
+              </div>
+              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+              <div class="tl-col tl-time">
+                <div class="tl-top">12:30</div><div class="tl-bottom">
+                <em>虹桥机场</em>
+                <span>T2</span>
+              </div>
+              </div>
+              <div class="tl-col tl-confirm tl-confirm-no">
+
+              </div>
+              <div class="tl-col tl-duration">
+                <em>6.7</em>折
+                    </div>
+              <div class="tl-col tl-price">
+                <i>&yen;</i><em>711</em>起
+                    </div>
+              <span class="select-btn-flight"></span>
+            </div>
+            <div class="tl-item-loading clearfix">
+              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+              <i class="loading-img"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 列表开始 END-->
+    </div>
+    <!--商品列表END-->
+
+
+    <list-bottom></list-bottom>
+
+
+  </div>
+</template>
+<script>
+  import ListTop from './list-top.vue';
+  import ListBottom from './list-bottom.vue';
+  export default {
+    name: 'flight',
+    components: {ListTop,ListBottom}
+  }
+</script>
+<!--flight.scss-->
+<style lang="scss">
+  @import "../../assets/scss/_var.scss";
+  /*flight-calendar.scss*/
+  .canderBox1 .calmonth {
+    width: 457px;
+  }
+
+  .canderBox1{
+    width: 924px;
+    height: 424px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -212px 0px 0px -462px;
+    z-index: 100;
+    .ui-calendar {
+      border: none;
+    }
+    .ui-calendar td {
+      height: 59px;
+    }
+    .ui-calendar .caltitle {
+      background-color: #ee3388;
+      color: #fff;
+    }
+    .ui-calendar-big[data-bimonthly="true"][data-float="false"] .calmonth[data-offset='0'] {
+      margin-left: 0px;
+    }
+    .ui-calendar-big[data-bimonthly="true"][data-float="false"] .calmonth[data-offset='1'] {
+      margin-right: 0px;
+    }
+    .ui-calendar .calmonth[data-offset='0'] .caltitle {
+      border-color: #ee3388;
+      line-height: 30px;
+      height: 30px;
+      margin-right: -6px;
+    }
+    .ui-calendar .calmonth[data-offset='1'] .caltitle {
+      border-color: #ee3388;
+      line-height: 30px;
+      height: 30px;
+      margin-left: -6px;
+    }
+    .ui-calendar .month-prev {
+      top: 0px;
+      left: 0px;
+      background-image: url('../../assets/imgs/list/flight/sprite/icon-calendar-left.png');
+      height: 30px;
+      width: 30px;
+    }
+    .ui-calendar .month-next {
+      top: 0px;
+      right: 0px;
+      background-image: url('../../assets/imgs/list/flight/sprite/icon-calendar-right.png');
+      height: 30px;
+      width: 30px;
+    }
+    .ui-calendar .month-prev:hover {
+      background-image: url('../../assets/imgs/list/flight/sprite/icon-calendar-left.png');
+      height: 30px;
+      width: 30px;
+      background-color: $color-lv-pink-hover;
+    }
+    .ui-calendar .month-next:hover {
+      background-image: url('../../assets/imgs/list/flight/sprite/icon-calendar-right.png');
+      height: 30px;
+      width: 30px;
+      background-color: $color-lv-pink-hover;
+    }
+    .ui-calendar .caldate,
+    .ui-calendar .caldate:hover,
+    .ui-calendar .nodate,
+    .ui-calendar .date {
+      width: 64px;
+      height: 59px;
+    }
+  }
+  .canderBox1 .nchclose{
+    position: absolute;
+    top: -47px;
+    right: 0px;
+    cursor: pointer;
+    background: url('../../assets/imgs/list/flight/sprite/icon-calendar-close.png') no-repeat center;
+    height: 47px;
+    width: 32px;
+    &:hover {
+      background: url('../../assets/imgs/list/flight/sprite/icon-calendar-close-hover.png') no-repeat center;
+      height: 47px;
+      width: 32px;
+    }
+  }
+  .canderBox1 .ui-calendar {
+    width: auto;
+  }
+  .canderBox1 .ui-calendar .calmonth .nodate .calday{
+    color: #999;
+  }
+  .canderBox1 .calmonth .calinfo-new1 .calinfo{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    text-align: center;
+    background: #f90;
+    margin-left: 5px;
+    vertical-align: 3px;
+    left: 25px;
+  }
+  .canderBox1 .calmonth .calinfo-new .calactive{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-family: "arial",sans-serif;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    text-align: center;
+    background: #ff7878;
+    margin-left: 5px;
+    vertical-align: 3px;
+    top: 3px;
+    right: 0px;
+  }
+  .canderBox1 .calprice{
+    right: 0;
+    left: 0px;
+  }
+  .canderBox1 .ui-calendar .calmonth .calSoldout .calprice,.canderBox1 .ui-calendar .calmonth .calSoldout .calprice i{
+    color: #999;
+    font-size: 14px;
+    font-family: "arial",sans-serif;
+  }
+  .canderBox1 .ui-calendar .calmonth .calSoldout .calprice i{
+    font-size: 12px;
+  }
+  .canderBox1 .ui-calendar .calmonth .calSoldout .calprice b{
+
+    color:#999;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    vertical-align: bottom;
+    line-height: 16px;
+    position: absolute;
+    top: -15px;
+    left: 0px;
+  }
+  .canderBox1 .calmonth .calinfo-new .calactive samp{
+    font-family: "arial",sans-serif;
+  }
+  .pop-layer-reply-fade{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    z-index: 99;
+  }
+  /*flight-calendar.scss END */
+  /*_flight-calendar-list.scss*/
+  .ft-price-calendar a,
+  .ft-price-calendar li,
+  .ft-price-calendar .ft-pc {
+    float: left;
+    height: 54px;
+    //border: 1px solid #fea1cb;
+    //border-bottom: 2px solid #ee3388;
+    border-top: 1px solid $color-lv-orange;
+    border-bottom: 1px solid #fc6;
+    margin-right: -1px;
+  }
+  .ft-price-calendar a {
+    position: relative;
+    z-index: 1;
+    display: block;
+    float: left;
+    width: 29px;
+    background: #fff;
+  }
+  .ft-price-calendar a i {
+    *cursor: pointer;
+    display: block;
+    width: 10px;
+    height: 15px;
+    margin: 20px 0 0 11px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -80px -100px;
+  }
+  .ft-price-calendar .slider-btn-right i {
+    background-position: -90px -100px;
+  }
+  .ft-price-calendar .slider-btn-disable {
+    cursor: default;
+  }
+  .ft-price-calendar .slider-btn-disable i {
+    background-position: -80px -120px;
+  }
+  .ft-price-calendar .slider-btn-right.slider-btn-disable i {
+    background-position: -90px -120px;
+  }
+  .ft-price-calendar .slider-btn-right.color-e38 {
+    border-left-color: #ee3388;
+  }
+  .ft-price-calendar li {
+    position: relative;
+    width: 108px;
+    background: $color-bg-orange;
+    text-align: center;
+    cursor: pointer;
+  }
+  .ft-price-calendar li:hover {
+    background: #fc6;
+  }
+  .ft-price-calendar li:hover p {
+    color: #fff;
+  }
+  .ft-price-calendar li.active {
+    z-index: 1;
+    background: #fc6;
+    color: #fff;
+  }
+
+  .ft-price-calendar li.active .date-info {
+    color: #fff;
+    //margin-top: 3px;
+  }
+  .ft-price-calendar li.active .price-info {
+    color: #fff;
+    i,b {
+      color: #fff;
+    }
+  }
+  .ft-price-calendar li.active .price-more {
+    color: #fff;
+  }
+  .ft-price-calendar li .date-info {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+  }
+  .ft-price-calendar li .date-info span {
+    margin-left: 5px;
+  }
+  .ft-price-calendar li .price-info {
+    font-size: 12px;
+    color: #999;
+    margin-left: -2px;
+  }
+  .ft-price-calendar li .price-info i {
+    display: inline-block;
+    font-size: 14px;
+    color: #f60;
+    width: 12px;
+  }
+  .ft-price-calendar li .price-info b{
+    color: #f60;
+    font-size:16px;
+    font-weight:normal;
+    margin-right:3px;
+  }
+  .ft-price-calendar li .price-info span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    text-align: center;
+    background: #ff9900;
+    margin-left: 5px;
+    vertical-align: 1px;
+  }
+  .ft-price-calendar li:hover .price-info b,.ft-price-calendar li:hover .price-info i{
+    color: #fff;
+  }
+  .ft-price-calendar li.active:hover .price-info b,.ft-price-calendar li.active:hover .price-info i{
+    color: #fff;
+  }
+  .ft-price-calendar li .price-more {
+    font-size: 14px;
+    color: #999;
+  }
+  .ft-price-calendar .ft-pc {
+    width: 74px;
+    width: 72px\9;
+    background: $color-bg-orange;
+    cursor: pointer;
+    //border-right: 1px solid #fea1cb;
+    text-align: center;
+  }
+  .ft-price-calendar .ft-pc:hover,
+  .ft-price-calendar .ft-pc.active {
+    background: #ffcc66;
+    //border-color: #e38;
+  }
+  .ft-price-calendar .ft-pc:hover i,
+  .ft-price-calendar .ft-pc.active i {
+    background: url('../../assets/imgs/list/flight/sprite/icon-flight-calendar-hover.png') no-repeat center;
+    height: 25px;
+    width: 26px;
+  }
+  .ft-price-calendar .ft-pc:hover p,
+  .ft-price-calendar .ft-pc.active p {
+    color: #fff;
+  }
+  .ft-price-calendar .ft-pc i {
+    display: block;
+    margin: 6px 0 0 25px;
+    *margin-left: 0;
+    background: url('../../assets/imgs/list/flight/sprite/icon-flight-calendar.png') no-repeat center;
+    height: 25px;
+    width: 26px;
+  }
+  .ft-price-calendar .ft-pc p {
+    font-size: 12px;
+    color: #666;
+  }
+  .ft-price-box {
+    *position: relative;
+    overflow: hidden;
+    width: 1070px;
+    height: 57px;
+    float: left;
+  }
+  .ft-price-box .ft-price-box-inner {
+    position: relative;
+    left: 0;
+    width: 200%;
+  }
+  .ft-price-box ul {
+    float: left;
+    width: 50%;
+  }
+
+  .ft-price-calendar {
+    .slider-btn-left {
+      i {
+        background: url('../../assets/imgs/list/flight/sprite/flight-left-useful.png') no-repeat center;
+        height: 16px;
+        width: 10px;
+      }
+      &.nomore-calendar {
+        cursor: not-allowed;
+        i {
+          background: url('../../assets/imgs/list/flight/sprite/flight-left-not.png') no-repeat center;
+          height: 16px;
+          width: 10px;
+
+        }
+      }
+    }
+    .slider-btn-right {
+      i {
+        background: url('../../assets/imgs/list/flight/sprite/flight-right-useful.png') no-repeat center;
+        height: 16px;
+        width: 10px;
+      }
+      &.nomore-calendar {
+        cursor: not-allowed;
+        i {
+          background: url('../../assets/imgs/list/flight/sprite/flight-right-not.png') no-repeat center;
+          height: 16px;
+          width: 10px;
+
+        }
+      }
+    }
+  }
+
+  /*_flight-calendar-list.scss END*/
+  /*_flight-list.scss*/
+  .ft-list {
+    background: #f5f5f5;
+  }
+  .ban-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 12px 0 30px;
+  }
+  .crumb {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 18px;
+  }
+  .crumb a {
+    color: #666;
+  }
+  .crumb a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+  .crumb .cur {
+    color: #999;
+    display: inline;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .promotion {
+    width: 1178px;
+    line-height: 22px;
+    background: #fffaee;
+    border: 1px solid #fa0;
+    margin-top: 10px;
+    padding: 5px 10px 9px;
+    overflow: hidden;
+  }
+  .promotion i {
+    display: block;
+    float: left;
+    margin: 4px 10px 0 0;
+    width: 14px;
+    height: 14px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -50px -20px;
+  }
+  .promotion span {
+    display: block;
+    float: right;
+    margin-top: 4px;
+    width: 13px;
+    height: 13px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -80px -20px;
+  }
+  .promotion span:hover {
+    cursor: pointer;
+  }
+  .promotion .promotion-main {
+    display: block;
+    width: 1135px;
+    float: left;
+    margin-top: -3px;
+  }
+  .promotion a,
+  .promotion p {
+    margin-top: 6px;
+    display: block;
+    line-height: 16px;
+    color: #333;
+  }
+  .promotion a:hover {
+    text-decoration: underline;
+    color: #f60;
+  }
+  .search {
+    padding: 8px 20px 16px 20px;
+    margin-top: 10px;
+    background: #fff;
+    position: relative;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba( 0, 0, 0,0.13);
+    box-shadow: 0px 2px 3px 0px rgba( 0, 0, 0,0.13);
+  }
+  .ft-type {
+    width: 73px;
+    float: left;
+  }
+  .ft-type a {
+    font-size: 14px;
+    color: #666;
+    line-height: 18px;
+    display: block;
+    padding: 4px 5px 4px 0;
+    height: 18px;
+    margin-bottom: 1px;
+  }
+  .ft-type a:hover {
+    text-decoration: none;
+  }
+  .ft-type a:hover i {
+    background-position: -105px -235px;
+  }
+  .ft-type a.active i {
+    background-position: -40px 0;
+  }
+  .ft-type a i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -60px 0;
+    vertical-align: top;
+    margin-right: 4px;
+  }
+  .change-city {
+    float: left;
+    display: block;
+    width: 44px;
+    height: 21px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -10px -85px;
+    margin: 12px 3px 0px;
+  }
+  .change-city:hover {
+    background-position: -10px -108px;
+  }
+  .ft-input-group {
+    float: left;
+    position: relative;
+    margin-top: 7px;
+    *display: inline;
+  }
+  .ft-input-group input {
+    font-size: 14px;
+    color: #333;
+    line-height: 18px;
+    width: 171px;
+    padding: 5px 10px 5px 37px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  .ft-input-group .input-calendar {
+    width: 163px;
+    padding-left: 45px;
+  }
+  .ft-input-group .input-info {
+    position: absolute;
+    top: 0px;
+    *top: 2px;
+    left: 11px;
+    font-size: 12px;
+    color: #999;
+    line-height: 30px;
+  }
+  .ft-input-group .ft-calendar-info {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    *top: 8px;
+  }
+  .ft-input-group .ft-calendar-info span {
+    float: left;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+    cursor: default;
+    vertical-align: 3px;
+  }
+  .ft-input-group .ft-calendar-info i {
+    float: left;
+    width: 19px;
+    height: 18px;
+    margin-left: 6px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") 0 0;
+  }
+  .ft-input-group .ft-city-error {
+    border-color: #EE3388;
+    background: #FEF2F9;
+  }
+  /*.ft-return-day-group {*/
+  /*margin-right: 0;*/
+  /*}*/
+  .ft-input-group-disable input {
+    background: #f5f5f5;
+    color: #bbb;
+  }
+  .ft-input-group-disable .input-info {
+    color: #bbb;
+  }
+  .ft-input-group-disable .ft-calendar-info i {
+    background-position: -20px 0;
+  }
+  .ft-search-btn {
+    margin-top: 7px;
+    display: block;
+    float: left;
+    padding:0px 25px;
+    *width:58px;
+  }
+  .same-city-error,
+  .invalid-city-error {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    left: 385px;
+    width: 194px;
+    height: 34px;
+    background: #fffaee;
+    border: 1px solid #fa0;
+    font-size: 12px;
+    color: #333;
+    line-height: 34px;
+  }
+  .same-city-error .warning,
+  .invalid-city-error .warning {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 6px 0 10px;
+    vertical-align: -3px;
+    *vertical-align: -1px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -50px -20px;
+  }
+  .same-city-error p,
+  .invalid-city-error p {
+    font-family: "SimSun", sans-serif;
+    width: 16px;
+    height: 10px;
+    position: absolute;
+    left: 15px;
+    top: -7px;
+  }
+  .same-city-error p span,
+  .invalid-city-error p span,
+  .same-city-error p i,
+  .invalid-city-error p i {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #fa0;
+    display: block;
+    line-height: 14px;
+    font-size: 14px;
+  }
+  .same-city-error p i,
+  .invalid-city-error p i {
+    top: 1px;
+    color: #fffaee;
+  }
+  .same-city-error {
+    bottom: -23px;
+  }
+  .invalid-city-error {
+    width: 120px;
+  }
+  .ft-main {
+    float: left;
+    width: 940px;
+    margin: 14px 20px 0 0;
+  }
+  .depa-ticket {
+    width: 940px;
+    background: #fff;
+    margin-bottom: 13px;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba( 0, 0, 0,0.13);
+    box-shadow: 0px 2px 3px 0px rgba( 0, 0, 0,0.13);
+  }
+  .depa-ticket .tui-gai-qian {
+    margin-right: 0;
+  }
+  .depa-ticket .dt-title {
+    float: left;
+    width: 64px;
+    padding: 15px 10px 15px 14px;
+    background: #f8f8f8;
+  }
+  .depa-ticket .dt-date {
+    font-size: 14px;
+    color: #000;
+    line-height: 16px;
+    font-weight: bold;
+  }
+  .depa-ticket .dt-date i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: -3px;
+    *vertical-align: 0;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -50px -45px;
+  }
+  .depa-ticket .dt-selected {
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+    margin: 2px 0 0 16px;
+  }
+  .depa-ticket .dt-opertion {
+    width: 115px;
+    float: left;
+    margin-top: 7px;
+    text-align: right;
+  }
+  .depa-ticket .dt-opertion a {
+    font-size: 12px;
+    color: #09c;
+  }
+  .depa-ticket .dt-opertion a:hover {
+    color: #f60;
+  }
+  .depa-ticket .dt-opertion p {
+    margin-top: 3px;
+  }
+  .depa-ticket .tl-item {
+    float: left;
+    width: 695px;
+    border-bottom: none;
+    padding: 10px 0 10px 20px;
+  }
+  .depa-ticket .tl-item .tl-info {
+    width: 131px;
+  }
+  .depa-ticket .tl-item .tl-duration {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .depa-ticket .tl-item .tl-class {
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    margin: 12px 0 0 10px;
+  }
+  .depa-ticket .tl-item .tl-price {
+    width: 80px;
+    margin-left: 20px;
+    text-align: center;
+  }
+  .depa-ticket .tl-item .tl-price .tl-bottom {
+    margin-left: 0;
+  }
+  .ft-title {
+    font-size: 16px;
+    color: #333;
+    line-height: 26px;
+    margin-bottom: 4px;
+  }
+  .ft-title span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .ft-title em {
+    font-size: 12px;
+    color: #999;
+    vertical-align: 1px;
+  }
+  .ft-title i {
+    display: inline-block;
+    width: 35px;
+    height: 6px;
+    margin: 0 10px;
+    vertical-align: 4px;
+    *vertical-align: 9px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -65px -90px;
+  }
+  .ft-title a {
+    margin-top: 2px;
+    float: right;
+    color: #09c;
+    font-size: 14px;
+  }
+  .ft-title a i {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 24px;
+    background-position: -90px -270px;
+  }
+  .ft-title a:hover {
+    text-decoration: underline;
+    color: #f60;
+  }
+
+  .ft-calendar-template {
+    display: none;
+  }
+  .ft-filter {
+    background: #fff;
+    font-size: 12px;
+    color: #999;
+  }
+  .ft-filter p {
+    float: left;
+    width: 62px;
+    line-height: 26px;
+  }
+  .ft-filter .ft-title {
+    display: none;
+  }
+  .ft-filter .filter-top {
+    padding-left: 17px;
+  }
+  .filter-main {
+    padding: 15px 0;
+    float: left;
+  }
+  .filter-main .select-div {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .filter-main .select-div span {
+    position: relative;
+    display: block;
+    padding-left: 6px;
+    width: 72px;
+    height: 24px;
+    border: 1px solid #ccc;
+    line-height: 24px;
+    background: #fff;
+    z-index: 1;
+  }
+  .filter-main .select-div i {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 10px;
+    margin-left: 4px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-width: 4px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+  }
+  .filter-main .select-div ul {
+    display: none;
+    position: absolute;
+    padding: 2px 0 2px 10px;
+    width: 68px;
+    left: 0px;
+    top: 25px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  .filter-main .select-div ul li {
+    font-size: 12px;
+    color: #333;
+    line-height: 31px;
+    height: 31px;
+    cursor: default;
+  }
+  .filter-main .select-div ul li label {
+    display: block;
+    margin-top: 3px;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+  .filter-main .select-div ul input[type=checkbox] {
+    vertical-align: -3px;
+    margin-right: 6px;
+  }
+  .filter-main .select-div-open ul {
+    display: block;
+  }
+  .filter-main .select-div-open span {
+    padding-bottom: 1px;
+    border-bottom: none;
+  }
+  .filter-main .select-time ul {
+    width: 145px;
+  }
+  .filter-main .select-airline ul {
+    width: 210px;
+  }
+  .filter-main .select-airline ul li {
+    width: 105px;
+    float: left;
+  }
+  .filter-main .select-airport ul {
+    width: 108px;
+  }
+  .filter-main .select-class span {
+    width: 46px;
+  }
+  /*.ft-main-fixed .ft-filter {*/
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*left: 50%;*/
+  /*margin-left: -600px;*/
+  /*z-index: 10;*/
+  /*margin-top: 0;*/
+  /*padding-left: 0;*/
+  /*width: 940px;*/
+  /*border-top: 2px solid #ee3388;*/
+  /*-webkit-box-shadow: 0px 2px 4px 0px rgba( 0, 0, 0,0.18);*/
+  /*box-shadow: 0px 2px 4px 0px rgba( 0, 0, 0,0.18);*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .filter-top {*/
+  /*padding-left: 13px;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .filter-main {*/
+  /*float: right;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .filter-result {*/
+  /*display: none;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .ft-title {*/
+  /*float: left;*/
+  /*width: 320px;*/
+  /*margin-top: 15px;*/
+  /*display: block;*/
+  /*font-size: 16px;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .ft-title span {*/
+  /*font-size: 14px;*/
+  /*margin-left: 10px;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .ft-title em {*/
+  /*vertical-align: 1px;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .ft-title i {*/
+  /*margin: 0 5px;*/
+  /*width: 23px;*/
+  /*background-position: -105px -260px;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .ft-title small {*/
+  /*color: #999;*/
+  /*font-size: 16px;*/
+  /*}*/
+  /*.ft-main-fixed .ft-filter .filter-main p {*/
+  /*display: none;*/
+  /*}*/
+  .ft-main-fixed .ticket-list {
+    padding-top: 103px;
+  }
+  .ft-wrap-fixed .search{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -600px;
+    z-index: 10;
+    margin-top: 0;
+    padding-bottom:56px;
+    width: 1160px;
+    border-top: 2px solid #ee3388;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba( 0, 0, 0,0.18);
+    box-shadow: 0px 2px 4px 0px rgba( 0, 0, 0,0.18);
+  }
+  .ft-wrap-fixed{
+    position: relative;
+    *z-index:20;
+  }
+  .ft-wrap-fixed .ft-filter{
+    position: fixed;
+    top: 46px;
+    left: 50%;
+    z-index: 20;
+    background: none;
+    margin-left: -594px;
+  }
+  .ft-wrap-fixed .ft-filter .filter-top{
+    padding-left: 15px;
+  }
+  .ft-wrap-fixed .ft-filter .filter-main{
+    margin-right: 213px;
+  }
+
+
+  .filter-result {
+    padding-top: 10px;
+    padding-left: 13px;
+    border-top: 1px dashed #ddd;
+  }
+  .filter-result p {
+    line-height: 22px;
+  }
+  .filter-result span {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 10px 10px 0;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 25px 0 5px;
+    position: relative;
+    border: 1px solid #f90;
+    border-right: none;
+    color: #000;
+  }
+  .filter-result em {
+    color: #f60;
+  }
+  .fr-content {
+    float: left;
+    width: 840px;
+    font-size: 0;
+  }
+  .fr-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 16px;
+    height: 20px;
+    padding: 0 2px;
+    background: #f90;
+    font-size: 16px;
+    color: #fff;
+    line-height: 20px;
+    font-weight: bolder;
+  }
+  .fr-close:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  .fr-close-all {
+    font-size: 12px;
+    color: #09c;
+    vertical-align: 0px;
+    white-space: nowrap;
+  }
+  .ticket-list {
+    width: 1200px;
+    margin-top: 10px;
+    background: #fff;
+    border-bottom: none;
+  }
+  .ticket-list .tl-item:hover {
+    background: #fffaee;
+  }
+  .ticket-list .tl-item-open:hover {
+    background: #ffffff;
+  }
+  .ticket-list .tl-item-open .select-btn-flight i {
+    background-position: -90px -45px;
+  }
+  .ticket-list .tl-item-open .tl-all,
+  .ticket-list .tl-item-open .tl-item-loading {
+    display: block;
+  }
+  .ticket-list .tl-item-open .flight-warning {
+    margin-top: 12px;
+  }
+  .sort {
+    height: 40px;
+    font-size: 12px;
+    color: #666;
+    line-height: 14px;
+    float:right;
+    padding:8px 0px;
+  }
+  .sort .tl-col {
+    width: auto;
+    padding: 0 10px;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+    margin-top: 13px;
+  }
+  .sort .tl-col i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -50px -35px;
+    margin-left: 3px;
+    *vertical-align: middle;
+  }
+  .sort .tl-col:hover {
+    color: #f60;
+  }
+  .sort .tl-col:hover i {
+    background-position: -70px -35px;
+  }
+  .sort .tl-price {
+    margin-left: 0;
+    border-right: none;
+  }
+  .sort .tl-col-active {
+    color: #f60;
+  }
+  .sort .tl-col-active i {
+    background-position: -70px -35px;
+  }
+  .sort .tl-col-down.tl-col-active i {
+    background-position: -80px -35px;
+  }
+  .sort .tl-col-down i {
+    background-position: -60px -35px;
+  }
+  .sort .tl-col-down:hover i {
+    background-position: -80px -35px;
+  }
+  .sort .ft-total {
+    float: left;
+    width: auto;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+  }
+  .sort .ft-total em {
+    font-size: 18px;
+    color: #f60;
+    vertical-align: -1px;
+    margin: 0 3px;
+  }
+
+  .ticket-list {
+    .tl-item {
+      padding: 22px 10px 22px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .tl-item .tl-detail {
+      padding-left: 20px;
+    }
+    .tl-item .tl-duration {
+      line-height:43px;
+      width: 75px;
+      margin-left:110px;
+      margin-top: 2px;
+      font-size:14px;
+      color: #999;
+    }
+    .tl-item .tl-duration span {
+      color: #999;
+    }
+    .tl-item .tl-duration .tl-bottom {
+      margin-top: 9px;
+    }
+    .tl-item .tl-info {
+      width: 213px;
+      padding-left: 0;
+    }
+    .tl-item .tl-price {
+      width: 110px;
+      margin-left: 90px;
+      line-height: 43px;
+      font-size:12px;
+      color: #999;
+      height:43px;
+      overflow: hidden;
+    }
+    .tl-item .tl-price em{
+      color: #ff6600;
+      font-size:28px;
+    }
+    .tl-item .tl-price i{
+      color: #ff6600;
+      font-size:20px;
+    }
+    .tl-item .select-btn-flight {
+      display: block;
+      float: right;
+      margin-top: 12px;
+      margin-right: 42px;
+      *margin-right: 16px;
+      background: url('../../assets/imgs/list/flight/sprite/icon-arrow-down.png') no-repeat center;
+      height: 26px;
+      width: 26px;
+      transition: all 0.3s;
+    }
+    .tl-item .select-btn-flight.up{
+      background: url('../../assets/imgs/list/flight/sprite/icon-arrow-up.png') no-repeat center;
+      height: 26px;
+      width: 26px;
+    }
+    .tl-item .select-btn-flight i {
+      display: inline-block;
+      width: 9px;
+      height: 5px;
+      margin-left: 9px;
+      vertical-align: 2px;
+      *vertical-align: 5px;
+      background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -35px;
+    }
+    .tl-col {
+      float: left;
+      min-height: 1px;
+    }
+    .tl-col .tl-top,
+    .tl-col .tl-bottom {
+      font-size: 12px;
+      color: #333;
+      line-height: 16px;
+    }
+    .tl-col .tl-bottom {
+      margin-top: 4px;
+    }
+    .tl-info {
+      width: 125px;
+      padding-left: 15px;
+    }
+    .tl-info .tl-top {
+      margin-top: 4px;
+    }
+    .tl-info .tl-bottom {
+      color: #666;
+      margin-left: 20px;
+    }
+    .tl-info .tl-bottom span {
+      margin-right: 5px;
+    }
+    .tl-info .tl-bottom .plane-type {
+      margin-right: 0;
+      border-bottom: 1px dashed #666;
+      cursor: default;
+      line-height: 18px;
+    }
+    .tl-info .fh-icon-ac {
+      *vertical-align: -2px;
+    }
+    .tl-time {
+      width: 104px;
+      text-align:left;
+    }
+    .tl-time .tl-top {
+      font-size: 24px;
+      line-height: 22px;
+      margin-top: 0px;
+    }
+    .tl-time .tl-bottom em {
+      display: inline-block;
+      max-width: 85px;
+      vertical-align: top;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #666;
+    }
+    .tl-time-left{
+      text-align: right;
+      margin-right: 20px;
+    }
+    .tl-time .tl-bottom span {
+      *vertical-align: -2px;
+      color: #666;
+    }
+    .tl-stop {
+      width: 95px;
+      text-align: center;
+      position: relative;
+      margin: 2px 20px 0px 0px;
+      height: 43px;
+      font-size: 12px;
+      color: #bbb;
+    }
+    .tl-stop i {
+      display: block;
+      width:91px;
+      height: 9px;
+      position: absolute;
+      left:2px;
+      bottom: 20px;
+      background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -332px;
+    }
+    .tl-duration {
+      width: 70px;
+      margin-left: 30px;
+    }
+    .tl-price {
+      width: 100px;
+      margin-left: 90px;
+    }
+    .tl-price em {
+      color: #bbb;
+    }
+    .tl-price .tl-top {
+      font-size: 12px;
+      color: #999;
+      margin-top: 2px;
+    }
+    .tl-price .tl-top i {
+      font-size: 14px;
+      color: #f60;
+      vertical-align: -1px;
+    }
+    .tl-price .tl-top em {
+      font-size: 20px;
+      color: #f60;
+      vertical-align: -2px;
+    }
+    .tl-price .tl-top b {
+      font-size: 12px;
+      color: #fff;
+      line-height: 16px;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background: #ff9900;
+      text-align: center;
+      font-weight: normal;
+      margin-left: 6px;
+      vertical-align: 2px;
+    }
+    .tl-price .tl-bottom {
+      font-size: 12px;
+      color: #999;
+      margin: 6px 0 0 15px;
+      *margin-top: 12px;
+    }
+    .tl-price .tl-bottom em {
+      font-size: 14px;
+      font-weight: normal;
+      vertical-align: -1px;
+      margin-right: 3px;
+    }
+  }
+  .flight-warning {
+    margin: 12px 0 0 10px;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+  }
+  .flight-warning i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -65px -20px;
+    vertical-align: -3px;
+    margin-right: 5px;
+  }
+  .tl-all {
+    border: 1px solid #e3e3e3;
+    border-bottom: none;
+    display: none;
+    position: relative;
+    margin: 8px 0px -5px;
+    margin-left: 182px;
+  }
+  .tl-all .tl-more-btn {
+    position: absolute;
+    z-index: 2;
+    bottom: -32px;
+    right: -1px;
+    width: 84px;
+    height: 31px;
+    border: 1px solid #e3e3e3;
+    border-top-color: #fff;
+    line-height: 31px;
+    color: #0099cc;
+    background: #fff;
+    text-align: center;
+  }
+  .tl-all .tl-more-btn i {
+    display: inline-block;
+    width: 7px;
+    height: 4px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -65px -85px;
+    vertical-align: 2px;
+    margin-left: 3px;
+  }
+  .tl-all .tl-more-btn:hover {
+    text-decoration: none;
+    color: #f60;
+  }
+  .tl-all .tl-more-btn:hover i {
+    background-position: -79px -85px;
+  }
+  .tl-all .tl-arrow,
+  .tl-item-loading .tl-arrow {
+    font-family: "SimSun", sans-serif;
+    display: block;
+    width: 16px;
+    height: 10px;
+    position: absolute;
+    right:230px;
+    top: -7px;
+  }
+  .tl-all .tl-arrow span,
+  .tl-item-loading .tl-arrow span,
+  .tl-all .tl-arrow i,
+  .tl-item-loading .tl-arrow i {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #e3e3e3;
+    display: block;
+    line-height: 12px;
+    font-size: 24px;
+  }
+  .tl-all .tl-arrow i,
+  .tl-item-loading .tl-arrow i {
+    top: 1px;
+    color: #fff;
+  }
+  .tl-item-loading {
+    border: 1px solid #e3e3e3;
+    position: relative;
+    margin-top: 18px;
+    display: none;
+    text-align: center;
+    padding: 16px 0 10px;
+  }
+  .tl-item-loading i.loading-img {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    background: url(http://pic.lvmama.com/img/new_v/ui_scrollLoading/loadingGIF46px.gif);
+  }
+  .tl-all-open .tl-more-btn i {
+    background-position: -72px -85px;
+  }
+  .tl-all-open .tl-more-btn:hover i {
+    background-position: -86px -85px;
+  }
+  .tl-part {
+    position: relative;
+    //border-bottom: 1px solid #e3e3e3;
+    overflow: hidden;
+  }
+  .tl-part ul {
+    float: left;
+    //margin-left: 126px;
+    //width: 1040px;
+    margin-top: -1px;
+  }
+  .tl-part ul li {
+    //border-top: 1px dashed #ddd;
+    padding: 15px 0;
+    //width: 790px;
+    font-size: 12px;
+  }
+  .tl-part ul li:hover {
+    background: #fffaee;
+  }
+  .tl-part ul li span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+  .tl-part ul li .tlp-class {
+    margin-left: 25px;
+    width: 106px;
+    color: #666;
+    line-height: 26px;
+  }
+  .tl-part ul li .tlp-discount {
+    margin-left:106px;
+    width: 44px;
+    color: #999;
+  }
+  .tl-part ul li .tlp-discount i {
+    margin-left: 3px;
+  }
+  .tl-part ul li .tlp-price {
+    font-size: 22px;
+    color: #f60;
+    vertical-align: -1px;
+    width:74px;
+    margin-left:14px;
+  }
+  .tl-part ul li .tlp-price i{
+    font-size:14px;
+  }
+  .tl-part ul li .tlp-remain {
+    font-size: 12px;
+    color: #ff0000;
+    float: right;
+    margin: 2px 10px 0 0;
+    margin-left: 60px;
+  }
+  .tl-part ul li .tlp-remain i {
+    margin-left: 1px;
+    vertical-align: -1px;
+  }
+  .tl-part ul li a {
+    display: block;
+    float: right;
+    margin-right: 0px;
+  }
+  .tl-part ul li .tagsback {
+    vertical-align: -3px;
+  }
+  .tlp-title {
+    width: 126px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .tlp-title span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -30px;
+    margin-top: -9px;
+    display: inline-block;
+    height: 18px;
+    width: 60px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    line-height: 18px;
+  }
+  .tlp-title span.icon-ac {
+    width: 90px;
+    height: 41px;
+    margin-left: -49px;
+    margin-top: -20px;
+    font-size: 0;
+  }
+  .tlp-title span.icon-ac-CA {
+    background: url(http://pic.lvmama.com/img/flight/icon-ac.png) 0 0;
+  }
+  .tlp-title span.icon-ac-ZH {
+    background: url(http://pic.lvmama.com/img/flight/icon-ac.png) 0 -41px;
+  }
+  .no-result {
+    width: 938px;
+    height: 398px;
+    border: 1px solid #ddd;
+    background: #fff;
+    margin-top: 10px;
+    text-align: center;
+    color: #666;
+  }
+  .no-result i {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") 0 -200px;
+    margin-top: 60px;
+  }
+  .no-result .info {
+    font-size: 16px;
+    color: #333;
+    line-height: 24px;
+    margin-top: 16px;
+  }
+  .no-result .suggestion {
+    font-size: 12px;
+    color: #999;
+    line-height: 24px;
+    margin: 6px 0 20px;
+  }
+  .no-result .action a {
+    margin-left: 7px;
+  }
+  .no-result a {
+    font-size: 12px;
+    color: #09c;
+    line-height: 24px;
+  }
+  .no-result a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+  .no-result .reload-btn {
+    color: #666;
+    margin-right: 10px;
+  }
+  .no-result .reload-btn:hover {
+    color: #666;
+    text-decoration: none;
+  }
+  .seo-links {
+    width: 898px;
+    padding: 14px 20px 4px;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  .seo-links p {
+    margin-bottom: 10px;
+  }
+  .seo-links b,
+  .seo-links span {
+    float: left;
+    color: #999;
+  }
+  .seo-links b {
+    width: 86px;
+  }
+  .seo-links span {
+    width: 810px;
+  }
+  .seo-links a {
+    color: #999;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .seo-links a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+  .ft-side {
+    position: relative;
+    float: left;
+    margin-top: 14px;
+  }
+  .ft-side-fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 9;
+    margin-top: 0;
+    margin-left: 360px;
+  }
+  .ft-side-info {
+    width: 238px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 2px solid #f90;
+  }
+  .ft-side-info h3 {
+    padding-left: 12px;
+    font-size: 12px;
+    color: #333;
+    line-height: 31px;
+    font-weight: normal;
+  }
+  .ft-side-info ul {
+    margin: 0 10px;
+    padding: 9px 0;
+    border-top: 1px dashed #e8e8e8;
+  }
+  .ft-side-info ul li {
+    float: left;
+    margin: 9px 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 18px;
+  }
+  .ft-side-info ul li i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -50px -65px;
+    vertical-align: -4px;
+    *vertical-align: middle;
+    margin-right: 10px;
+  }
+  .ft-side-info .mr45 {
+    margin-right: 45px;
+  }
+  .ft-side-rec {
+    width: 240px;
+    margin-top: 10px;
+    background: #fff;
+  }
+  .ft-side-rec p {
+    padding-left: 13px;
+    height: 35px;
+    font-size: 14px;
+    color: #333;
+    line-height: 35px;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid #e3e3e3;
+    position: relative;
+  }
+  .ft-side-rec p em {
+    margin-right: 28px;
+  }
+  .ft-side-rec p i,.train-groom .fsr-area i {
+    display: inline-block;
+    width: 20px;
+    height: 6px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -110px -300px;
+    vertical-align: 2px;
+    *vertical-align: 5px;
+    margin: 0 7px;
+  }
+  .train-groom .fsr-area{
+    display: block;
+    margin-bottom: -7px;
+  }
+  .ft-side-rec p span,.train-groom .fsr-area{
+    width: 140px;
+    color: #666;
+  }
+
+  .ft-side-rec .fsr-list {
+    background: #fff;
+    padding: 8px 0 7px;
+  }
+  .ft-side-rec .fsr-list a {
+    display: block;
+    padding: 0 14px;
+    height: 29px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    *position: relative;
+  }
+  .ft-side-rec .fsr-list a:hover {
+    background: #fffaee;
+    text-decoration: none;
+  }
+  .ft-side-rec .fsr-list .fsr-price {
+    float: right;
+    font-size: 12px;
+    color: #999;
+    line-height: 29px;
+    *float: none;
+    *position: absolute;
+    *right: 14px;
+    *bottom: 5px;
+  }
+  .ft-side-rec .fsr-list .fsr-price i {
+    font-size: 12px;
+    margin-right: 1px;
+    color: #f60;
+  }
+  .ft-side-rec .fsr-list .fsr-price b{
+    font-weight: normal;
+    font-size: 18px;
+    color: #f60;
+    margin-right:3px;
+  }
+  .ft-side-rec .fsr-list .fsr-date {
+    font-size: 14px;
+    color: #666;
+    line-height: 29px;
+  }
+  .ft-side-rec .fsr-list .fsr-date em {
+    font-size: 12px;
+    color: #999;
+    margin-left: 6px;
+  }
+  .ft-price {
+    margin-bottom: 15px;
+    padding: 0 8px 0 10px;
+    font-size: 0;
+    height: 26px;
+    line-height: 26px;
+  }
+  .ft-price span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  .ft-price .ftp-price {
+    font-size: 18px;
+    color: #f60;
+  }
+  .ft-price .ftp-price i {
+    font-size: 12px;
+    vertical-align: 1px;
+  }
+  .ft-price .ftp-discount {
+    color: #999;
+    vertical-align: 1px;
+  }
+  .ft-price .ftp-discount em {
+    margin-right: 2px;
+    font-weight: normal;
+  }
+  .ft-price .ftp-remain {
+    float: right;
+    margin-right: 6px;
+    color: #ff0000;
+  }
+  .ft-price .ftp-remain em {
+    font-weight: normal;
+  }
+  .ft-price a {
+    float: right;
+    margin-top: 2px;
+  }
+  .ft-qr-code {
+    margin: 0 10px;
+    padding: 14px 2px;
+    border-top: 1px dashed #e8e8e8;
+  }
+  .ft-qr-code img {
+    float: left;
+    width: 65px;
+    height: 65px;
+  }
+  .ft-qr-code p {
+    float: left;
+    width: 140px;
+    margin: 12px 0 0 8px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+  }
+  .ft-ticket-info {
+    padding: 8px 10px 15px 10px;
+    margin-bottom: 10px;
+    background: url(http://pic.lvmama.com/img/flight/card-edge.png) repeat-x left bottom #f8f8f8;
+  }
+  .ft-ticket-info .tl-time {
+    width: 75px;
+  }
+  .ft-ticket-info .tl-time .tl-top {
+    font-size: 16px;
+  }
+  .ft-ticket-info .tl-stop {
+    width: 65px;
+  }
+  .ft-ticket-info .tl-stop i {
+    left: 2px;
+    width: 60px;
+    background-position: 0 -140px;
+  }
+  .ft-ticket-info .tl-bottom {
+    margin-top: 0;
+  }
+  .ft-ticket-info .tl-bottom em {
+    color: #666;
+  }
+  .ft-date-info {
+    font-size: 0;
+    height: 24px;
+    margin-bottom: 3px;
+  }
+  .ft-date-info .adult-tip {
+    float: right;
+    margin-left: 8px;
+  }
+  .ft-date-info .date {
+    font-size: 14px;
+    color: #000;
+    line-height: 18px;
+  }
+  .ft-date-info .week {
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+  }
+  .ft-date-info .tui-gai-qian {
+    float: right;
+    margin-right: 0;
+  }
+  .ft-plane-info {
+    font-size: 0;
+    line-height: 20px;
+    height: 20px;
+    color: #999;
+    margin-bottom: 12px;
+  }
+  .ft-plane-info .fh-icon-ac {
+    vertical-align: -4px;
+  }
+  .ft-plane-info span {
+    font-size: 12px;
+  }
+  .ft-plane-info .company {
+    color: #000;
+    margin-right: 15px;
+  }
+  .ft-plane-info .number,
+  .ft-plane-info .plane-type {
+    vertical-align: -1px;
+  }
+  .ft-plane-info .plane-type {
+    border-bottom: 1px dashed #999;
+    cursor: default;
+    margin-left: 3px;
+  }
+  .ft-plane-info .class-type {
+    margin-left: 15px;
+    font-size: 12px;
+    vertical-align: -1px;
+  }
+  .tip-part {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 316px;
+  }
+  .tip-part span {
+    margin-right: 13px;
+  }
+  .tip-part .dis-tip {
+    margin-right: 5px;
+  }
+  .dis-tip {
+    height: 16px;
+    padding: 0 4px;
+    border: 1px solid #ff9900;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #f90;
+    line-height: 16px;
+  }
+  .ft-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    display: none;
+  }
+  .ft-dialog-loading {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -48px 0 0 -162px;
+    z-index: 1000;
+    border: 0;
+    width: 323px;
+    color: #4d4d4d;
+    padding: 1px;
+    background-color: #999;
+    display: none;
+  }
+  .ft-dialog-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+  .ft-dialog-body {
+    padding: 17px 20px 16px 23px;
+  }
+  .ft-dialog-body p {
+    padding-left: 66px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    color: #333;
+    background: url(http://pic.lvmama.com/img/new_v/ui_scrollLoading/loadingGIF46px.gif) no-repeat;
+  }
+  .ft-dialog-timeout {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -48px 0 0 -185px;
+    z-index: 1000;
+    border: 0;
+    width: 370px;
+    color: #4d4d4d;
+    padding: 1px;
+    background-color: #999;
+    display: none;
+  }
+  .ft-dialog-timeout p {
+    line-height: 22px;
+  }
+  .ft-dialog-timeout p em {
+    color: #f60;
+  }
+  .ft-dialog-timeout p span {
+    font-size: 12px;
+    color: #999;
+  }
+  .ft-dialog-date-warning {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -200px;
+    z-index: 1000;
+    border: 0;
+    width: 400px;
+    color: #4d4d4d;
+    padding: 1px;
+    background-color: #999;
+    display: none;
+  }
+  .ft-dialog-dw-body {
+    padding: 20px 20px 16px 23px;
+  }
+  .ft-dialog-dw-body p {
+    font-size: 16px;
+    color: #333;
+  }
+  .ft-dialog-dw-body em {
+    color: #f60;
+  }
+  .search,
+  .complete-wrap,
+  .des_error_tips {
+    box-shadow: 0 2px 2px 0 #e3e3e3;
+  }
+  /*城市推荐框*/
+  .city_mdd {
+    background: #fff;
+    width: 391px;
+    padding: 10px;
+    border: #ddd solid 1px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    position: absolute;
+    display: none;
+  }
+  .city_mdd p {
+    color: #999;
+  }
+  .city_mdd .ico {
+    background: url(http://pic.lvmama.com/img/v6/flighthotel/flighthotel.png);
+  }
+  .city_mdd .mdd_tab {
+    height: 32px;
+    line-height: 30px;
+    overflow: hidden;
+    color: #333;
+    position: relative;
+    z-index: 3;
+  }
+  .city_mdd .mdd_tab li {
+    float: left;
+    padding: 0 11px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+  }
+  .city_mdd .mdd_tab li.active {
+    color: #ED3387;
+    border-bottom: #ED3387 solid 2px;
+  }
+  .city_mdd .mdd_tab li.active .city_icon {
+    display: block;
+  }
+  .city_mdd .mdd_tab li:hover {
+    color: #ED3387;
+  }
+  .city_mdd .mdd_tab li .city_icon {
+    width: 11px;
+    height: 6px;
+    background-position: -135px -5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -2px;
+    display: none;
+  }
+  .city_mdd .mdd_list {
+    margin-top: -1px;
+    border-top: #E5E5E5 solid 1px;
+  }
+  .city_mdd .mdd_list li {
+    display: none;
+    padding-top: 7px;
+    line-height: 20px;
+    margin-bottom: -8px;
+  }
+  .city_mdd .mdd_list li a {
+    color: #333;
+    margin-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .city_mdd .mdd_list li a:hover {
+    color: #f60;
+  }
+  .city_mdd .mdd_list dl {
+    padding-left: 46px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .city_mdd .mdd_list dt {
+    float: left;
+    width: 46px;
+    margin-left: -46px;
+    padding-top: 1px;
+    font-size: 12px;
+    color: #ED3387;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+  }
+  .city_mdd .mdd_list dd {
+    float: left;
+    width: 100%;
+    line-height: 22px;
+  }
+  .city_mdd .mdd_list .mdd_hot {
+    margin-bottom: 0;
+    padding-left: 18px;
+  }
+  .city_mdd .mdd_history {
+    font-size: 0;
+    margin-top: 12px;
+    padding-top: 4px;
+    border-top: 1px dashed #ddd;
+    margin-bottom: -5px;
+  }
+  .city_mdd .mdd_history b {
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+    width: 70px;
+  }
+  .city_mdd .mdd_history span,
+  .city_mdd .mdd_history b {
+    display: block;
+    float: left;
+  }
+  .city_mdd .mdd_history span {
+    width: 320px;
+  }
+  .city_mdd .mdd_history a {
+    font-size: 12px;
+    color: #333;
+    margin-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .city_mdd .mdd_history a:hover {
+    color: #f60;
+  }
+  .city_mdd .mdd_his_content {
+    display: none;
+  }
+  /*目的地补全文本框及补全列表*/
+  .complete-wrap {
+    width: 218px;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 20;
+    background: #fff;
+  }
+  .complete-wrap li {
+    width: 100%;
+  }
+  .complete-wrap li.active a {
+    color: #f60;
+    background: #f5f5f5;
+    text-decoration: none;
+  }
+  .complete-wrap li.divide-line {
+    border-top: 1px dashed #ccc;
+  }
+  .complete-wrap .place-name {
+    font-size: 14px;
+    width: 250px;
+    height: inherit;
+    float: left;
+    overflow: hidden;
+  }
+  .complete-wrap .place-name b {
+    color: #999;
+    font-weight: normal;
+  }
+  .complete-wrap a {
+    background: #fff;
+    display: block;
+    color: #999;
+    height: 22px;
+    line-height: 22px;
+    padding: 4px 10px;
+  }
+  .complete-wrap a:hover {
+    color: #f60;
+    background: #f5f5f5;
+    text-decoration: none;
+  }
+  .des_error_tips {
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 208px;
+    height: 22px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 12px;
+    color: #999;
+    padding: 5px;
+    z-index: 9;
+  }
+  .des_error_tips .word {
+    font-weight: bold;
+    color: #EE3388;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .des_error_tips span {
+    float: left;
+  }
+  .des_error_tips i {
+    color: #999;
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .ftc-tip {
+    display: none;
+    background: #f8f8f8;
+    font-size: 12px;
+    color: #666;
+    line-height: 32px;
+    height: 33px;
+    padding-left: 10px;
+    border-color: #dcdcdc;
+    border-style: solid;
+    border-width: 0px 2px 0 2px;
+  }
+  .ftc-tip i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -50px -20px;
+    vertical-align: -3px;
+    *vertical-align: -1px;
+  }
+  .poptip .tip-content {
+    max-width: 400px;
+  }
+  .poptip .tip-content span.tag-title {
+    font-weight: bold;
+  }
+  .sales-calendar .callow {
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin-left: 1px;
+    text-indent: -9999px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -300px;
+  }
+  .sales-calendar .calSoldout .calprice,
+  .sales-calendar .calMore .calprice {
+    font-size: 12px;
+    color: #999;
+  }
+  .sales-calendar .calmonth[data-offset="0"] .caltitle {
+    width: 476px;
+    text-indent: -6px;
+  }
+  .sales-calendar .calmonth[data-offset="1"] .calbox {
+    border-left: 1px solid #e3e3e3;
+  }
+  /*我要吐槽 201610 */
+  #dialog-feedback-temp,
+  #dialog-feedback-result-temp {
+    display: none;
+  }
+  .ft-feedback-tip {
+    position: absolute;
+    width: 21px;
+    padding:6px 6px 7px;
+    background: #ee3388;
+    right: -39px;
+    top: 0px;
+    cursor: pointer;
+    font-size:12px;
+    color: #fff;
+    line-height: 14px;
+    text-align: center;
+  }
+  .ft-feedback-tip i{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width:21px;
+    height:21px;
+    background: url(http://pic.lvmama.com/img/flight/flight.png) -60px -360px;
+    margin-bottom: 1px;
+  }
+  .ft-feedback-tip-sm i{
+    display: none;
+  }
+  .dialog-feedback {
+    color: #333;
+  }
+  .dialog-feedback .dialog-body,
+  .dialog-feedback .dialog-footer {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .dialog-feedback h4 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    padding-top: 2px;
+  }
+  .dialog-feedback p {
+    font-size: 14px;
+    padding-left: 9px;
+    margin-bottom: 1px;
+    position: relative;
+  }
+  .dialog-feedback p span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f60;
+    line-height: 28px;
+  }
+  .dialog-feedback .feedback-text {
+    resize: none;
+    width: 412px;
+    height: 104px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 7px;
+  }
+  .dialog-feedback .feedback-mobile {
+    border: 1px solid #ccc;
+    width: 412px;
+    height: 16px;
+    line-height: 16px;
+    padding: 6px 8px;
+  }
+  .dialog-feedback .dialog-footer {
+    text-align: left;
+    padding-bottom: 29px;
+  }
+  .dialog-feedback .dialog-footer .btn {
+    margin: 0 10px 0 0;
+  }
+  .dialog-feedback #dialog-feedback-temp {
+    display: block;
+    position: relative;
+  }
+  .dialog-feedback #dialog-feedback-temp .feedback-tip {
+    position: absolute;
+    left: 83px;
+    bottom: -46px;
+    color: #999;
+  }
+  .dialog-feedback #dialog-feedback-temp .feedback-tip i {
+    margin-right: 6px;
+    vertical-align: -3px;
+    *vertical-align: 0px;
+  }
+  .dialog-feedback .dialog-content .feedback-error {
+    border-color: #ff3300;
+  }
+  .dialog-feedback-result #dialog-feedback-result-temp {
+    display: block;
+  }
+  .dialog-feedback-result .feedback-result-content {
+    padding-top: 33px;
+    *padding-top: 20px;
+    padding-left: 90px;
+    position: relative;
+  }
+  .dialog-feedback-result .feedback-result-content .nova-icon-outline-lg {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+  }
+  .dialog-feedback-result .feedback-result-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 24px;
+  }
+  .dialog-feedback-result .feedback-result-content p span.feedback-result-text {
+    font-size: 14px;
+    color: #666;
+  }
+  .dialog-feedback-result .feedback-result-content p span.feedback-result-text em {
+    font-size: 18px;
+    color: #f60;
+    margin-right: 2px;
+  }
+  .dialog-feedback-result .feedback-result-content p span.feedback-result-text dfn {
+    font-size: 16px;
+    margin-right: -2px;
+  }
+  .dialog-feedback-result .dialog-footer {
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .dialog-feedback-result .dialog-footer .btn {
+    margin-left: 0;
+  }
+  /*公告管理 201611 */
+  .nova-tip-part {
+    width: 1200px;
+    margin: 10px auto 0;
+    height: 42px;
+  }
+  .nova-tip-part:hover .nova-tip {
+    height: auto;
+    position: relative;
+    z-index: 5;
+  }
+  .nova-tip-part .nova-tip-close {
+    margin-top: -4px;
+  }
+  .nova-tip-part .nova-tip {
+    padding-top: 4px;
+    height: 28px;
+    *height: 28px;
+    overflow: hidden;
+  }
+  .nova-tip-part .nova-tip span {
+    float: none;
+    vertical-align: -1px;
+    *vertical-align: 1px;
+  }
+  .nova-tip-part li {
+    font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif;
+    margin-top: 8px;
+  }
+  .nova-tip-part li strong {
+    max-width: 1070px;
+    display: inline-block;
+    vertical-align: -3px;
+    font-weight: normal;
+    margin-right: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .nova-tip-part li a {
+    vertical-align: 1px;
+  }
+  .search .select-div ul{
+    display: none;
+    position: absolute;
+    /*padding-top:2px;*/
+    width: 78px;
+    left: 0px;
+    top: 25px;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  .search .select-div ul li{
+    height:29px;
+    line-height: 29px;
+    cursor: pointer;
+    font-size:14px;
+    padding-left: 9px;
+  }
+  .search .select-div ul li label{
+    cursor: pointer;
+  }
+  .search .select-div ul li:hover,.search .select-div ul li.active{
+    color: #ff6600;
+    background:#f5f5f5;
+  }
+  .search .select-div{
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+    margin-top:7px;
+  }
+  .search .select-div span{
+    position: relative;
+    display: block;
+    padding-left: 9px;
+    width: 69px;
+    height: 28px;
+    border: 1px solid #ccc;
+    line-height: 28px;
+    background: #fff;
+    z-index: 1;
+    font-size:14px;
+  }
+  .search .select-div span i{
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 12px;
+    margin-left: 4px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-width: 4px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+  }
+  .search .select-div span i.up{
+    border-color: transparent transparent #333 transparent;
+    top:8px;
+  }
+  .plane-share{
+    margin-left: 8px;
+    font-size:12px;
+    color: #666;
+    border-bottom: 1px dashed #666;
+  }
+  .ft-list .tl-item:hover{
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+    background: #fff;
+    cursor: pointer;
+  }
+  .ft-list .tl-all .tl-arrow i{
+    color: #fafafa;
+  }
+  .ft-list .tl-tips{
+    height:39px;
+    line-height: 39px;
+    padding:0px 15px;
+    background: #fafafa;
+    text-align: right;
+  }
+  .ft-list .tl-tips span{
+    font-size:12px;
+    color: #999;
+    margin-left:30px;
+  }
+  .ft-list .tl-tips em{
+    color: #666;
+    font-style:normal;
+  }
+  .tl-part-tips{
+    position: relative;
+    padding:2px 0px 6px 14px;
+    margin-top:-2px;
+    background: #fff;
+    border-bottom: 1px solid #e3e3e3;
+    min-height: 20px;
+  }
+  .tl-part-tips .nova-tip{
+    font-size:12px;
+    color: #999;
+    line-height: 20px;
+    padding:0px 0px 0px 20px;
+  }
+  .tl-all .tl-part-tips .tl-more-btn{
+    color: #666;
+    bottom:0px;
+    right:15px;
+    width:auto;
+    height:auto;
+    border:0px;
+  }
+  .tl-all .tl-part-tips .tl-more-btn i{
+    background: url('../../assets/imgs/list/flight/sprite/icon-arrow.png') no-repeat center;
+    height: 6px;
+    width: 9px;
+  }
+  .tl-all .tl-part-tips .tl-more-btn:hover{
+    color: #f60;
+  }
+  .tl-all .tl-part-tips .tl-more-btn:hover i{
+    background: url('../../assets/imgs/list/flight/sprite/icon-arrow-hover.png') no-repeat center;
+    height: 6px;
+    width: 9px;
+  }
+  .tl-all-open .tl-part-tips .tl-more-btn i{
+    //background-position: -20px -360px;
+    transform: rotateX(180deg);
+  }
+  .tl-all-open .tl-part-tips .tl-more-btn:hover i{
+    //background-position: -40px -360px;
+    background: url('../../assets/imgs/list/flight/sprite/icon-arrow-hover.png') no-repeat center;
+    height: 6px;
+    width: 9px;
+  }
+  .ticket-list .tl-item-open .select-btn-flight{
+    /*background: url('../../assets/imgs/list/flight/sprite/icon-arrow-up.png') no-repeat center;
+    height: 26px;
+    width: 26px;*/
+    transform: rotateX(180deg);
+  }
+  .ft-authentication{
+    padding:15px 26px 13px 15px;
+    width:199px;
+    background: #fff;
+  }
+  .ft-authentication ul{
+    margin-top:-19px;
+  }
+  .ft-authentication li{
+    padding-left:31px;
+    position: relative;
+    margin-top:19px;
+  }
+  .ft-authentication li .title{
+    font-size:14px;
+    color: #666;
+    line-height: 14px;
+    margin-bottom: 7px;
+  }
+  .ft-authentication li .paragraph{
+    font-size:12px;
+    color: #999;
+    line-height: 12px;
+  }
+  .ft-authentication li i{
+    display: block;
+    width:22px;
+    height:25px;
+    background:url(http://pic.lvmama.com/img/flight/flight.png) -0px -400px;
+    position: absolute;
+    top: 0px;
+    *top: 15px;
+    left:0px;
+  }
+  .ft-authentication li i.authentication-icon2{
+    background-position: -40px -400px;
+  }
+  .ft-authentication li i.authentication-icon3{
+    background-position: -0px -440px;
+  }
+  .ft-authentication li i.authentication-icon4{
+    background-position: -40px -440px;
+  }
+  .ft-side-rec .train-groom a{
+    height:auto;
+    overflow: visible;
+    padding:12px 14px 5px;
+    margin-bottom: 0px;
+    border-top:1px dashed #ddd;
+  }
+  .ft-side-rec .train-groom{
+    padding:0px;
+    margin-top:-1px;
+  }
+  .ft-side-rec .train-groom .fsr-time{
+    width: 90px;
+    float: right;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    *float: none;
+    *position: absolute;
+    *right: 14px;
+    *bottom: 8px;
+  }
+  .plane-select{
+    display: none;
+    position:absolute;
+    z-index:20;
+  }
+  .plane-select ul {
+    /*display: none;*/
+    /*position: absolute;*/
+    /*padding: 2px 0 2px 10px;*/
+    width: 78px;
+    /*left: 0px;*/
+    /*top: 25px;*/
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  .plane-select ul li {
+    font-size: 12px;
+    color: #333;
+    line-height: 29px;
+    height: 29px;
+    cursor: default;
+    padding-left:9px;
+  }
+  .plane-select ul li.active,.plane-select ul li:hover{
+    color: #f60;
+    background: #f5f5f5;
+  }
+  .plane-select ul li label {
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    cursor: pointer;
+  }
+  .plane-select ul input[type=checkbox] {
+    vertical-align: -3px;
+    margin-right: 6px;
+  }
+  .filter-main .select-div-open ul {
+    display: block;
+  }
+  .filter-main .select-div-open span {
+    padding-bottom: 1px;
+    border-bottom: none;
+  }
+  .reduce-price{
+    width:194px;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+  }
+  .reduce-price .dis-tip{
+    /*float: left;*/
+    vertical-align: middle;
+    margin-left: 30px;
+  }
+  .reduce-price .tlp-price{
+    float: right;
+  }
+  /*_flight-list.scss END*/
+  /*flight.scss*/
+  body {
+    background-color: #f5f5f5;
+    b {
+      font-weight: normal;
+    }
+    .btn {
+      font-weight: normal;
+      padding: 0 20px;
+    }
+    .ticket-list {
+      .btn {
+        font-weight: normal;
+        padding: 0 10px;
+      }
+    }
+    .head-wrapper {
+      box-shadow: none;
+    }
+    .search-num {
+      margin-bottom: 0;
+    }
+  }
+
+  /*去返程切换*/
+  .flight-switch-tabs {
+    background-color: #fff;
+    a {
+      float: left;
+      height: 42px;
+      line-height: 42px;
+      padding: 0 21px;
+      color: #666;
+      text-align: center;
+      font-size: 14px;
+      font-family: "Microsoft YaHei";
+      &:hover {
+        text-decoration: none;
+        background-color: #fc6;
+        color: #fff;
+      }
+      &.current {
+        background-color: #f90;
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+
+  /*搜索bar*/
+  .search-contents-flight {
+    box-shadow: 0px 0px 4px #ccc;
+    margin-bottom: 11px;
+    .default-box {
+      .city {
+        height: 42px;
+        .icon {
+          background: url('../../assets/imgs/list/flight/sprite/icon-flight.png') no-repeat center;
+          height: 40px;
+          width: 40px;
+        }
+        .icon-flight-double {
+          @include inlineblock;
+          background: url('../../assets/imgs/list/flight/sprite/flight-double.png') no-repeat center;
+          height: 13px;
+          width: 52px;
+          margin: 17px 15px 0 15px;
+          vertical-align: top;
+        }
+        .icon-flight-single {
+          @extend .icon-flight-double;
+          background: url('../../assets/imgs/list/flight/sprite/flight-single.png') no-repeat center;
+          height: 5px;
+          margin-top: 21px;
+        }
+        .flight-from {
+          @include inlineblock;
+          line-height: 30px;
+          span {
+            display: block;
+            font-size:12px;
+            color:#999999;
+            height: 16px;
+            line-height: 16px;
+            font-weight: normal;
+          }
+          .city-from-str,.city-to-str {
+            display: block;
+            height: 26px;
+            line-height: 26px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+          }
+        }
+        .flight-to {
+          @extend .flight-from;
+        }
+      }
+    }
+    .change-box {
+      .icon {
+        margin-top: 32px;
+      }
+      .flight-tabs {
+        margin: 0 0 12px 0px;
+        .flight-single {
+          @include inlineblock;
+          font-size:12px;
+          color:#666666;
+          cursor: pointer;
+          margin-right: 25px;
+          &.current {
+            color: $color-lv-pink;
+            span {
+              background: url('../../assets/imgs/list/flight/sprite/icon-flight-chosen.png') no-repeat center;
+              height: 15px;
+              width: 15px;
+            }
+          }
+          span {
+            @include inlineblock;
+            background: url('../../assets/imgs/list/flight/sprite/icon-flight-not.png') no-repeat center;
+            height: 15px;
+            width: 15px;
+            vertical-align: middle;
+            margin: 2px 6px 0 0;
+          }
+        }
+        .flight-double {
+          @extend .flight-single;
+        }
+      }
+      .city {
+        .icon {
+          background: url('../../assets/imgs/list/flight/sprite/icon-flight.png') no-repeat center;
+        }
+      }
+      .date {
+        .input-wrapper {
+          padding-top: 36px;
+        }
+      }
+      .flight-date-return {
+        &.search-cascading {
+          input {
+            background: url(../../assets/imgs/list/alpha.gif) repeat;
+          }
+          color: #333;
+          .search-contents-icon-calendar,.search-contents-info {
+            display: block;
+          }
+        }
+        &.disabled {
+          input {
+            background-color: #eee;
+            @include opacity(0.5);
+          }
+          color: #999;
+          .search-contents-icon-calendar,.search-contents-info {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  /*价格日历=>三角箭头*/
+  .ft-price-box-inner {
+    .active {
+      .arrow-top {
+        position: absolute;
+        bottom: -2px;
+        left: 45px;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        overflow: hidden;
+        border-color: transparent;
+        border-bottom-color: #fff;
+        border-width: 0 5px 5px 5px ;
+        border-style: solid;
+        font-style: normal;
+        font-weight: 400;
+        _border-style: dashed;
+      }
+    }
+  }
+
+  /*筛选区 */
+  //不含税
+  .rank_box li.active, .rank_box li:hover{
+    .no-tax {
+      color: $color-lv-pink;
+    }
+  }
+  .no-tax {
+    color: #999;
+  }
+
+  /*日历弹出*/
+  .sales-calendar .calmonth[data-offset="0"] .caltitle {
+    width: 476px;
+  }
+
+  /*详细列表*/
+  //添加立即确认
+  .tl-confirm {
+    border:1px solid #ff9900;
+    border-radius:2px;
+    width:54px;
+    height:14px;
+    text-align: center;
+    font-size:12px;
+    color:#ff9900;
+    line-height:14px;
+    margin-top: 15px;
+    &.tl-confirm-no {
+      border: 0;
+    }
+  }
+  /*flight.scss END*/
+</style>
+<!--flight.scss END-->

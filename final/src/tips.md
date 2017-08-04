@@ -23,8 +23,23 @@ import SearchTitle from './search-title.vue' //此处的SearchTitle就不能乱�
 ```
 ##7.组件中的data必须是函数的原因：保证每次使用组件时，data都是唯一的
 ##8.在引用了重复的组件之前进行路由切换，重复部分依然会重新渲染，造成性能浪费
+##9.利用重用的组件来引入公共的样式文件，如list-top组件中的样子。
 
 #三.html
+##1.模板中的自定义属性的值必须是字符串否侧报错
+##2.v-bind当中的不能使用filter，可以使用method代替
+```html
+ //filter不行
+ <div class="cart-section cart-section-diy" v-bind="{id:(item.sectionName|idTransfer)}" v-for="item in cartInfo">
+ //method行
+ <div class="cart-section cart-section-diy" v-bind="{id:idTransfer(item.sectionName)}" v-for="item in cartInfo">
+```
+##3.v-bind绑定除class属性的时候都不能用:简写方式
+##4.v-for循环中国可以使用cumputed或者method
+```html
+ <option v-for="num in optionMax(detail.inventory)" v-bind="{selected:(num === detail.hotelNum)}">{{num}}</option>
+```
+
 
 #四.tool
 ##1.雪碧图当中的2x图片，目前有个小问题，就是所有的一倍图都要有对应的二倍图，且尺寸不能错，否则会报错

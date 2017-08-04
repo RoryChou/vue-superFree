@@ -34,6 +34,7 @@
   }
 </script>
 <style lang="scss">
+  /*list-bottom.scss*/
   @import "../../assets/scss/_var.scss";
   .click-more {
     background:#ffffff;
@@ -98,3 +99,4 @@
     top: 0;
   }
 </style>
+

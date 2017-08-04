@@ -1,9 +1,9 @@
 <template>
-    <div class="cart">
+    <router-link to="cart" class="cart">
         <span class="pro-num">6</span>
         <i></i>
         超级自由行
-      </div>
+    </router-link>
 </template>
 <script>
     export default {

@@ -1,0 +1,263 @@
+{
+  "mainInfo": [
+    {
+      "sectionName": "自选单品",
+      "hotelList": [
+        {
+          "startDate": "2017-08-01",
+          "leaveDate": "2017-08-04",
+          "hotelName": "厦门希尔顿逸林酒店厦门希尔顿逸林酒店",
+          "hotelStars": "五星级",
+          "roomType": "豪华大床房",
+          "hotelServe": "双早",
+          "hotelNum": 1,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 100
+        },
+        {
+          "startDate": "2017-08-01",
+          "leaveDate": "2017-08-04",
+          "hotelName": "厦门希尔顿逸林酒店厦门希尔顿逸林酒店",
+          "hotelStars": "五星级",
+          "roomType": "豪华大床房",
+          "hotelServe": "双早",
+          "hotelNum": 2,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 1
+        }
+      ],
+      "flightList": [
+        {
+          "go": {
+            "flightDirection": "去程",
+            "date": "2017-08-01",
+            "startTime": "16:30",
+            "leaveTime": "20:30",
+            "spendDays": 1,
+            "startPlace": "斯里兰卡",
+            "targetPlace": "阿拉斯加",
+            "startAirport": "浦东国际机场",
+            "targetAirport": "上海浦东国际机场",
+            "flightCompany": "中国南方航空",
+            "planeNum": "HO1221",
+            "planeType": "772",
+            "seatType": "经济舱",
+            "ticketType": "儿童",
+            "flightNum": 1,
+            "singlePrice": 240,
+            "inventory": 100
+          },
+          "return": {
+            "flightDirection": "返程",
+            "date": "2017-08-04",
+            "startTime": "16:30",
+            "leaveTime": "20:30",
+            "spendDays": 1,
+            "startPlace": "阿拉斯加",
+            "targetPlace": "斯里兰卡",
+            "startAirport": "上海浦东国际机场",
+            "targetAirport": "浦东国际机场",
+            "flightCompany": "春秋航空",
+            "planeNum": "HO1221",
+            "planeType": "772",
+            "seatType": "经济舱",
+            "ticketType": "成人",
+            "flightNum": 2,
+            "singlePrice": 240,
+            "inventory": 1
+          }
+        }
+      ],
+      "ticketList": [
+        {
+          "date": "2017-08-01",
+          "viewName": "厦门植物园",
+          "ticketNum": 2,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 6
+        },
+        {
+          "date": "2017-08-01",
+          "viewName": "厦门植物园",
+          "ticketNum": 2,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 100
+        },
+        {
+          "date": "2017-08-01",
+          "viewName": "厦门植物园",
+          "ticketNum": 2,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 1
+        }
+      ]
+    },
+    {
+      "sectionName": "我的套餐1",
+      "hotelList": [
+        {
+          "startDate": "2017-08-01",
+          "leaveDate": "2017-08-04",
+          "hotelName": "厦门希尔顿逸林酒店厦门希尔顿逸林酒店",
+          "hotelStars": "五星级",
+          "roomType": "豪华大床房",
+          "hotelServe": "双早",
+          "hotelNum": 1,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 100
+        },
+        {
+          "startDate": "2017-08-01",
+          "leaveDate": "2017-08-04",
+          "hotelName": "厦门希尔顿逸林酒店厦门希尔顿逸林酒店",
+          "hotelStars": "五星级",
+          "roomType": "豪华大床房",
+          "hotelServe": "双早",
+          "hotelNum": 1,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 100
+        }
+      ],
+      "flightList": [
+        {
+          "go": {
+            "flightDirection": "去程",
+            "date": "2017-08-01",
+            "startTime": "16:30",
+            "leaveTime": "20:30",
+            "spendDays": 1,
+            "startPlace": "斯里兰卡",
+            "targetPlace": "阿拉斯加",
+            "startAirport": "浦东国际机场",
+            "targetAirport": "上海浦东国际机场",
+            "flightCompany": "中国南方航空",
+            "planeNum": "HO1221",
+            "planeType": "772",
+            "seatType": "经济舱",
+            "ticketType": "儿童",
+            "flightNum": 1,
+            "singlePrice": 240,
+            "inventory": 100
+          },
+          "return": {
+            "flightDirection": "返程",
+            "date": "2017-08-04",
+            "startTime": "16:30",
+            "leaveTime": "20:30",
+            "spendDays": 1,
+            "startPlace": "阿拉斯加",
+            "targetPlace": "斯里兰卡",
+            "startAirport": "上海浦东国际机场",
+            "targetAirport": "浦东国际机场",
+            "flightCompany": "春秋航空",
+            "planeNum": "HO1221",
+            "planeType": "772",
+            "seatType": "经济舱",
+            "ticketType": "成人",
+            "flightNum": 2,
+            "singlePrice": 240,
+            "inventory": 1
+          }
+        }
+      ],
+      "ticketList": [
+        {
+          "date": "2017-08-01",
+          "viewName": "厦门植物园",
+          "ticketNum": 2,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 1
+        }
+      ]
+    },
+    {
+      "sectionName": "我的套餐2",
+      "hotelList": [
+        {
+          "startDate": "2017-08-01",
+          "leaveDate": "2017-08-04",
+          "hotelName": "厦门希尔顿逸林酒店厦门希尔顿逸林酒店",
+          "hotelStars": "五星级",
+          "roomType": "豪华大床房",
+          "hotelServe": "双早",
+          "hotelNum": 1,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 100
+        },
+        {
+          "startDate": "2017-08-01",
+          "leaveDate": "2017-08-04",
+          "hotelName": "厦门希尔顿逸林酒店厦门希尔顿逸林酒店",
+          "hotelStars": "五星级",
+          "roomType": "豪华大床房",
+          "hotelServe": "双早",
+          "hotelNum": 1,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 100
+        }
+      ],
+      "flightList": [
+        {
+          "go": {
+            "flightDirection": "去程",
+            "date": "2017-08-01",
+            "startTime": "16:30",
+            "leaveTime": "20:30",
+            "spendDays": 1,
+            "startPlace": "斯里兰卡",
+            "targetPlace": "阿拉斯加",
+            "startAirport": "浦东国际机场",
+            "targetAirport": "上海浦东国际机场",
+            "flightCompany": "中国南方航空",
+            "planeNum": "HO1221",
+            "planeType": "772",
+            "seatType": "经济舱",
+            "ticketType": "儿童",
+            "flightNum": 1,
+            "singlePrice": 240,
+            "inventory": 100
+          },
+          "return": {
+            "flightDirection": "返程",
+            "date": "2017-08-04",
+            "startTime": "16:30",
+            "leaveTime": "20:30",
+            "spendDays": 1,
+            "startPlace": "阿拉斯加",
+            "targetPlace": "斯里兰卡",
+            "startAirport": "上海浦东国际机场",
+            "targetAirport": "浦东国际机场",
+            "flightCompany": "春秋航空",
+            "planeNum": "HO1221",
+            "planeType": "772",
+            "seatType": "经济舱",
+            "ticketType": "成人",
+            "flightNum": 2,
+            "singlePrice": 240,
+            "inventory": 1
+          }
+        }
+      ],
+      "ticketList": [
+        {
+          "date": "2017-08-01",
+          "viewName": "厦门植物园",
+          "ticketNum": 2,
+          "notice": "不可退改",
+          "singlePrice": 240,
+          "inventory": 1
+        }
+      ]
+    }
+  ]
+}

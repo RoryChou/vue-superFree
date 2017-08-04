@@ -382,510 +382,511 @@
         <i></i>（提供的总价中包含机票机场建设费&燃油费）
     </div>
 
-    <!--商品列表-->
-    <div class="main-box">
+    <!-- 列表开始 -->
+    <div class="ticket-list">
       <div class="loading_box">
         <i class="icon_loading"></i>
         <span>请稍候，正在为您查询</span>
       </div>
-      <!-- 列表开始 -->
-      <div class="ticket-list">
-        <div id="tickets">
-          <!-- 已经加载过的加js-tl-loaded -->
-          <div class="tl-item tl-item-open js-tl-loaded">
-            <div class="tl-detail clearfix">
-              <div class="tl-col tl-info">
-                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
-                <!-- TODO 机型信息填在对应的data属性中 -->
-                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
-              </div>
-              <div class="tl-col tl-time tl-time-left">
-                <div class="tl-top">06:15</div>
-                <div class="tl-bottom">
-                  <em title="浦东国际机场够了">浦东国际机场够了</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
-              <div class="tl-col tl-time">
-                <div class="tl-top">
-                  12:30
-                  <em class="add-one-day" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
-                </div>
-                <div class="tl-bottom">
-                  <em>虹桥机场</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
-                立即确认
+      <div id="tickets">
+        <!-- 已经加载过的加js-tl-loaded -->
+        <div class="tl-item tl-item-open js-tl-loaded">
+          <div class="tl-detail clearfix">
+            <div class="tl-col tl-info">
+              <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+              <!-- TODO 机型信息填在对应的data属性中 -->
+              <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
             </div>
-              <div class="tl-col tl-duration">
-                <em>6.7</em>折
-                    </div>
-              <div class="tl-col tl-price">
-                <i>&yen;</i><em>711</em>起
-                    </div>
-              <span class="select-btn-flight"></span>
-            </div>
-            <div class="tl-all clearfix">
-              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
-              <div class="tl-tips">
-                <span>机建燃油：<em>￥50/人</em></span>
-                <span>餐食：<em>有</em></span>
-                <span>准点率：<em>80%</em></span>
-              </div>
-              <!-- 航司产品 data-num=3 默认显示3条 航司产品加JS-tl-ac-part-->
-              <div class="tl-part JS-tl-ac-part clearfix" data-num="2">
-                <ul>
-                  <li>
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li>
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <!-- 商务优选 data-num=2 默认显示2条-->
-              <div class="tl-part clearfix" data-num="2">
-                <ul>
-                  <li>
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li>
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <!-- 商务优选 data-num=2 默认显示2条-->
-              <div class="tl-part clearfix" data-num="1">
-                <ul>
-                  <li>
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <!-- 尊贵专享 data-num=1 默认显示1条-->
-              <div class="tl-part clearfix" data-num="0" style="display:none;">
-                <ul>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                  <li style="display: none;">
-                    <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
-                    <span class="tlp-remain">余<i>3</i></span>
-                    <span class="tlp-class">经济舱</span>
-                    <p class="tip-part">
-                      <span class="tui-gai-qian">退改签</span>
-                      <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
-                      <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
-                    </p>
-                    <span class="tlp-discount">6.7<i>折</i></span>
-                    <p class="reduce-price">
-                      <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
-                      <span class="tlp-price"><i>&yen;</i>1711</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <!--提示语句-->
-              <div class="tl-part-tips">
-                <div class="nova-tip nova-tip-normal">
-                  <span class="nova-icon-xs nova-icon-info"></span>
-                  该航班为隔夜航班，请留意您的出行安排
-              </div>
-                <a class="tl-more-btn" href="javascript:;">更多舱位（共<em>8</em>个）<i></i></a>
+            <div class="tl-col tl-time tl-time-left">
+              <div class="tl-top">06:15</div>
+              <div class="tl-bottom">
+                <em title="浦东国际机场够了">浦东国际机场够了</em>
+                <span>T2</span>
               </div>
             </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-detail clearfix">
-              <div class="tl-col tl-info">
-                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
-                <!-- TODO 机型信息填在对应的data属性中 -->
-                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+            <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+            <div class="tl-col tl-time">
+              <div class="tl-top">
+                12:30
+                <em class="add-one-day" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
               </div>
-              <div class="tl-col tl-time tl-time-left">
-                <div class="tl-top">06:15</div>
-                <div class="tl-bottom">
-                  <em title="浦东国际机场够了">浦东国际机场够了</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
-              <div class="tl-col tl-time">
-                <div class="tl-top">12:30</div>
-                <div class="tl-bottom">
-                  <em>虹桥机场</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
-                立即确认
-            </div>
-              <div class="tl-col tl-duration">
-                <em>6.7</em>折
-                    </div>
-              <div class="tl-col tl-price">
-                <i>&yen;</i><em>711</em>起
-                    </div>
-              <span class="select-btn-flight"></span>
-            </div>
-            <div class="tl-item-loading clearfix">
-              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
-              <i class="loading-img"></i>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-detail clearfix">
-              <div class="tl-col tl-info">
-                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
-                <!-- TODO 机型信息填在对应的data属性中 -->
-                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
-              </div>
-              <div class="tl-col tl-time tl-time-left">
-                <div class="tl-top">06:15</div>
-                <div class="tl-bottom">
-                  <em title="浦东国际机场够了">浦东国际机场够了</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
-              <div class="tl-col tl-time">
-                <div class="tl-top">12:30</div>
-                <div class="tl-bottom">
-                  <em>虹桥机场</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
-                立即确认
-            </div>
-              <div class="tl-col tl-duration">
-                <em>6.7</em>折
-                    </div>
-              <div class="tl-col tl-price">
-                <i>&yen;</i><em>711</em>起
-                    </div>
-              <span class="select-btn-flight"></span>
-            </div>
-            <div class="tl-item-loading clearfix">
-              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
-              <i class="loading-img"></i>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-detail clearfix">
-              <div class="tl-col tl-info">
-                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
-                <!-- TODO 机型信息填在对应的data属性中 -->
-                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
-              </div>
-              <div class="tl-col tl-time tl-time-left">
-                <div class="tl-top">06:15</div>
-                <div class="tl-bottom">
-                  <em title="浦东国际机场够了">浦东国际机场够了</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
-              <div class="tl-col tl-time">
-                <div class="tl-top">12:30</div>
-                <div class="tl-bottom">
-                  <em>虹桥机场</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
-                立即确认
-            </div>
-              <div class="tl-col tl-duration">
-                <em>6.7</em>折
-                    </div>
-              <div class="tl-col tl-price">
-                <i>&yen;</i><em>711</em>起
-                    </div>
-              <span class="select-btn-flight"></span>
-            </div>
-            <div class="tl-item-loading clearfix">
-              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
-              <i class="loading-img"></i>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-detail clearfix">
-              <div class="tl-col tl-info">
-                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
-                <!-- TODO 机型信息填在对应的data属性中 -->
-                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
-              </div>
-              <div class="tl-col tl-time tl-time-left">
-                <div class="tl-top">06:15</div>
-                <div class="tl-bottom">
-                  <em title="浦东国际机场够了">浦东国际机场够了</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
-              <div class="tl-col tl-time">
-                <div class="tl-top">12:30</div>
-                <div class="tl-bottom">
-                  <em>虹桥机场</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
-                立即确认
-            </div>
-              <div class="tl-col tl-duration">
-                <em>6.7</em>折
-                    </div>
-              <div class="tl-col tl-price">
-                <i>&yen;</i><em>711</em>起
-                    </div>
-              <span class="select-btn-flight"></span>
-            </div>
-            <div class="tl-item-loading clearfix">
-              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
-              <i class="loading-img"></i>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-detail clearfix">
-              <div class="tl-col tl-info">
-                <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
-                <!-- TODO 机型信息填在对应的data属性中 -->
-                <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
-              </div>
-              <div class="tl-col tl-time tl-time-left">
-                <div class="tl-top">06:15</div>
-                <div class="tl-bottom">
-                  <em title="浦东国际机场够了">浦东国际机场够了</em>
-                  <span>T2</span>
-                </div>
-              </div>
-              <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
-              <div class="tl-col tl-time">
-                <div class="tl-top">12:30</div><div class="tl-bottom">
+              <div class="tl-bottom">
                 <em>虹桥机场</em>
                 <span>T2</span>
               </div>
-              </div>
-              <div class="tl-col tl-confirm tl-confirm-no">
-
-              </div>
-              <div class="tl-col tl-duration">
-                <em>6.7</em>折
-                    </div>
-              <div class="tl-col tl-price">
-                <i>&yen;</i><em>711</em>起
-                    </div>
-              <span class="select-btn-flight"></span>
             </div>
-            <div class="tl-item-loading clearfix">
-              <div class="tl-arrow"><span>◆</span><i>◆</i></div>
-              <i class="loading-img"></i>
+            <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+              立即确认
+          </div>
+            <div class="tl-col tl-duration">
+              <em>6.7</em>折
+                    </div>
+            <div class="tl-col tl-price">
+              <i>&yen;</i><em>711</em>起
+                    </div>
+            <span class="select-btn-flight"></span>
+          </div>
+          <div class="tl-all clearfix">
+            <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+            <div class="tl-tips">
+              <span>机建燃油：<em>￥50/人</em></span>
+              <span>餐食：<em>有</em></span>
+              <span>准点率：<em>80%</em></span>
+            </div>
+            <!-- 航司产品 data-num=3 默认显示3条 航司产品加JS-tl-ac-part-->
+            <div class="tl-part JS-tl-ac-part clearfix" data-num="2">
+              <ul>
+                <li>
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li>
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- 商务优选 data-num=2 默认显示2条-->
+            <div class="tl-part clearfix" data-num="2">
+              <ul>
+                <li>
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li>
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- 商务优选 data-num=2 默认显示2条-->
+            <div class="tl-part clearfix" data-num="1">
+              <ul>
+                <li>
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- 尊贵专享 data-num=1 默认显示1条-->
+            <div class="tl-part clearfix" data-num="0" style="display:none;">
+              <ul>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+                <li style="display: none;">
+                  <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                  <span class="tlp-remain">余<i>3</i></span>
+                  <span class="tlp-class">经济舱</span>
+                  <p class="tip-part">
+                    <span class="tui-gai-qian">退改签</span>
+                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                  </p>
+                  <span class="tlp-discount">6.7<i>折</i></span>
+                  <p class="reduce-price">
+                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!--提示语句-->
+            <div class="tl-part-tips">
+              <div class="nova-tip nova-tip-normal">
+                <span class="nova-icon-xs nova-icon-info"></span>
+                该航班为隔夜航班，请留意您的出行安排
+            </div>
+              <a class="tl-more-btn" href="javascript:;">更多舱位（共<em>8</em>个）<i></i></a>
             </div>
           </div>
         </div>
+        <div class="tl-item">
+          <div class="tl-detail clearfix">
+            <div class="tl-col tl-info">
+              <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+              <!-- TODO 机型信息填在对应的data属性中 -->
+              <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+            </div>
+            <div class="tl-col tl-time tl-time-left">
+              <div class="tl-top">06:15</div>
+              <div class="tl-bottom">
+                <em title="浦东国际机场够了">浦东国际机场够了</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+            <div class="tl-col tl-time">
+              <div class="tl-top">12:30</div>
+              <div class="tl-bottom">
+                <em>虹桥机场</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+              立即确认
+          </div>
+            <div class="tl-col tl-duration">
+              <em>6.7</em>折
+                    </div>
+            <div class="tl-col tl-price">
+              <i>&yen;</i><em>711</em>起
+                    </div>
+            <span class="select-btn-flight"></span>
+          </div>
+          <div class="tl-item-loading clearfix">
+            <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+            <i class="loading-img"></i>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-detail clearfix">
+            <div class="tl-col tl-info">
+              <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+              <!-- TODO 机型信息填在对应的data属性中 -->
+              <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+            </div>
+            <div class="tl-col tl-time tl-time-left">
+              <div class="tl-top">06:15</div>
+              <div class="tl-bottom">
+                <em title="浦东国际机场够了">浦东国际机场够了</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+            <div class="tl-col tl-time">
+              <div class="tl-top">12:30</div>
+              <div class="tl-bottom">
+                <em>虹桥机场</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+              立即确认
+          </div>
+            <div class="tl-col tl-duration">
+              <em>6.7</em>折
+                    </div>
+            <div class="tl-col tl-price">
+              <i>&yen;</i><em>711</em>起
+                    </div>
+            <span class="select-btn-flight"></span>
+          </div>
+          <div class="tl-item-loading clearfix">
+            <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+            <i class="loading-img"></i>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-detail clearfix">
+            <div class="tl-col tl-info">
+              <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+              <!-- TODO 机型信息填在对应的data属性中 -->
+              <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+            </div>
+            <div class="tl-col tl-time tl-time-left">
+              <div class="tl-top">06:15</div>
+              <div class="tl-bottom">
+                <em title="浦东国际机场够了">浦东国际机场够了</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+            <div class="tl-col tl-time">
+              <div class="tl-top">12:30</div>
+              <div class="tl-bottom">
+                <em>虹桥机场</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+              立即确认
+          </div>
+            <div class="tl-col tl-duration">
+              <em>6.7</em>折
+                    </div>
+            <div class="tl-col tl-price">
+              <i>&yen;</i><em>711</em>起
+                    </div>
+            <span class="select-btn-flight"></span>
+          </div>
+          <div class="tl-item-loading clearfix">
+            <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+            <i class="loading-img"></i>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-detail clearfix">
+            <div class="tl-col tl-info">
+              <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+              <!-- TODO 机型信息填在对应的data属性中 -->
+              <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+            </div>
+            <div class="tl-col tl-time tl-time-left">
+              <div class="tl-top">06:15</div>
+              <div class="tl-bottom">
+                <em title="浦东国际机场够了">浦东国际机场够了</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+            <div class="tl-col tl-time">
+              <div class="tl-top">12:30</div>
+              <div class="tl-bottom">
+                <em>虹桥机场</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+              立即确认
+          </div>
+            <div class="tl-col tl-duration">
+              <em>6.7</em>折
+                    </div>
+            <div class="tl-col tl-price">
+              <i>&yen;</i><em>711</em>起
+                    </div>
+            <span class="select-btn-flight"></span>
+          </div>
+          <div class="tl-item-loading clearfix">
+            <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+            <i class="loading-img"></i>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-detail clearfix">
+            <div class="tl-col tl-info">
+              <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+              <!-- TODO 机型信息填在对应的data属性中 -->
+              <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+            </div>
+            <div class="tl-col tl-time tl-time-left">
+              <div class="tl-top">06:15</div>
+              <div class="tl-bottom">
+                <em title="浦东国际机场够了">浦东国际机场够了</em>
+                <span>T2</span>
+              </div>
+            </div>
+            <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+            <div class="tl-col tl-time">
+              <div class="tl-top">12:30</div><div class="tl-bottom">
+              <em>虹桥机场</em>
+              <span>T2</span>
+            </div>
+            </div>
+            <div class="tl-col tl-confirm tl-confirm-no">
+
+            </div>
+            <div class="tl-col tl-duration">
+              <em>6.7</em>折
+                    </div>
+            <div class="tl-col tl-price">
+              <i>&yen;</i><em>711</em>起
+                    </div>
+            <span class="select-btn-flight"></span>
+          </div>
+          <div class="tl-item-loading clearfix">
+            <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+            <i class="loading-img"></i>
+          </div>
+        </div>
       </div>
-      <!-- 列表开始 END-->
     </div>
-    <!--商品列表END-->
+    <!-- 列表开始 END-->
 
 
     <list-bottom></list-bottom>
 
-
+    <cart></cart>
   </div>
 </template>
 <script>
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
+  import Cart from '../home/cart.vue';
   export default {
     name: 'flight',
-    components: {ListTop,ListBottom}
+    components: {ListTop,ListBottom,Cart}
   }
 </script>
+<style >
+  @import "http://pic.lvmama.com/styles/v6/flighthotel/fh-icon-ac.css";
+</style>
 <!--flight.scss-->
-<style lang="scss">
+<style lang="scss" scoped>
+  /*flight.scss*/
   @import "../../assets/scss/_var.scss";
   /*flight-calendar.scss*/
   .canderBox1 .calmonth {

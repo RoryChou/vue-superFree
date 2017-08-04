@@ -341,7 +341,6 @@
     import SearchTitle from './search-title.vue'
     import Cart from './cart.vue'
     import HotCitys from './hot-citys.vue'
-    import {store} from '../../main.js'
     export default {
         name: 'search',
         components:{History,SearchTitle,Cart,HotCitys},

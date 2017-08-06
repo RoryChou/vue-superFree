@@ -24,6 +24,7 @@ import SearchTitle from './search-title.vue' //此处的SearchTitle就不能乱�
 ##7.组件中的data必须是函数的原因：保证每次使用组件时，data都是唯一的
 ##8.在引用了重复的组件之前进行路由切换，重复部分依然会重新渲染，造成性能浪费
 ##9.利用重用的组件来引入公共的样式文件，如list-top组件中的样子。
+##10.forEach循环无法使用break和return终止遍历，只能用抛出错误的方式
 
 #三.html
 ##1.模板中的自定义属性的值必须是字符串否侧报错

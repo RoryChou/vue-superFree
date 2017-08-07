@@ -12,7 +12,7 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/_var.scss";
-    //@import "../../spritesmith-generated/_sprite.scss";
+    @import "../../spritesmith-generated/_sprite.scss";
 
     .cart {
         &:hover {
@@ -27,7 +27,7 @@
         height: 46px;
         line-height: 46px;
         //@include sprite($bg-cart);
-        //@include retina-sprite($bg-cart-group);
+        @include retina-sprite($bg-cart-group);
         width: 140px;
         text-align: center;
         color: #fff;
@@ -35,7 +35,7 @@
         cursor: pointer;
         .pro-num {
             background: url("../../assets/imgs/sprite@2x/icon-cart-num.png");
-            //@include retina-sprite($icon-cart-num-group);
+            @include retina-sprite($icon-cart-num-group);
             height: 26px;
             line-height: 26px;
             text-align: center;
@@ -46,7 +46,7 @@
         }
         i {
             background: url("../../assets/imgs/sprite@2x/icon-cart.png");
-          //@include retina-sprite($icon-cart-group);
+          @include retina-sprite($icon-cart-group);
             height: 20px;
             width: 20px;
             @include inlineblock;
@@ -55,7 +55,7 @@
         }
         &:hover {
             background: url("../../assets/imgs/sprite@2x/bg-cart-hover.png");
-          //@include retina-sprite($bg-cart-hover-group);
+          @include retina-sprite($bg-cart-hover-group);
         }
     }
 </style>

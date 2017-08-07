@@ -38,7 +38,7 @@
           <div class="cart-section-money-total td">
             <i class="cart-section-money-total-title">套餐总价：</i>
             <i class="cart-section-money-total-num">
-              ¥<b>{{item.totalMoney}}</b>
+              ¥<b>{{sectionTotalMoney(item)}}</b>
             </i>
           </div>
         </div>
@@ -529,6 +529,19 @@
         item.isChecked = flag;
 
         this.clearSection(itemIndex)
+      },
+      //计算section总价
+      sectionTotalMoney:function (item) {
+          let totalMoney = 0;
+        for(let i in item){
+          if(typeof item[i] === "object"){
+            item[i].forEach(function (value) {
+              if(value.isChecked){
+                totalMoney += value.
+              }
+            })
+          }
+        }
       },
       //清除其他section
       clearSection:function (itemIndex) {

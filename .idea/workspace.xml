@@ -2,105 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4def0a86-10e9-4574-b9a3-bc8920aeadb9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-btn-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-btn-left@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-btn-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-btn-right@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-close@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-days.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-days@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-hearts-choose.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-hearts-choose@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-hearts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-hearts@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-overview-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-overview-hover@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-overview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-overview@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-tuwen-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-tuwen-hover@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-tuwen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-tuwen@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-view.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-view@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-yinhao-down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-yinhao-down@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-yinhao.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/baodian/sprite/icon-yinhao@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/adult.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/adult@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-cart-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-cart-arrow@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-cart-empty.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-cart-empty@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-cart@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox-checked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox-checked@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox-hover@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-checkBox@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-flight-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-flight-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-flight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-flight@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-hotel-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-hotel-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-hotel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-hotel@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-lv-fail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-lv-fail@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-lv-notice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-lv-notice@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-notice-reverse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-notice-reverse@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-notice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-notice@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-ticket-not.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-ticket-not@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-ticket.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/icon-ticket@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/kid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/cart/sprite/kid@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/adult.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/adult@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-flight-line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-flight-line@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-flight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-flight@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-hotel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-hotel@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-insurance.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-insurance@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-line@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-notice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-notice@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-tickets.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/icon-tickets@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/kid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/assets/imgs/form/sprite/kid@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/components/baodian/baodian.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/components/cart/cart.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/components/form/form.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/src/components/loading.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final/static/data/cartInfo.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/final/src/App.vue" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/index.html" afterPath="$PROJECT_DIR$/final/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/home/cart.vue" afterPath="$PROJECT_DIR$/final/src/components/home/cart.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/home/search.vue" afterPath="$PROJECT_DIR$/final/src/components/home/search.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/list/combo.vue" afterPath="$PROJECT_DIR$/final/src/components/list/combo.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/list/flight.vue" afterPath="$PROJECT_DIR$/final/src/components/list/flight.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/list/hotel.vue" afterPath="$PROJECT_DIR$/final/src/components/list/hotel.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/list/list-bottom.vue" afterPath="$PROJECT_DIR$/final/src/components/list/list-bottom.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/components/list/list-top.vue" afterPath="$PROJECT_DIR$/final/src/components/list/list-top.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/router/index.js" afterPath="$PROJECT_DIR$/final/src/router/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final/src/tips.md" afterPath="$PROJECT_DIR$/final/src/tips.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -163,7 +65,7 @@
       <file leaf-file-name="cartInfo.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/static/data/cartInfo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="594">
               <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding>
                 <element signature="e#3406#4640#0" expanded="false" />
@@ -177,8 +79,8 @@
       <file leaf-file-name="cart.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/src/components/cart/cart.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="135" column="80" lean-forward="true" selection-start-line="135" selection-start-column="80" selection-end-line="135" selection-end-column="80" />
+            <state relative-caret-position="908">
+              <caret line="152" column="16" lean-forward="true" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
@@ -386,15 +288,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue-sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../superFree" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/final" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptPreferStrict" value="false" />
@@ -584,27 +499,27 @@
       <workItem from="1501723879678" duration="18469000" />
       <workItem from="1501810802418" duration="13688000" />
       <workItem from="1501830131619" duration="2585000" />
-      <workItem from="1501833587041" duration="4226000" />
+      <workItem from="1501833587041" duration="5077000" />
+      <workItem from="1501983126401" duration="120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272076000" />
+    <option name="totallyTimeSpent" value="273047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12961012" sideWeight="0.46695557" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12961012" sideWeight="0.46695557" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12961012" sideWeight="0.5330444" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -993,7 +908,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/static/data/cartInfo.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="594">
           <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
             <element signature="e#3406#4640#0" expanded="false" />
@@ -1005,8 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/src/components/cart/cart.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="135" column="80" lean-forward="true" selection-start-line="135" selection-start-column="80" selection-end-line="135" selection-end-column="80" />
+        <state relative-caret-position="908">
+          <caret line="152" column="16" lean-forward="true" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
           <folding>
             <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />

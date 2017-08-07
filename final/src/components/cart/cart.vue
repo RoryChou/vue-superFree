@@ -33,7 +33,7 @@
       <loading v-show="isShowLoading"></loading>
       <div class="cart-section" v-bind="{id:idTransfer(item.sectionName)}" v-for="(item,itemIndex) in cartInfo">
         <div class="cart-section-title">
-          <span class="icon-checkBox td" v-bind="{'data-checked':item.isChecked}" :class="{checked:item.isChecked}" @click="selectSection(item)"></span>
+          <span class="icon-checkBox td" v-bind="{'data-checked':item.isChecked}" :class="{checked:item.isChecked}" @click="selectSection(item,itemIndex)"></span>
           <span class="cart-section-title-main td">{{item.sectionName}}</span>
           <div class="cart-section-money-total td">
             <i class="cart-section-money-total-title">套餐总价：</i>
@@ -47,7 +47,7 @@
             <div class="cart-section-pro-hotel" v-for="(detail,detailIndex) in item.hotelList">
               <div class="cart-section-pro-wrapper clearfix">
                 <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}" :class="{checked:detail.isChecked}"
-                      @click="selectDetail(detail)"></span>
+                      @click="selectDetail(detail,item,itemIndex)"></span>
                 <span class="icon-hotel td"></span>
                 <div class="hotel-date-container td">
                   <p class="hotel-date-start">
@@ -93,7 +93,7 @@
             <div class="cart-section-pro-flight" v-for="(detail,detailIndex) in item.flightList">
               <div class="cart-section-pro-wrapper clearfix">
                 <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}" :class="{checked:detail.isChecked}"
-                      @click="selectDetail(detail)"></span>
+                      @click="selectDetail(detail,itemitemIndex)"></span>
                 <span class="icon-flight td"></span>
                 <div class="section-pro-flight-block clearfix" v-if="detail.go==={}">
                   <div class="flight-icon-route-go" :class="{'flight-icon-route-go':lineKey==='go','flight-icon-route-back':lineKey==='return'}">{{line.flightDirection}}</div>
@@ -155,7 +155,7 @@
             <div class="cart-section-pro-ticket" v-for="(detail,detailIndex) in item.ticketList">
               <div class="cart-section-pro-wrapper clearfix">
                 <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}" :class="{checked:detail.isChecked}"
-                      @click="selectDetail(detail)"></span>
+                      @click="selectDetail(detail,item,itemIndex)"></span>
                 <span class="icon-ticket td"></span>
                 <p class="ticket-date td">{{detail.date}}</p>
                 <p class="ticket-name td">{{detail.viewName}}</p>
@@ -457,12 +457,16 @@
         vm.cartInfo = res.data.mainInfo;
         vm.totalProNumCalc();
         vm.isShowLoading = false;
+        //注册所有checkbox属性
+        vm.registerIscheck()
       }, function (error) {
         console.log('error', error)
       })
+
     },
     mounted: function () {
       //this.totalProNumCalc();
+
     },
     watch: {},
     computed: {},
@@ -476,19 +480,65 @@
             this.totalPrpNum += this.cartInfo[i].hotelList.length+this.cartInfo[i].flightList.length+this.cartInfo[i].ticketList.length
         }
       },
-      selectSection: function (item) {
-          if(item.isChecked === undefined){
-            this.$set(item,'isChecked',true);
-          }else {
+      //注册所有checkbox
+      registerIscheck:function () {
+        let vm = this;
+        vm.cartInfo.forEach(function (value) {
+          for(let i in value){
+            vm.$set(value,'isChecked',false)
+            if(typeof value[i] === "object"){
+              value[i].forEach(function (valueDetail) {
+                vm.$set(valueDetail,'isChecked',false)
+              })
+            }
+          }
+        })
+      },
+      selectSection: function (item,itemIndex,move) {
+          if(move === undefined){
             item.isChecked = !item.isChecked;
+          }else {
+            item.isChecked = move;
+          }
+
+          //section全选
+          for(let i in item){
+            if(typeof item[i] === "object"){
+              item[i].forEach(function (value) {
+                value.isChecked = item.isChecked;
+              })
+            }
+          }
+          if(itemIndex !== -1){
+            this.clearSection(itemIndex)
           }
       },
-      selectDetail: function (detail) {
-        if(detail.isChecked === undefined){
-          this.$set(detail,'isChecked',true);
-        }else {
-          detail.isChecked = !detail.isChecked;
+      selectDetail: function (detail,item,itemIndex) {
+        detail.isChecked = !detail.isChecked;
+        //判断是否触发全选
+        let flag = true;
+        for(let i in item){
+          if(typeof item[i] === "object"){
+            for(let j=0;j < item[i].length;j++){
+              if(!item[i][j].isChecked) {
+                flag = false
+              }
+            }
+          }
         }
+        item.isChecked = flag;
+
+        this.clearSection(itemIndex)
+      },
+      //清除其他section
+      clearSection:function (itemIndex) {
+          let vm = this;
+        this.cartInfo.forEach(function (value, index) {
+          if(index !== itemIndex) {
+            value.isChecked = false;
+            vm.selectSection(value,-1,false);
+          }
+        })
       },
       idTransfer: function (name) {
         if(name === '自选单品'){

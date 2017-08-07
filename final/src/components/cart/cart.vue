@@ -38,7 +38,7 @@
           <div class="cart-section-money-total td">
             <i class="cart-section-money-total-title">套餐总价：</i>
             <i class="cart-section-money-total-num">
-              ¥<b>{{sectionTotalMoney(item)}}</b>
+              ¥<b>{{item.totalMoney}}</b>
             </i>
           </div>
         </div>
@@ -73,14 +73,14 @@
                 </div>
                 <span class="pro-price-single td">¥{{detail.singlePrice}}</span>
                 <div class="select-container td">
-                  <select class="pro-num" name="" v-model="detail.hotelNum">
-                    <option v-for="num in optionMax(detail.inventory,detail.hotelNum,detailIndex,itemIndex,'Hotel')">{{num}}</option>
+                  <select class="pro-num" name="" v-model="detail.proNum">
+                    <option v-for="num in optionMax(detail.inventory,detail.proNum,detailIndex,itemIndex,'Hotel')">{{num}}</option>
                   </select>
                   <p class="pro-num-notice" v-show="detail.inventory-detail.oldHotelNum<0">库存不足{{detail.oldHotelNum}}份</p>
                 </div>
 
                 <div class="pro-money td">
-                  ¥<span>{{detail.singlePrice*detail.hotelNum}}</span>
+                  ¥<span>{{detail.singlePrice*detail.proNum}}</span>
                 </div>
                 <div class="pro-operations td">
                   <p class="cart-delete">删除</p>
@@ -93,55 +93,108 @@
             <div class="cart-section-pro-flight" v-for="(detail,detailIndex) in item.flightList">
               <div class="cart-section-pro-wrapper clearfix">
                 <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}" :class="{checked:detail.isChecked}"
-                      @click="selectDetail(detail,itemitemIndex)"></span>
+                      @click="selectDetail(detail,item,itemIndex)"></span>
                 <span class="icon-flight td"></span>
-                <div class="section-pro-flight-block clearfix" v-if="detail.go==={}">
-                  <div class="flight-icon-route-go" :class="{'flight-icon-route-go':lineKey==='go','flight-icon-route-back':lineKey==='return'}">{{line.flightDirection}}</div>
+                <div class="section-pro-flight-block clearfix" v-if="detail.go!=={}">
+                  <div class="flight-icon-route-go">{{detail.go.flightDirection}}</div>
                   <div class="flight-main-container td">
                     <p class="flight-main-citys">
-                      <span class="flight-city-from">{{line.startPlace}}</span>
+                      <span class="flight-city-from">{{detail.go.startPlace}}</span>
                       <i class="icon-flight-arrow"></i>
-                      <span class="flight-city-to">{{line.targetPlace}}</span>
+                      <span class="flight-city-to">{{detail.go.targetPlace}}</span>
                     </p>
-                    <p class="flight-date-start">{{line.date}}</p>
+                    <p class="flight-date-start">{{detail.go.date}}</p>
                   </div>
                   <div class="flight-info-container clearfix td">
                     <div class="flight-info-from">
-                      <p class="flight-time-from">{{line.startTime}}</p>
-                      <p class="flight-airport-from" title="浦东国际机场">{{line.startAirport}}</p>
+                      <p class="flight-time-from">{{detail.go.startTime}}</p>
+                      <p class="flight-airport-from" title="浦东国际机场">{{detail.go.startAirport}}</p>
                     </div>
                     <div class="icon-flight-arrow"></div>
                     <div class="flight-info-to">
-                      <p class="flight-time-to">{{line.leaveTime}}
+                      <p class="flight-time-to">{{detail.go.leaveTime}}
                         <em class="add-one-day js-tips" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
                       </p>
-                      <p class="flight-airport-to" title="上海浦东国际机场">{{line.targetAirport}}</p>
+                      <p class="flight-airport-to" title="上海浦东国际机场">{{detail.go.targetAirport}}</p>
                     </div>
                   </div>
                   <div class="pro-details-container td">
-                    <p class="flight-company">{{line.flightCompany}}</p>
+                    <p class="flight-company">{{detail.go.flightCompany}}</p>
                     <p class="flight-plane-info">
-                      <span class="flight-plane-num">{{line.planeNum}}</span>
+                      <span class="flight-plane-num">{{detail.go.planeNum}}</span>
                       <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167"
-                            data-max="167">{{line.planeType}}</span>
+                            data-max="167">{{detail.go.planeType}}</span>
                     </p>
                   </div>
                   <span class="pro-sevice td">
-                                    {{line.seatType}}
-                                    <p :class="{'flight-ticket-type-kid':line.ticketType==='儿童','flight-ticket-type-adult':line.ticketType==='成人'}"></p>
+                                    {{detail.go.seatType}}
+                                    <p :class="{'flight-ticket-type-kid':detail.go.ticketType==='儿童','flight-ticket-type-adult':detail.go.ticketType==='成人'}"></p>
                                 </span>
                   <div class="pro-notice td">
                     <span class="tui-gai-qian">退改签</span>
                   </div>
-                  <span class="pro-price-single td">¥{{line.singlePrice}}</span>
+                  <span class="pro-price-single td">¥{{detail.go.singlePrice}}</span>
                   <div class="select-container td">
-                    <select class="pro-num pro-num-flightGo" name="" v-model="line.flightNum">
-                      <option v-for="num in optionMax(line.inventory,line.flightNum,detailIndex,itemIndex,'Flight',lineKey)">{{num}}</option>
+                    <select class="pro-num pro-num-flightGo" name="" v-model="detail.go.proNum">
+                      <option v-for="num in optionMax(detail.go.inventory,detail.go.proNum,detailIndex,itemIndex,['Flight','go'])">{{num}}</option>
                     </select>
-                    <p class="pro-num-notice" v-show="line.inventory-line.oldFlightNum<0">库存不足{{line.oldFlightNum}}张</p>
+                    <p class="pro-num-notice" v-show="detail.go.inventory-detail.go.oldFlightNum<0">库存不足{{detail.go.oldFlightNum}}张</p>
                   </div>
                   <div class="pro-money td">
-                    ¥<span>{{line.singlePrice*line.flightNum}}</span>
+                    ¥<span>{{detail.go.singlePrice*detail.go.proNum}}</span>
+                  </div>
+                  <div class="pro-operations td">
+                    <p class="cart-delete">删除</p>
+                    <p class="cart-move">移入其他套餐</p>
+                  </div>
+                </div>
+                <div class="section-pro-flight-block clearfix" v-if="detail.return!=={}">
+                  <div class="flight-icon-route-back">{{detail.return.flightDirection}}</div>
+                  <div class="flight-main-container td">
+                    <p class="flight-main-citys">
+                      <span class="flight-city-from">{{detail.return.startPlace}}</span>
+                      <i class="icon-flight-arrow"></i>
+                      <span class="flight-city-to">{{detail.return.targetPlace}}</span>
+                    </p>
+                    <p class="flight-date-start">{{detail.return.date}}</p>
+                  </div>
+                  <div class="flight-info-container clearfix td">
+                    <div class="flight-info-from">
+                      <p class="flight-time-from">{{detail.return.startTime}}</p>
+                      <p class="flight-airport-from" title="浦东国际机场">{{detail.return.startAirport}}</p>
+                    </div>
+                    <div class="icon-flight-arrow"></div>
+                    <div class="flight-info-to">
+                      <p class="flight-time-to">{{detail.return.leaveTime}}
+                        <em class="add-one-day js-tips" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                      </p>
+                      <p class="flight-airport-to" title="上海浦东国际机场">{{detail.return.targetAirport}}</p>
+                    </div>
+                  </div>
+                  <div class="pro-details-container td">
+                    <p class="flight-company">{{detail.return.flightCompany}}</p>
+                    <p class="flight-plane-info">
+                      <span class="flight-plane-num">{{detail.return.planeNum}}</span>
+                      <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167"
+                            data-max="167">{{detail.return.planeType}}</span>
+                    </p>
+                  </div>
+                  <span class="pro-sevice td">
+                                    {{detail.return.seatType}}
+                                    <p :class="{'flight-ticket-type-kid':detail.return.ticketType==='儿童','flight-ticket-type-adult':detail.return.ticketType==='成人'}"></p>
+                                </span>
+                  <div class="pro-notice td">
+                    <span class="tui-gai-qian">退改签</span>
+                  </div>
+                  <span class="pro-price-single td">¥{{detail.return.singlePrice}}</span>
+                  <div class="select-container td">
+                    <select class="pro-num pro-num-flightGo" name="" v-model="detail.return.proNum">
+                      <option v-for="num in optionMax(detail.return.inventory,detail.return.proNum,detailIndex,itemIndex,['Flight','return'])">{{num}}</option>
+                    </select>
+                    <p class="pro-num-notice" v-show="detail.return.inventory-detail.return.oldFlightNum<0">库存不足{{detail.return.oldFlightNum}}张</p>
+                  </div>
+                  <div class="pro-money td">
+                    ¥<span>{{detail.return.singlePrice*detail.return.proNum}}</span>
                   </div>
                   <div class="pro-operations td">
                     <p class="cart-delete">删除</p>
@@ -164,13 +217,13 @@
                 </div>
                 <span class="pro-price-single td">¥{{detail.singlePrice}}</span>
                 <div class="select-container td">
-                  <select class="pro-num" name="" v-model="detail.ticketNum">
-                    <option v-for="num in optionMax(detail.inventory,detail.ticketNum,detailIndex,itemIndex,'Ticket')">{{num}}</option>
+                  <select class="pro-num" name="" v-model="detail.proNum">
+                    <option v-for="num in optionMax(detail.inventory,detail.proNum,detailIndex,itemIndex,'Ticket')">{{num}}</option>
                   </select>
                   <p class="pro-num-notice" v-show="detail.inventory-detail.oldTicketNum<0">库存不足{{detail.oldTicketNum}}份</p>
                 </div>
                 <div class="pro-money td">
-                  ¥<span>{{detail.singlePrice*detail.ticketNum}}</span>
+                  ¥<span>{{detail.singlePrice*detail.proNum}}</span>
                 </div>
                 <div class="pro-operations td">
                   <p class="cart-delete">删除</p>
@@ -484,6 +537,7 @@
       registerIscheck:function () {
         let vm = this;
         vm.cartInfo.forEach(function (value) {
+            vm.$set(value,'totalMoney',0)
           for(let i in value){
             vm.$set(value,'isChecked',false)
             if(typeof value[i] === "object"){
@@ -512,6 +566,7 @@
           if(itemIndex !== -1){
             this.clearSection(itemIndex)
           }
+        this.sectionTotalMoney()
       },
       selectDetail: function (detail,item,itemIndex) {
         detail.isChecked = !detail.isChecked;
@@ -528,20 +583,35 @@
         }
         item.isChecked = flag;
 
+
         this.clearSection(itemIndex)
+        this.sectionTotalMoney()
+
       },
       //计算section总价
-      sectionTotalMoney:function (item) {
-          let totalMoney = 0;
-        for(let i in item){
-          if(typeof item[i] === "object"){
-            item[i].forEach(function (value) {
-              if(value.isChecked){
-                totalMoney += value.
+      sectionTotalMoney:function () {
+
+          this.cartInfo.forEach(function (item) {
+            let totalMoney = 0;
+            for(let i in item){
+              if(typeof item[i] === "object"){
+                item[i].forEach(function (value) {
+                  if(value.isChecked){
+                    //判断是否为机票
+                    if(i === 'flightList') {
+                      for(let j in value){
+                        totalMoney += (value[j].proNum?value[j].proNum:0)*(value[j].singlePrice?value[j].singlePrice:0)
+                      }
+                    }else {
+                      totalMoney += value.proNum*value.singlePrice
+                    }
+                  }
+                })
               }
-            })
-          }
-        }
+            }
+            item.totalMoney = totalMoney;
+          })
+
       },
       //清除其他section
       clearSection:function (itemIndex) {
@@ -561,18 +631,19 @@
           return id
         }
       },
-      optionMax: function (inventory,num,detailIndex,itemIndex,type,line) {
-        let  listName,numName,lineName;
+      optionMax: function (inventory,num,detailIndex,itemIndex,type) {
+        let  listName,numName,lineName1,lineName2;
         if(type === 'Hotel'){
             listName = 'hotelList';
-            numName = 'hotelNum';
-        }else if(type === 'Flight'){
+            numName = 'proNum';
+        }else if(typeof type === 'object'){
             listName = 'flightList';
-            numName = 'flightNum';
-            lineName = line;
+            numName = 'proNum';
+            lineName1 = type[0];
+            lineName2 = type[1];
         }else {
           listName = 'ticketList';
-          numName = 'ticketNum';
+          numName = 'proNum';
         }
         //限制最大数量9
         let res = inventory>=9?9:inventory;
@@ -580,14 +651,18 @@
         if(inventory<num){
           //TODO 修改数据库
           let listObj = this.cartInfo[itemIndex][listName][detailIndex];
-          if(lineName===undefined) {
+          if(typeof type !== 'object') {
             this.cartInfo[itemIndex][listName][detailIndex][numName] = inventory;
+            //增加oldNum
+            this.$set(listObj,'old'+ type +'Num',num)
           }else {
-            this.cartInfo[itemIndex][listName][detailIndex][lineName][numName] = inventory;
-            listObj = listObj[lineName];
+              //机票
+            this.cartInfo[itemIndex][listName][detailIndex][lineName2][numName] = inventory;
+            listObj = listObj[lineName2];
+            //增加oldNum
+            this.$set(listObj,'oldFlightNum',num)
           }
-          //增加oldNum
-          this.$set(listObj,'old'+ type +'Num',num)
+
         }
         return res;
       }

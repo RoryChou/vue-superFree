@@ -10,7 +10,7 @@
           "hotelStars": "五星级",
           "roomType": "豪华大床房",
           "hotelServe": "双早",
-          "hotelNum": 1,
+          "proNum": 1,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 100
@@ -22,7 +22,7 @@
           "hotelStars": "五星级",
           "roomType": "豪华大床房",
           "hotelServe": "双早",
-          "hotelNum": 2,
+          "proNum": 2,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 1
@@ -45,7 +45,7 @@
             "planeType": "772",
             "seatType": "经济舱",
             "ticketType": "儿童",
-            "flightNum": 1,
+            "proNum": 1,
             "singlePrice": 240,
             "inventory": 100
           },
@@ -64,7 +64,7 @@
             "planeType": "772",
             "seatType": "经济舱",
             "ticketType": "成人",
-            "flightNum": 2,
+            "proNum": 2,
             "singlePrice": 240,
             "inventory": 1
           }
@@ -74,7 +74,7 @@
         {
           "date": "2017-08-01",
           "viewName": "厦门植物园",
-          "ticketNum": 2,
+          "proNum": 2,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 6
@@ -82,7 +82,7 @@
         {
           "date": "2017-08-01",
           "viewName": "厦门植物园",
-          "ticketNum": 2,
+          "proNum": 2,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 100
@@ -90,7 +90,7 @@
         {
           "date": "2017-08-01",
           "viewName": "厦门植物园",
-          "ticketNum": 2,
+          "proNum": 2,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 1
@@ -107,7 +107,7 @@
           "hotelStars": "五星级",
           "roomType": "豪华大床房",
           "hotelServe": "双早",
-          "hotelNum": 1,
+          "proNum": 1,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 100
@@ -119,7 +119,7 @@
           "hotelStars": "五星级",
           "roomType": "豪华大床房",
           "hotelServe": "双早",
-          "hotelNum": 1,
+          "proNum": 1,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 100
@@ -142,7 +142,7 @@
             "planeType": "772",
             "seatType": "经济舱",
             "ticketType": "儿童",
-            "flightNum": 1,
+            "proNum": 1,
             "singlePrice": 240,
             "inventory": 100
           },
@@ -161,7 +161,7 @@
             "planeType": "772",
             "seatType": "经济舱",
             "ticketType": "成人",
-            "flightNum": 2,
+            "proNum": 2,
             "singlePrice": 240,
             "inventory": 1
           }
@@ -171,7 +171,7 @@
         {
           "date": "2017-08-01",
           "viewName": "厦门植物园",
-          "ticketNum": 2,
+          "proNum": 2,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 1
@@ -188,7 +188,7 @@
           "hotelStars": "五星级",
           "roomType": "豪华大床房",
           "hotelServe": "双早",
-          "hotelNum": 1,
+          "proNum": 1,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 100
@@ -200,7 +200,7 @@
           "hotelStars": "五星级",
           "roomType": "豪华大床房",
           "hotelServe": "双早",
-          "hotelNum": 1,
+          "proNum": 1,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 100
@@ -223,7 +223,7 @@
             "planeType": "772",
             "seatType": "经济舱",
             "ticketType": "儿童",
-            "flightNum": 1,
+            "proNum": 1,
             "singlePrice": 240,
             "inventory": 100
           },
@@ -242,7 +242,7 @@
             "planeType": "772",
             "seatType": "经济舱",
             "ticketType": "成人",
-            "flightNum": 2,
+            "proNum": 2,
             "singlePrice": 240,
             "inventory": 1
           }
@@ -252,7 +252,7 @@
         {
           "date": "2017-08-01",
           "viewName": "厦门植物园",
-          "ticketNum": 2,
+          "proNum": 2,
           "notice": "不可退改",
           "singlePrice": 240,
           "inventory": 1

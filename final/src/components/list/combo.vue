@@ -970,7 +970,7 @@
 </style>
 
 <!--combo.scss-->
-<style lang="scss" scoped>
+<style lang="scss" >
   /*combo.scss*/
   @import "../../assets/scss/_var.scss";
 

@@ -885,7 +885,7 @@
   @import "http://pic.lvmama.com/styles/v6/flighthotel/fh-icon-ac.css";
 </style>
 <!--flight.scss-->
-<style lang="scss" scoped>
+<style lang="scss">
   /*flight.scss*/
   @import "../../assets/scss/_var.scss";
   /*flight-calendar.scss*/

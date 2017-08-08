@@ -32,8 +32,8 @@
               <div class="date">
                 <i class="icon"></i>
                 <span>
-                            <b class="hotel-days">3</b>天
-                        </span>
+                    <b class="hotel-days">3</b>天
+                </span>
                 <p class="date-details">
                   <span><b class="date-from-str">2017-08-01</b>入住</span>
                   <span><b class="date-to-str">2017-08-03</b>退房</span>
@@ -42,7 +42,7 @@
               <div class="btn-wrapper">
                 <div class="btn btn-change btn-pink">
                   更改行程
-              </div>
+                </div>
               </div>
             </div>
             <div class="change-box clearfix">

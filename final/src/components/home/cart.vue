@@ -1,7 +1,7 @@
 <template>
     <router-link to="cart" class="cart">
         <span class="pro-num">6</span>
-        <i></i>
+        <i class="iconfont">&#xe899;</i>
         超级自由行
     </router-link>
 </template>
@@ -13,6 +13,7 @@
 <style lang="scss">
     @import "../../assets/scss/_var.scss";
     @import "../../spritesmith-generated/_sprite.scss";
+    @import "../../assets/fonts/iconfont.css";
 
     .cart {
         &:hover {
@@ -45,10 +46,11 @@
             left: 0px;
         }
         i {
-            background: url("../../assets/imgs/sprite@2x/icon-cart.png");
-          @include retina-sprite($icon-cart-group);
-            height: 20px;
-            width: 20px;
+            //background: url("../../assets/imgs/sprite@2x/icon-cart.png");
+          //@include retina-sprite($icon-cart-group);
+            font-size: 22px;
+            //height: 20px;
+            //width: 20px;
             @include inlineblock;
             vertical-align: middle;
             margin-top: -3px;

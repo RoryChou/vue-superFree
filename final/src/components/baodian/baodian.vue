@@ -33,7 +33,8 @@
               </p>
             </div>
             <div class="bd-title-icon-container">
-              <i class="icon-bd-hearts"></i>
+             <!-- <i class="icon-bd-hearts"></i>-->
+              <i class="iconfont icon-bd-hearts">&#xe86f;</i>
               <p>
                 <span>点赞</span>
                 <b class="bd-hearts-num">4581</b>
@@ -257,6 +258,7 @@
 <style lang="scss">
   /*baodian.scss*/
   @import "../../assets/scss/var";
+  @import "../../assets/fonts/iconfont.css";
 
   body {
     b {
@@ -353,11 +355,13 @@
               width: 30px;
             }
             &.icon-bd-hearts {
-              background: url('../../assets/imgs/baodian/sprite/icon-hearts.png') no-repeat center;
+              //background: url('../../assets/imgs/baodian/sprite/icon-hearts.png') no-repeat center;
               height: 25px;
               width: 28px;
+              font-size: 28px;
+              color: #00cc66;
               &.active,&:hover {
-                background: url('../../assets/imgs/baodian/sprite/icon-hearts-choose.png') no-repeat center;
+                //background: url('../../assets/imgs/baodian/sprite/icon-hearts-choose.png') no-repeat center;
               }
             }
           }

@@ -38,7 +38,7 @@
           <div class="cart-section-money-total td">
             <i class="cart-section-money-total-title">套餐总价：</i>
             <i class="cart-section-money-total-num">
-              ¥<b>{{item.totalMoney}}</b>
+              ¥<b>{{sectionTotalMoney(item,itemIndex)}}</b>
             </i>
           </div>
         </div>
@@ -46,7 +46,9 @@
           <div class="cart-section-hotel-container">
             <div class="cart-section-pro-hotel" v-for="(detail,detailIndex) in item.hotelList">
               <div class="cart-section-pro-wrapper clearfix">
-                <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}" :class="{checked:detail.isChecked}"
+                <span class="icon-checkBox td"
+                      v-bind="{'data-checked':detail.isChecked}"
+                      :class="{checked:detail.isChecked}"
                       @click="selectDetail(detail,item,itemIndex)"></span>
                 <span class="icon-hotel td"></span>
                 <div class="hotel-date-container td">
@@ -522,7 +524,9 @@
 
     },
     watch: {},
-    computed: {},
+    computed: {
+
+    },
     filters: {
 
     },
@@ -566,7 +570,7 @@
           if(itemIndex !== -1){
             this.clearSection(itemIndex)
           }
-        this.sectionTotalMoney()
+        //this.sectionTotalMoney()
       },
       selectDetail: function (detail,item,itemIndex) {
         detail.isChecked = !detail.isChecked;
@@ -583,35 +587,36 @@
         }
         item.isChecked = flag;
 
-
         this.clearSection(itemIndex)
-        this.sectionTotalMoney()
+        //this.sectionTotalMoney()
 
       },
       //计算section总价
-      sectionTotalMoney:function () {
-
-          this.cartInfo.forEach(function (item) {
-            let totalMoney = 0;
-            for(let i in item){
-              if(typeof item[i] === "object"){
-                item[i].forEach(function (value) {
-                  if(value.isChecked){
-                    //判断是否为机票
-                    if(i === 'flightList') {
-                      for(let j in value){
-                        totalMoney += (value[j].proNum?value[j].proNum:0)*(value[j].singlePrice?value[j].singlePrice:0)
-                      }
-                    }else {
-                      totalMoney += value.proNum*value.singlePrice
-                    }
+      sectionTotalMoney:function (item) {
+        let totalMoney = 0;
+        for(let i in item){
+          if(typeof item[i] === "object"){
+            //判断是否是机票
+            if(i === 'flightList'){
+              item[i].forEach(function (value) {
+                for(let j in value){
+                  //判断是否勾选
+                  if(value[j].isChecked){
+                    totalMoney += value[j].proNum*value[j].singlePrice
                   }
-                })
-              }
+                }
+              })
+            }else {
+              item[i].forEach(function (value) {
+                //判断是否勾选
+                if(value.isChecked){
+                  totalMoney += value.proNum*value.singlePrice
+                }
+              })
             }
-            item.totalMoney = totalMoney;
-          })
-
+          }
+        }
+        return totalMoney;
       },
       //清除其他section
       clearSection:function (itemIndex) {

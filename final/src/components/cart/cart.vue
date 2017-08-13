@@ -75,7 +75,7 @@
                 </div>
                 <span class="pro-price-single td">¥{{detail.singlePrice}}</span>
                 <div class="select-container td">
-                  <select class="pro-num" name="" v-model="detail.proNum">
+                  <select class="pro-num" name="" v-model="detail.proNum" >
                     <option v-for="num in optionMax(detail.inventory,detail.proNum,detailIndex,itemIndex,'Hotel')">{{num}}</option>
                   </select>
                   <p class="pro-num-notice" v-show="detail.inventory-detail.oldHotelNum<0">库存不足{{detail.oldHotelNum}}份</p>
@@ -598,11 +598,14 @@
           if(typeof item[i] === "object"){
             //判断是否是机票
             if(i === 'flightList'){
+
               item[i].forEach(function (value) {
-                for(let j in value){
-                  //判断是否勾选
-                  if(value[j].isChecked){
-                    totalMoney += value[j].proNum*value[j].singlePrice
+                //判断是否勾选
+                if(value.isChecked){
+                  for(let j in value){
+                    if(typeof value[j] === 'object'){
+                      totalMoney += value[j].proNum*value[j].singlePrice
+                    }
                   }
                 }
               })

@@ -47,7 +47,7 @@
         }
         i {
             //background: url("../../assets/imgs/sprite@2x/icon-cart.png");
-          //@include retina-sprite($icon-cart-group);
+            //@include retina-sprite($icon-cart-group);
             font-size: 22px;
             //height: 20px;
             //width: 20px;

@@ -247,42 +247,6 @@
     #Feedback {
       bottom: 80px;
     }
-    .cart {
-      position: fixed;
-      display: block;
-      z-index: 20;
-      bottom: 20px;
-      right: 0px;
-      background: url("../../assets/imgs/list/hotel/sprite/bg-cart.png");
-      height: 46px;
-      line-height: 46px;
-      width: 140px;
-      text-align: center;
-      color: #fff;
-      font-size: 14px;
-      cursor: pointer;
-      .pro-num {
-        background: url("../../assets/imgs/list/hotel/sprite/icon-cart-num.png");
-        height: 26px;
-        line-height: 26px;
-        text-align: center;
-        width: 26px;
-        position: absolute;
-        top: -13px;
-        left: 0px;
-      }
-      i {
-        background: url("../../assets/imgs/list/hotel/sprite/icon-cart.png");
-        height: 20px;
-        width: 20px;
-        @include inlineblock;
-        vertical-align: middle;
-        margin-top: -3px;
-      }
-      &:hover {
-        background: url("../../assets/imgs/list/hotel/sprite/bg-cart-hover.png");
-      }
-    }
     .fix-top {
       position: fixed;
       top: 0;

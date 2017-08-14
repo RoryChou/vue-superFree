@@ -17,6 +17,7 @@
 
     <!--主要内容-->
     <div class="wrap">
+
       <div class="cart-num-container">
         <i class="icon-cart"></i>
         购物车
@@ -31,11 +32,26 @@
         <span class="title-operate td">操作</span>
       </div>
       <loading v-show="isShowLoading"></loading>
-      <div class="cart-section" v-bind="{id:idTransfer(item.sectionName)}" v-for="(item,itemIndex) in cartInfo">
+      <div class="cart-section"
+           v-bind="{id:idTransfer(item.sectionName)}"
+           v-for="(item,itemIndex) in cartInfo">
         <div class="cart-section-title">
-          <span class="icon-checkBox td" v-bind="{'data-checked':item.isChecked}" :class="{checked:item.isChecked}"
+          <span class="icon-checkBox td"
+                v-bind="{'data-checked':item.isChecked}"
+                :class="{checked:item.isChecked}"
                 @click="selectSection(item,itemIndex)"></span>
           <span class="cart-section-title-main td">{{item.sectionName}}</span>
+          <p class="cart-section-my-info" v-if="item.sectionName !== '自选单品'">
+            <span class="my-info-citys">
+              <b class="my-info-citys-from">{{item.fromCity}}</b>
+              -
+              <b class="my-info-citys-to">{{item.toCity}}</b>
+            </span>
+            <span class="my-info-days">{{item.spendDays}}</span>
+            <span class="my-info-date-start">
+                <b>{{item.startDate}}</b>出发
+            </span>
+          </p>
           <div class="cart-section-money-total td">
             <i class="cart-section-money-total-title">套餐总价：</i>
             <i class="cart-section-money-total-num">
@@ -45,7 +61,8 @@
         </div>
         <div class="cart-section-details">
           <div class="cart-section-hotel-container">
-            <div class="cart-section-pro-hotel" v-for="(detail,detailIndex) in proTypeFilter(item.proList,'hotel')">
+            <div class="cart-section-pro-hotel"
+                 v-for="(detail,detailIndex) in proTypeFilter(item.proList,'hotel')">
               <div class="cart-section-pro-wrapper clearfix">
                 <span class="icon-checkBox td"
                       v-bind="{'data-checked':detail.isChecked}"
@@ -55,13 +72,14 @@
                 <div class="hotel-date-container td">
                   <p class="hotel-date-start">
                     <span>{{detail.startDate}}</span>入住
-                                </p>
+                  </p>
                   <p class="hotel-date-end">
                     <span>{{detail.leaveDate}}</span>退房
-                                </p>
+                  </p>
                 </div>
                 <div class="hotel-info-container td">
-                  <p class="hotel-name" v-bind="{title:detail.hotelName}">{{detail.hotelName}}</p>
+                  <p class="hotel-name"
+                     v-bind="{title:detail.hotelName}">{{detail.hotelName}}</p>
                   <p class="hotel-stars">{{detail.hotelStars}}</p>
                 </div>
                 <div class="pro-details-container td">
@@ -72,51 +90,28 @@
                 </div>
                 <span class="pro-sevice td">{{detail.hotelServe}}</span>
                 <div class="pro-notice td">
-                  <span class="js-tips" v-bind="{'tip-content':detail.notice}">{{detail.notice}}</span>
+                  <span class="js-tips"
+                        v-bind="{'tip-content':detail.notice}">{{detail.notice}}</span>
                 </div>
                 <span class="pro-price-single td">¥{{detail.singlePrice}}</span>
                 <div class="select-container td">
-                  <select class="pro-num" name="" v-model="detail.proNum">
-                    <option v-for="num in optionMax(detail)">{{num}}</option>
+                  <select class="pro-num" name=""
+                          v-model="detail.proNum">
+                    <option
+                      v-for="num in optionMax(detail)">{{num}}</option>
                   </select>
-                  <p class="pro-num-notice" v-show="detail.inventory-detail.oldProNum<0">库存不足{{detail.oldProNum}}份</p>
+                  <p class="pro-num-notice"
+                     v-show="detail.inventory-detail.oldProNum<0">库存不足{{detail.oldProNum}}份</p>
                 </div>
 
                 <div class="pro-money td">
                   ¥<span>{{detail.singlePrice * detail.proNum}}</span>
                 </div>
                 <div class="pro-operations td">
-                  <p class="cart-delete">删除</p>
-                  <p class="cart-move">移入其他套餐</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart-section-ticket-container">
-            <div class="cart-section-pro-ticket" v-for="(detail,detailIndex) in proTypeFilter(item.proList,'ticket')">
-              <div class="cart-section-pro-wrapper clearfix">
-                <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}"
-                      :class="{checked:detail.isChecked}"
-                      @click="selectDetail(detail,item,itemIndex)"></span>
-                <span class="icon-ticket td"></span>
-                <p class="ticket-date td">{{detail.date}}</p>
-                <p class="ticket-name td">{{detail.viewName}}</p>
-                <div class="pro-notice td">
-                  <span class="js-tips" tip-content="不可退改!!!">{{detail.notice}}</span>
-                </div>
-                <span class="pro-price-single td">¥{{detail.singlePrice}}</span>
-                <div class="select-container td">
-                  <select class="pro-num" name="" v-model="detail.proNum">
-                    <option v-for="num in optionMax(detail)">{{num}}</option>
-                  </select>
-                  <p class="pro-num-notice" v-show="detail.inventory-detail.oldProNum<0">库存不足{{detail.oldProNum}}份</p>
-                </div>
-                <div class="pro-money td">
-                  ¥<span>{{detail.singlePrice * detail.proNum}}</span>
-                </div>
-                <div class="pro-operations td">
-                  <p class="cart-delete">删除</p>
-                  <p class="cart-move">移入其他套餐</p>
+                  <p class="cart-delete"
+                     @click="deletePro()">删除</p>
+                  <p class="cart-move"
+                     @click="proTransfer()">移入其他套餐</p>
                 </div>
               </div>
             </div>
@@ -182,8 +177,8 @@
                     ¥<span>{{detail.singlePrice * detail.proNum}}</span>
                   </div>
                   <div class="pro-operations td">
-                    <p class="cart-delete">删除</p>
-                    <p class="cart-move">移入其他套餐</p>
+                    <p class="cart-delete" @click="deletePro()">删除</p>
+                    <p class="cart-move"  @click="proTransfer()">移入其他套餐</p>
                   </div>
                 </div>
               </div>
@@ -238,17 +233,17 @@
                   </div>
                   <span class="pro-price-single td">¥{{detail.go.singlePrice}}</span>
                   <div class="select-container td">
-                    <select class="pro-num pro-num-flightGo" name="" v-model="detail.go.proNum">
-                      <option v-for="num in optionMax(detail.go)">{{num}}</option>
+                    <select class="pro-num pro-num-flightGo" name="" v-model="detail.proNum">
+                      <option v-for="num in optionMax(detail)">{{num}}</option>
                     </select>
-                    <p class="pro-num-notice" v-show="detail.go.inventory-detail.go.oldProNum<0">库存不足{{detail.go.oldProNum}}张</p>
+                    <p class="pro-num-notice" v-show="detail.go.inventory-detail.oldProNum<0">库存不足{{detail.oldProNum}}张</p>
                   </div>
                   <div class="pro-money td">
-                    ¥<span>{{detail.go.singlePrice * detail.go.proNum}}</span>
+                    ¥<span>{{detail.go.singlePrice * detail.proNum}}</span>
                   </div>
                   <div class="pro-operations td">
-                    <p class="cart-delete">删除</p>
-                    <p class="cart-move">移入其他套餐</p>
+                    <p class="cart-delete" @click="deletePro()">删除</p>
+                    <p class="cart-move" @click="proTransfer()">移入其他套餐</p>
                   </div>
                 </div>
                 <div class="section-pro-flight-block clearfix">
@@ -292,21 +287,50 @@
                   </div>
                   <span class="pro-price-single td">¥{{detail.return.singlePrice}}</span>
                   <div class="select-container td">
-                    <select class="pro-num pro-num-flightGo" name="" v-model="detail.return.proNum" disabled>
+                    <select class="pro-num pro-num-flightGo" name="" v-model="detail.proNum" disabled>
                       <option
-                        v-for="num in optionMax(detail.return)">{{num}}
+                        v-for="num in optionMax(detail)">{{num}}
                       </option>
                     </select>
-                    <p class="pro-num-notice" v-show="detail.return.inventory-detail.return.oldProNum<0">
-                      库存不足{{detail.return.oldProNum}}张</p>
+                    <p class="pro-num-notice" v-show="detail.return.inventory-detail.oldProNum<0">
+                      库存不足{{detail.oldProNum}}张</p>
                   </div>
                   <div class="pro-money td">
-                    ¥<span>{{detail.return.singlePrice * detail.return.proNum}}</span>
+                    ¥<span>{{detail.return.singlePrice * detail.proNum}}</span>
                   </div>
                   <div class="pro-operations td">
-                    <p class="cart-delete">删除</p>
-                    <p class="cart-move">移入其他套餐</p>
+                    <p class="cart-delete" @click="deletePro()">删除</p>
+                    <p class="cart-move" @click="proTransfer()">移入其他套餐</p>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-section-ticket-container">
+            <div class="cart-section-pro-ticket" v-for="(detail,detailIndex) in proTypeFilter(item.proList,'ticket')">
+              <div class="cart-section-pro-wrapper clearfix">
+                <span class="icon-checkBox td" v-bind="{'data-checked':detail.isChecked}"
+                      :class="{checked:detail.isChecked}"
+                      @click="selectDetail(detail,item,itemIndex)"></span>
+                <span class="icon-ticket td"></span>
+                <p class="ticket-date td">{{detail.date}}</p>
+                <p class="ticket-name td">{{detail.viewName}}</p>
+                <div class="pro-notice td">
+                  <span class="js-tips" tip-content="不可退改!!!">{{detail.notice}}</span>
+                </div>
+                <span class="pro-price-single td">¥{{detail.singlePrice}}</span>
+                <div class="select-container td">
+                  <select class="pro-num" name="" v-model="detail.proNum">
+                    <option v-for="num in optionMax(detail)">{{num}}</option>
+                  </select>
+                  <p class="pro-num-notice" v-show="detail.inventory-detail.oldProNum<0">库存不足{{detail.oldProNum}}份</p>
+                </div>
+                <div class="pro-money td">
+                  ¥<span>{{detail.singlePrice * detail.proNum}}</span>
+                </div>
+                <div class="pro-operations td">
+                  <p class="cart-delete" @click="deletePro()">删除</p>
+                  <p class="cart-move" @click="proTransfer()">移入其他套餐</p>
                 </div>
               </div>
             </div>
@@ -338,187 +362,60 @@
         </div>
         <div class="sft-bottom-bar-wrapper clearfix">
           <div class="bottom-bar-left clearfix">
-            <span class="cart-clear-all">清空购物车</span>
+            <span class="cart-clear-all" @click="clearCart()">清空购物车</span>
             <span class="cart-move">移入其他套餐</span>
             <span class="bottom-bar-clear">清除失效商品</span>
           </div>
-          <router-link to="form" class="bottom-bar-button">
+          <div class="bottom-bar-button"
+           @click="gotoForm()">
             立即预订
-
-
-
-          </router-link>
+          </div>
           <div class="bottom-bar-right">
             <p class="bottom-bar-right-top">
-              应付：<span>¥<b>5450</b></span>
+              应付：<span>¥<b>{{totalMoney-500>0?totalMoney-500:0}}</b></span>
             </p>
             <p class="bottom-bar-right-bottom">
                    <span class="money-total-old">
-                       订单总价：<b>¥</b><i>6000</i>
+                       订单总价：<b>¥</b><i>{{totalMoney}}</i>
                    </span>
               <span class="money-off">
-                       套餐立减：<b>¥</b><i>240</i>
+                       套餐立减：<b>¥</b><i>500</i>
                    </span>
             </p>
           </div>
-
         </div>
       </div>
     </div>
     <!--底部结算bar END-->
 
-    <!-- 查看退改签 -->
-    <div class="tgq-info">
-      <div class="tip-arrow"><em>◆</em><i>◆</i></div>
-      <p class="tgq-loading">
-        驴妈妈拼命加载中，请稍候...
-    </p>
-      <div class="tgq-info-part tgq-info-part-default">
-        <dl class="clearfix">
-          <dt>退票费</dt>
-          <dd>
-            <p class="clearfix"><i></i><span>取消座位时间计算手续费</span></p>
-            <p class="clearfix"><i></i><span>按照当前舱位票面价收取退票费</span></p>
-            <p class="clearfix"><i></i><span>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</span></p>
-          </dd>
-        </dl>
-        <dl class="clearfix">
-          <dt>签转费</dt>
-          <dd>
-            <p>可以改签</p>
-          </dd>
-        </dl>
-        <dl class="clearfix">
-          <dt>改期费</dt>
-          <dd><p>按照当前舱位票面价收取变更费</p>
-            <p>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</p></dd>
-        </dl>
-      </div>
-      <div class="tgq-info-part tgq-info-part-ac">
-        <dl class="clearfix">
-          <dt>成人退票手续费</dt>
-          <dd>
-            <p class="clearfix"><i></i><span>起飞前2小时内：200元/人</span></p>
-            <p class="clearfix"><i></i><span>起飞前2小时外：100元/人</span></p>
-            <p class="clearfix"><i></i><span>起飞后：260元/人</span></p>
-          </dd>
-        </dl>
-        <dl class="clearfix">
-          <dt>成人同舱改期<br>手续费</dt>
-          <dd>
-            <p class="clearfix"><i></i><span>起飞前2小时内：200元/人</span></p>
-            <p class="clearfix"><i></i><span>起飞前2小时外：免费</span></p>
-            <p class="clearfix"><i></i><span>起飞后：200元/人</span></p>
-          </dd>
-        </dl>
-        <dl class="clearfix">
-          <dt>退改详情</dt>
-          <dd><p>退票：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p>
-            <p>改签：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p></dd>
-        </dl>
-        <dl class="clearfix">
-          <dt>备注</dt>
-          <dd><p>备注文案</p></dd>
-        </dl>
-      </div>
-    </div>
-    <!-- 查看退改签 END-->
 
-    <!-- 查看机型 -->
-    <div class="plane-info">
-      <div class="tip-arrow"><em>◆</em><i>◆</i></div>
-      <div class="plane-info-title">
-        <span class="pi-plan">计划机型</span>
-        <span class="pi-name">机型名称</span>
-        <span class="pi-type">类型</span>
-        <span class="pi-min">最少座位数</span>
-        <span class="pi-max">最多座位数</span>
-      </div>
-      <div class="plane-info-detail">
-        <span class="pi-plan"></span>
-        <span class="pi-name"></span>
-        <span class="pi-type"></span>
-        <span class="pi-min"></span>
-        <span class="pi-max"></span>
-      </div>
-      <img class="plane-info-loading" src="http://pic.lvmama.com/img/new_v/ui_scrollLoading/loading.gif" alt="">
-    </div>
-    <!-- //plane-info结束 -->
+    <!--confirm弹窗-->
+    <alert class="alert-content"
+           v-bind:message='alertContent'></alert>
+    <!--confirm弹窗END-->
 
     <!--套餐弹出框-->
-    <div class="alert-combos-container">
+    <div class="alert-combos-container" >
       <ul>
-        <li class="combos-diy">
-          <p class="combos-main">自选单品</p>
-        </li>
-        <li class="combos-my-1">
-          <p class="combos-main">我的套餐1</p>
-          <p class="combos-details">
-                    <span class="combos-citys">
-                        <b class="combos-citys-from">上海</b>
-                        -
-                        <b class="combos-citys-to">厦门</b>
-                    </span>
-            <span class="combos-days">4天3晚</span>
+        <li v-for="item in cartInfo"
+            @click="combosTranfer(item.proList)">
+          <p class="combos-main">{{item.sectionName}}</p>
+          <p class="combos-details"
+             v-if="item.sectionName !== '自选单品'">
+            <span class="combos-citys">
+                <b class="combos-citys-from">{{item.fromCity}}</b>
+                -
+                <b class="combos-citys-to">{{item.toCity}}</b>
+            </span>
+            <span class="combos-days">{{item.spendDays}}</span>
             <span class="combos-date-start">
-                        <b>05月10日</b>出发
-                    </span>
-          </p>
-        </li>
-        <li class="combos-my-2">
-          <p class="combos-main">我的套餐2</p>
-          <p class="combos-details">
-                    <span class="combos-citys">
-                        <b class="combos-citys-from">上海</b>
-                        -
-                        <b class="combos-citys-to">厦门</b>
-                    </span>
-            <span class="combos-days">4天3晚</span>
-            <span class="combos-date-start">
-                        <b>05月10日</b>出发
-                    </span>
-          </p>
-        </li>
-        <li class="combos-my-3">
-          <p class="combos-main">我的套餐3</p>
-          <p class="combos-details">
-                    <span class="combos-citys">
-                        <b class="combos-citys-from">上海</b>
-                        -
-                        <b class="combos-citys-to">厦门</b>
-                    </span>
-            <span class="combos-days">4天3晚</span>
-            <span class="combos-date-start">
-                        <b>05月10日</b>出发
-                    </span>
-          </p>
-        </li>
-        <li class="combos-my-4">
-          <p class="combos-main">我的套餐4</p>
-          <p class="combos-details">
-                    <span class="combos-citys">
-                        <b class="combos-citys-from">上海</b>
-                        -
-                        <b class="combos-citys-to">厦门</b>
-                    </span>
-            <span class="combos-days">4天3晚</span>
-            <span class="combos-date-start">
-                        <b>05月10日</b>出发
-                    </span>
+                <b>{{item.startDate}}</b>出发
+            </span>
           </p>
         </li>
       </ul>
     </div>
     <!--套餐弹出框 END-->
-
-    <!--移入套餐失败toast-->
-    <div class="alert-move-fail alert-toast">
-      <div class="icon-lv-container">
-        <i class="icon-lv-fail"></i>
-      </div>
-      <p>移入失败，请重新移入哦~</p>
-    </div>
-    <!--移入套餐失败toast END-->
 
     <!--无勾选toast-->
     <div class="alert-choose-none alert-toast">
@@ -528,61 +425,25 @@
       <p>请选择商品哦~</p>
     </div>
     <!--无勾选toast END-->
-
-    <!--只能买一个套餐toast-->
-    <div class="alert-only alert-toast">
-      <div class="icon-lv-container">
-        <i class="icon-lv-notice"></i>
-      </div>
-      <p>一次只能购买 1 个套餐哦，请分开下单吧~</p>
-    </div>
-    <!--只能买一个套餐toast END-->
-
-    <!--行程冲突toast-->
-    <div class="alert-conflict alert-toast">
-      <div class="icon-lv-container">
-        <i class="icon-lv-notice"></i>
-      </div>
-      <p>您购买的行程不同，请分开下单吧</p>
-    </div>
-    <!--行程冲突toast END-->
-
-    <!--删除alert-->
-    <div class="alert-delete-content alert-content">
-      <span class="icon-notice"></span>
-      <span class="icon-words">删除该商品则无套餐组合优惠了，你确定要删除该商品吗？</span>
-    </div>
-    <!--删除alert END-->
-
-    <!--清除失效alert-->
-    <div class="alert-clear-content alert-content">
-      <span class="icon-notice"></span>
-      <span class="icon-words">您确定要清除所有失效商品吗？</span>
-    </div>
-    <!--清除失效alert END-->
-
-    <!--产品数量不足alert-->
-    <div class="alert-num-notEnough alert-content">
-      <span class="icon-notice"></span>
-      <span class="icon-words">
-            我的套餐<b>1</b>中航班<i>HNBS</i>数量只能预订<em>2</em>张，<i>XX</i>酒店只剩<em>2</em>间,<i>XX</i>门票只剩<em>2</em>张您确认要继续预订吗？
-        </span>
-    </div>
-    <!--产品数量不足alert END-->
   </div>
 </template>
 <script>
   import axois from 'axios';
   import jsonp from 'jsonp';
   import Loading from '../loading';
+  import Alert from './alert-confirm.vue';
   export default {
     name: 'cartPage',
-    components: {Loading},
+    components: {Loading,Alert},
     data: function () {
       return {
         cartInfo: [],
+        currentSectionName:'',
         totalSecNum: 0,
-        isShowLoading: true
+        isShowLoading: true,
+        alertContent:'',
+        novaDialogCombos: null,
+        proTranferElem: null,
       }
     },
     created: function () {
@@ -597,15 +458,25 @@
         }, function (error) {
           console.log('error', error)
         })
-
     },
     mounted: function () {
-      //this.totalProNumCalc();
-
+      var vm = this;
+      $(document).on('click','.alert-combos-container li',function () {
+        vm.novaDialogCombos.close()
+      });
+      /*$('.alert-combos-container li').click(function () {
+          vm.novaDialogCombos.close()
+      })*/
     },
     watch: {},
     computed: {
-
+      totalMoney: function () {
+          let totalMoney = 0;
+        this.cartInfo.forEach(function (value) {
+          totalMoney += value.totalMoney
+        });
+        return totalMoney;
+      }
     },
     filters: {},
     methods: {
@@ -615,7 +486,6 @@
       },
       //注册所有checkbox
       registerProperty: function () {
-
         let vm = this;
         vm.cartInfo.forEach(function (value) {
           vm.$set(value, 'totalMoney', 0);
@@ -624,13 +494,16 @@
             vm.$set(proValue, 'isChecked', false);
             if (proValue.proType === 'flightCombo') {
               let singlePrice = proValue.go.singlePrice + proValue.return.singlePrice;
-              let proNum = proValue.go.proNum<proValue.return.proNum?proValue.go.proNum:proValue.return.proNum;
+              //let proNum = proValue.go.proNum<proValue.return.proNum?proValue.go.proNum:proValue.return.proNum;
+              let inventory = proValue.go.inventory<proValue.return.inventory?proValue.go.inventory:proValue.return.inventory;
               vm.$set(proValue, 'singlePrice', singlePrice);
-              vm.$set(proValue, 'proNum', proNum);
+              //vm.$set(proValue, 'proNum', proNum);
+              vm.$set(proValue, 'inventory', inventory);
             }
           });
         })
       },
+      //筛选产品类型,处理原始数据
       proTypeFilter: function (proList, type) {
         let arr = [];
         proList.forEach(function (value) {
@@ -640,6 +513,7 @@
         });
         return arr;
       },
+      //勾选套餐
       selectSection: function (item, itemIndex, move) {
         if (move === undefined) {
           item.isChecked = !item.isChecked;
@@ -652,14 +526,16 @@
         });
 
         if (itemIndex !== -1) {
-          this.clearSection(itemIndex)
+          this.clearSection(item,itemIndex)
         }
       },
+      //勾选产品
       selectDetail: function (detail, item, itemIndex) {
         detail.isChecked = !detail.isChecked;
         this.checkSectionSelect(item);
-        this.clearSection(itemIndex)
+        this.clearSection(item,itemIndex)
       },
+      //检车是否触发套餐的勾选
       checkSectionSelect: function (item) { //判断是否触发全选
         let flag = true;
         item.proList.forEach(function (value) {
@@ -671,9 +547,12 @@
       },
       //计算section总价
       sectionTotalMoney: function (item) {
-
         let totalMoney = 0;
+        //处理flightCombo的数据
         item.proList.forEach(function (value) {
+          /*if (value.proType === 'flightCombo') {
+            value.proNum = value.go.proNum<value.return.proNum?value.go.proNum:value.return.proNum;
+          }*/
           if (value.isChecked) {
             totalMoney += value.proNum * value.singlePrice;
           }
@@ -682,8 +561,9 @@
         return item.totalMoney;
       },
       //清除其他section
-      clearSection: function (itemIndex) {
+      clearSection: function (item,itemIndex) {
         let vm = this;
+        this.currentSectionName = item.sectionName;
         this.cartInfo.forEach(function (value, index) {
           if (index !== itemIndex) {
             value.isChecked = false;
@@ -691,6 +571,7 @@
           }
         })
       },
+      //sectionName转化为ID
       idTransfer: function (name) {
         if (name === '自选单品') {
           return 'combos-diy'
@@ -699,6 +580,7 @@
           return id
         }
       },
+      //处理商品数量与库存
       optionMax: function (detail) {
         let inventory = detail.inventory;
         let num = detail.proNum;
@@ -711,6 +593,71 @@
           detail.proNum = inventory;
         }
         return res;
+      },
+      //删除单个商品
+      deletePro: function () {
+        let vm = this;
+        //弹出确认窗口
+        this.alertContent = '删除该商品则无套餐组合优惠了，你确定要删除该商品吗？';
+        this.$nextTick(function () {
+          vm.initNovaDialogConfirm(vm.deleteProCallback);
+        })
+      },
+      deleteProCallback:function () {
+        //TODO
+        alert('商品已删除');
+      },
+      //清空购物车
+      clearCart: function () {
+        let vm = this;
+        //弹出确认窗口
+        this.alertContent = '你确定要清空购物车吗？';
+        this.$nextTick(function () {
+          vm.initNovaDialogConfirm(vm.clearCartCallback);
+        })
+      },
+      clearCartCallback:function () {
+        //TODO
+        alert('购物车已清空');
+      },
+      initNovaDialogConfirm: function (okCallback) {
+        nova.dialog({
+          title: null,  //标题
+          content: $('.alert-content'),
+          okCallback: okCallback,
+          cancelCallback: true
+        });
+      },
+      //移入其他套餐
+      proTransfer: function (detail) {
+        let vm = this;
+        this.proTranferElem = detail;
+        vm.novaDialogCombos = nova.dialog({
+          title: '选择要移入的套餐',
+          wrapClass: "alert-combos-wrapper",
+          content: $(".alert-combos-container"),
+          width: 479,
+          height: 416
+        });
+      },
+      combosTranfer: function (prolist) {
+          //TODO
+      },
+      //点击立即预订
+      gotoForm: function () {
+        if(this.totalMoney === 0){
+          //弹出提示框
+          nova.dialog({
+            title: null,  //标题
+            wrapClass: "alert-combos-wrapper",
+            time: 1500,  //定时关闭 单位毫秒(ms)
+            content: $('.alert-choose-none'),
+            width: 421,
+            height: 168
+          });
+        }else {
+          this.$router.push({ name: 'form', params: { comboName: this.currentSectionName }})
+        }
       }
     }
   }
@@ -973,6 +920,19 @@
             font-size: 20px;
             font-weight: 600;
           }
+        }
+      }
+      .cart-section-my-info {
+        float: left;
+        font-size:14px;
+        color:#666666;
+        font-weight: 600;
+        margin-left: 10px;
+        span {
+          margin-right: 4px;
+        }
+        b {
+          font-weight: 600;
         }
       }
     }

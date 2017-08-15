@@ -55,6 +55,7 @@
 
 <style>
   @import "http://pic.lvmama.com/styles/v6/public/common_box.css";
+  @import "http://pic.lvmama.com/styles/v5/modules/tip.css";
 </style>
 
 <!--baodian.scss-->
@@ -293,7 +294,7 @@
       }
     }
     .change-box {
-      display: none;
+      //display: none;
       margin-bottom: -8px;
       margin-top: 8px;
       .section-input {
@@ -352,7 +353,7 @@
       }
       .error-box {
         position: absolute;
-        display: none;
+        //display: none;
         top: -4px;
         left: 256px;
         background:#ffffff;
@@ -443,7 +444,7 @@
       margin-right: 0;
     }
     .drop-suggestion-citys {
-      display: none;
+      //display: none;
       position: absolute;
       border: 1px solid #ccc\9;
       box-shadow: 0px 2px 4px #999;

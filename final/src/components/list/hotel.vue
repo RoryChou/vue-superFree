@@ -1601,7 +1601,7 @@
 </template>
 <script>
   import ListTop from './list-top.vue';
-  import Cart from '../home/cart.vue';
+  import Cart from '../cart.vue';
   export default {
       name: 'hotel',
     components: {ListTop,Cart}

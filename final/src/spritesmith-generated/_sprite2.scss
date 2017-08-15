@@ -18,13 +18,13 @@ $icon-arrow-width: 11px;
 $icon-arrow-height: 6px;
 $icon-arrow-total-width: 11px;
 $icon-arrow-total-height: 6px;
-$icon-arrow-image: '../../spritesmith-generated/sprite.png';
-$icon-arrow: (0px, 0px, 0px, 0px, 11px, 6px, 11px, 6px, '../../spritesmith-generated/sprite.png', 'icon-arrow', );
+$icon-arrow-image: '../spritesmith-generated/sprite.png';
+$icon-arrow: (0px, 0px, 0px, 0px, 11px, 6px, 11px, 6px, '../spritesmith-generated/sprite.png', 'icon-arrow', );
 $spritesheet-width: 11px;
 $spritesheet-height: 6px;
-$spritesheet-image: '../../spritesmith-generated/sprite.png';
+$spritesheet-image: '../spritesmith-generated/sprite.png';
 $spritesheet-sprites: ($icon-arrow, );
-$spritesheet: (11px, 6px, '../../spritesmith-generated/sprite.png', $spritesheet-sprites, );
+$spritesheet: (11px, 6px, '../spritesmith-generated/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

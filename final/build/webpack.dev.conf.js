@@ -32,7 +32,7 @@ module.exports = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
-    new FriendlyErrorsPlugin(),
+    new FriendlyErrorsPlugin()/*,
     new SpritesmithPlugin({
       src: {
         cwd: path.resolve(__dirname, '../src/assets/imgs/sprite'),
@@ -59,6 +59,6 @@ module.exports = merge(baseWebpackConfig, {
         cssImageRef: "../../spritesmith-generated/sprite.png"
       },
       retina:  '@2x'
-    })
+    })*/
   ]
 })

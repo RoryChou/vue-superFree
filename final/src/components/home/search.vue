@@ -328,7 +328,7 @@
         </a>
       </div>
     </div>
-    <cart></cart>
+    <cart v-bind:cartNum="cartNum"></cart>
     <history></history>
     <hot-citys></hot-citys>
   </div>
@@ -339,7 +339,7 @@
     import jsonp from 'jsonp'
     import History from './history.vue'
     import SearchTitle from './search-title.vue'
-    import Cart from './cart.vue'
+    import Cart from '../cart.vue'
     import HotCitys from './hot-citys.vue'
     export default {
         name: 'search',
@@ -401,8 +401,16 @@
                 keywordsBoxStyle: {
                     top: '0',
                     left: '0'
-                }
+                },
+                cartNum:0
             }
+        },
+        created: function () {
+          var vm = this;
+          axios.get('static/data/cart.json')
+            .then(function (res) {
+              vm.cartNum = res.data.proNum
+            })
         },
         mounted: function () {
             const vm = this;
@@ -864,8 +872,6 @@
                     }
                     if (!this.isComboError&&name) {
                         this.$router.push({ name: 'combo', params: { currentSec: 'combo'}})
-                      //发送搜索信息到后台
-                      //store.$emit('currentSec','combo')
                     }
                 }else if(this.currentLi === 'flight'){
                     if (this.flightFromContent === '') {

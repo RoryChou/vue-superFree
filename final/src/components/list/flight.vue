@@ -875,10 +875,24 @@
 <script>
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
-  import Cart from '../home/cart.vue';
+  import Cart from '../cart.vue';
   export default {
     name: 'flight',
-    components: {ListTop,ListBottom,Cart}
+    components: {ListTop,ListBottom,Cart},
+    data: function () {
+      return {
+        isFlightDouble: false,
+        flightFromContent: '上海',
+        flightToContent: '',
+        flightType: 'single',
+        flightFromDate: '',
+        flightToDate: '',
+        isFlightError: false,
+        isErrorFlightFrom: false,
+        isErrorFlightTo: false,
+        calendarFlightReturn: null,
+      }
+    }
   }
 </script>
 <style >

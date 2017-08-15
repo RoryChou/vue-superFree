@@ -97,14 +97,12 @@
               <div class="order-details-header">
 
                 <h1 class="detail_product_tit clearfix">
-                  <b>我的套餐1</b>
+                  <b>{{comboName}}</b>
                   <p>上海－厦门 4天3晚 自由行（05月01日出发）上海厦门4天3晚自由行上海厦门4天3晚自由行日出发自由行日自由行日</p>
                   <a href="#">返回购物车</a>
                 </h1>
               </div>
               <div class="order-details-body">
-
-
                 <!-- 酒店 -->
                 <dl class="order-product-dl">
                   <dt><span class="order-icon order-icon-hotel"></span>酒店</dt>
@@ -1835,7 +1833,18 @@
 </template>
 <script>
   export default {
-      name: 'form'
+      name: 'form',
+    data: function () {
+      return {
+        comboName:''
+      }
+    },
+    created: function () {
+      this.comboName = this.$route.params.comboName
+    },
+    mounted: function () {
+      window.scrollTo(0,0)
+    }
   }
 </script>
 <style>

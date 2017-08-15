@@ -48,6 +48,110 @@ import SearchTitle from './search-title.vue' //此处的SearchTitle就不能乱�
         return item.totalMoney;
       }
 ```
+##12.在生命周期中调用方法时，内部的响应式数据是无效的，即：响应式数据更新的两个必要条件：1.使用响应式数据2.在触发视图更新的方法中使用
+```js
+//在这种条件下调用方法是不好的，无法触发内部的更新
+created: function () {
+      let vm = this;
+      axois.get('static/data/cart_info_new.json')
+        .then(function (res) {
+          vm.cartInfo = res.data.mainInfo;
+          vm.totalProNumCalc();
+          vm.isShowLoading = false;
+          //注册所有checkbox属性,totalMoney属性
+          vm.registerProperty()
+        }, function (error) {
+          console.log('error', error)
+        })
+
+    },
+methods: {
+    //注册所有checkbox
+    registerProperty: function () {
+      let vm = this;
+      vm.cartInfo.forEach(function (value) {
+        vm.$set(value, 'totalMoney', 0);
+        vm.$set(value, 'isChecked', false);
+        value.proList.forEach(function (proValue) {
+          vm.$set(proValue, 'isChecked', false);
+          if (proValue.proType === 'flightCombo') {
+            let singlePrice = proValue.go.singlePrice + proValue.return.singlePrice;
+            let proNum = proValue.go.proNum<proValue.return.proNum?proValue.go.proNum:proValue.return.proNum;
+            vm.$set(proValue, 'singlePrice', singlePrice);
+            vm.$set(proValue, 'proNum', proNum);
+          }
+        });
+      })
+    }
+}
+//需要显式调用
+//<b>{{sectionTotalMoney(item, itemIndex)}}</b>
+methods:{
+    //计算section总价
+    sectionTotalMoney: function (item) {
+      let totalMoney = 0;
+      //处理flightCombo的数据
+
+      item.proList.forEach(function (value) {
+        if (value.proType === 'flightCombo') {
+          value.proNum = value.go.proNum<value.return.proNum?value.go.proNum:value.return.proNum;
+        }
+        if (value.isChecked) {
+          totalMoney += value.proNum * value.singlePrice;
+        }
+      });
+      item.totalMoney = totalMoney;
+      return item.totalMoney;
+    }
+}
+```
+##13.在引入组件的时候，一定要写清楚相对路径
+```js
+//不好，会当做npm组件
+import Alert from 'alert.vue';
+//好,会寻找本地组件
+import Alert from './alert.vue';
+```
+##14.Vue 异步执行 DOM 更新
+```js
+//dom异步更新，获取的元素尚未发生改变
+deletePro: function () {
+  //弹出确认窗口
+  this.alertContent = '删除该商品则无套餐组合优惠了，你确定要删除该商品吗？';
+  nova.dialog({
+    title: null,  //标题
+    content: $('.test'),
+    okCallback: function () {
+      alert(6666)
+    },
+    cancelCallback: true
+  });
+}
+
+//使用nextTick或者setTimeout都可以强制dom更新
+deletePro: function () {
+  //弹出确认窗口
+  this.alertContent = '删除该商品则无套餐组合优惠了，你确定要删除该商品吗？';
+  this.$nextTick(function () {
+    nova.dialog({
+      title: null,  //标题
+      content: $('.test'),
+      okCallback: function () {
+        alert(6666)
+      },
+      cancelCallback: true
+    });
+  })
+}
+```
+##15.nova.dialog使用的content是复制过去的，然而复制过去的时候并没有复制到上面的事件。
+##16.vue-router的命名很诡异
+```js
+//跳转前页面
+this.$router
+//跳转后页面
+this.$route
+```
 #三.html
 ##1.模板中的自定义属性的值必须是字符串否侧报错
 ##2.v-bind当中的不能使用filter，可以使用method代替
@@ -62,7 +166,7 @@ import SearchTitle from './search-title.vue' //此处的SearchTitle就不能乱�
 ```html
  <option v-for="num in optionMax(detail.inventory)" v-bind="{selected:(num === detail.hotelNum)}">{{num}}</option>
 ```
-
+##5.input上绑定keydown事件貌似可以省事
 
 #四.tool
 ##1.雪碧图当中的2x图片，目前有个小问题，就是所有的一倍图都要有对应的二倍图，且尺寸不能错，否则会报错

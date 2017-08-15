@@ -49,7 +49,7 @@
               </div>
               </div>
             </div>
-            <div class="change-box clearfix">
+            <!--<div class="change-box clearfix">
               <div class="city">
                 <i class="icon"></i>
                 <div class="input-wrapper">
@@ -74,14 +74,14 @@
                       <i class="error-icon"></i>
                       <p>总人数不能超过9人哦！</p>
                     </div>
-                    <!--<div class="error-box error-box-bottom">
+                    &lt;!&ndash;<div class="error-box error-box-bottom">
                         <div class="tip-arrow tip-arrow-top">
                             <em>◆</em>
                             <i>◆</i>
                         </div>
                         <i class="error-icon"></i>
                         <p>总人数不能超过9人哦！</p>
-                    </div>-->
+                    </div>&ndash;&gt;
                   </div>
                   <div class="flight-to section-input search-city">
                     <div class="search-contents-title">目的地</div>
@@ -237,7 +237,7 @@
                 </div>
               </div>
             </div>
-            <ul class="drop-complete"></ul>
+            <ul class="drop-complete"></ul>-->
           </div>
         </div>
 
@@ -875,10 +875,24 @@
 <script>
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
-  import Cart from '../home/cart.vue';
+  import Cart from '../cart.vue';
   export default {
     name: 'flight',
-    components: {ListTop,ListBottom,Cart}
+    components: {ListTop,ListBottom,Cart},
+    data: function () {
+      return {
+        isFlightDouble: false,
+        flightFromContent: '上海',
+        flightToContent: '',
+        flightType: 'single',
+        flightFromDate: '',
+        flightToDate: '',
+        isFlightError: false,
+        isErrorFlightFrom: false,
+        isErrorFlightTo: false,
+        calendarFlightReturn: null,
+      }
+    }
   }
 </script>
 <style >

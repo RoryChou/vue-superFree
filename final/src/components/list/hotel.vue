@@ -1554,28 +1554,7 @@
 
         </div>
 
-        <!-- 点击加载更多 -->
-        <div class="click-more">
-          点击查看更多酒店
-      </div>
-        <!-- 点击加载更多END -->
-
-        <!--到底了-->
-        <div class="nomore">
-          <span>已经到底了哦~</span>
-        </div>
-        <!--到底了END-->
-
-
-        <!-- 搜索无结果 -->
-        <div class="noresult">
-          <span class="hlIcon hlIcon-warning"></span>
-          <div class="noresult-content">
-            <h3 class="noresult-title">抱歉，没有找到符合条件的酒店</h3>
-            <p class="noresult-explain">您可以调整行程或筛选条件后重新搜索试试哦~</p>
-          </div>
-        </div>
-        <!-- 搜索无结果 结束 -->
+        <list-bottom v-bind:content="emptyContent"></list-bottom>
 
       </div><!-- //mainLeft 左侧结束-->
 
@@ -1596,15 +1575,32 @@
     <!-- 列表开始 END-->
 
 
-    <cart></cart>
+    <cart v-bind:cartNum="cartNum"></cart>
   </div>
 </template>
 <script>
   import ListTop from './list-top.vue';
+  import ListBottom from './list-bottom.vue';
   import Cart from '../cart.vue';
+  import axios from 'axios'
   export default {
       name: 'hotel',
-    components: {ListTop,Cart}
+    components: {ListTop,ListBottom,Cart},
+    data: function () {
+      return {
+        cartNum:0,
+        emptyContent: '酒店'
+      }
+    },
+    created: function () {
+      var vm = this;
+
+      //获取购物车数据
+      axios.get('static/data/cart.json')
+        .then(function (res) {
+          vm.cartNum = res.data.proNum
+        })
+    }
   }
 </script>
 <style >

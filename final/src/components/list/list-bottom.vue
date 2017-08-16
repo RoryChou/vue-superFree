@@ -2,7 +2,7 @@
   <div>
     <!-- 点击加载更多 -->
     <div class="click-more" v-if="currentList !== 'hotel'">
-      点击查看更多套餐
+      点击查看更多{{content}}
     </div>
     <!-- 点击加载更多END -->
 
@@ -16,7 +16,7 @@
     <div class="noresult" v-if="currentList !== 'hotel'">
       <span class="hlIcon hlIcon-warning"></span>
       <div class="noresult-content">
-        <h3 class="noresult-title">抱歉，没有找到符合条件的套餐</h3>
+        <h3 class="noresult-title">抱歉，没有找到符合条件的{{content}}</h3>
         <p class="noresult-explain">您可以调整行程或筛选条件后重新搜索试试哦~</p>
       </div>
     </div>
@@ -30,7 +30,8 @@
       return {
         currentList: 'combo'
       }
-    }
+    },
+    props:['content']
   }
 </script>
 <style lang="scss">

@@ -9,7 +9,7 @@
       name: 'loading'
   }
 </script>
-<style>
+<style scoped>
   .loading_box {
     height: 46px;
     padding: 30px 0;

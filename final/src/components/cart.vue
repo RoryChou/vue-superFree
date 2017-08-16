@@ -11,7 +11,7 @@
       props:['cartNum']
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../assets/scss/_var.scss";
     @import "../spritesmith-generated/_sprite.scss";
     @import "../assets/fonts/iconfont.css";

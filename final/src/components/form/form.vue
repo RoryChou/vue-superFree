@@ -1847,7 +1847,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   @import "http://pic.lvmama.com/styles/order/abroad/freetour/order-abroad-freetour.css";
 </style>
 <style lang="scss">

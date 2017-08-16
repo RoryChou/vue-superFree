@@ -826,7 +826,7 @@
     </div>
     <!--商品列表END-->
 
-    <list-bottom></list-bottom>
+    <list-bottom v-bind:content="emptyContent"></list-bottom>
 
     <cart v-bind:cartNum="cartNum"></cart>
 
@@ -854,6 +854,7 @@
         comboAdultNum: 2,
         comboKidsNum: 1,
         cartNum:0,
+        isFlightDouble: false,
         isShowChangeBox: false,
         currentSuggestBox: '',
         currentCompleteBox: '',
@@ -895,6 +896,7 @@
           top: '0',
           left: '0'
         },
+        emptyContent: '套餐'
       }
     },
     created: function () {

@@ -867,15 +867,16 @@
     <!-- 列表开始 END-->
 
 
-    <list-bottom></list-bottom>
+    <list-bottom v-bind:content="emptyContent"></list-bottom>
 
-    <cart></cart>
+    <cart v-bind:cartNum="cartNum"></cart>
   </div>
 </template>
 <script>
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
   import Cart from '../cart.vue';
+  import axios from 'axios'
   export default {
     name: 'flight',
     components: {ListTop,ListBottom,Cart},
@@ -891,7 +892,18 @@
         isErrorFlightFrom: false,
         isErrorFlightTo: false,
         calendarFlightReturn: null,
+        cartNum:0,
+        emptyContent: '航班'
       }
+    },
+    created: function () {
+      var vm = this;
+
+      //获取购物车数据
+      axios.get('static/data/cart.json')
+        .then(function (res) {
+          vm.cartNum = res.data.proNum
+        })
     }
   }
 </script>

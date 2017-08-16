@@ -388,6 +388,8 @@
     </div>
     <!--底部结算bar END-->
 
+<<<<<<< HEAD
+=======
 
     <!--confirm弹窗-->
     <alert class="alert-content"
@@ -425,6 +427,7 @@
       <p>请选择商品哦~</p>
     </div>
     <!--无勾选toast END-->
+>>>>>>> 9184f40910bfe9e31828eb8bf9a3743055e0bbee
   </div>
 </template>
 <script>

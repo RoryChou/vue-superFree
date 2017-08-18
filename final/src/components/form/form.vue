@@ -98,8 +98,8 @@
 
                 <h1 class="detail_product_tit clearfix">
                   <b>{{comboName}}</b>
-                  <p>上海－厦门 4天3晚 自由行（05月01日出发）上海厦门4天3晚自由行上海厦门4天3晚自由行日出发自由行日自由行日</p>
-                  <a href="#">返回购物车</a>
+                  <p>上海－厦门 4天3晚 自由行（05月01日出发）上海厦门4天3晚自由行上海厦门4天3晚自由行日出发自由行日自由行日{{proId}}</p>
+                  <router-link to="cart">返回购物车</router-link>
                 </h1>
               </div>
               <div class="order-details-body">
@@ -1836,11 +1836,13 @@
       name: 'form',
     data: function () {
       return {
-        comboName:''
+        comboName:'',
+        proId:0
       }
     },
     created: function () {
-      this.comboName = this.$route.params.comboName
+      this.comboName = this.$route.params.comboName;
+      this.proId = this.$route.params.proId;
     },
     mounted: function () {
       window.scrollTo(0,0)

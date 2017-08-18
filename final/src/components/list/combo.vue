@@ -309,7 +309,7 @@
       </div>
       <!-- 列表开始 -->
       <div class="main-list">
-        <div class="list-prod clearfix">
+        <div class="list-prod clearfix" v-bind="{}">
           <div class="list-left">
             <div class="list-title">
               <div class="list-left-wrapper clearfix">
@@ -368,11 +368,9 @@
 
 
                   </div>
-                  <div class="btn-add-cart btn-add-cart-new">
-                    <i></i>
-                    加入购物车
-
-
+                  <div class="btn-add-cart btn-add-cart-new"
+                       @click="addToCart()">
+                    <i></i>加入购物车
                   </div>
                 </div>
               </div>
@@ -815,7 +813,8 @@
             </p>
             </div>
             <div class="list-right-btns">
-              <a href="#" class="btn btn-lg btn-orange btn-buy">立即预定</a>
+              <a href="#" class="btn btn-lg btn-orange btn-buy"
+                 @click="butNow()">立即预定</a>
               <a href="#" class="btn btn-lg btn-add-cart">加入购物车</a>
               <!--<a href="#" class="btn btn-lg btn-add-cart-already">已加入购物车</a>-->
             </div>
@@ -839,6 +838,7 @@
   import Cart from '../cart.vue';
   import axios from 'axios'
   import jsonp from 'jsonp'
+  import {storage} from '../../assets/js/utils.js'
   export default {
     name: 'combo',
     components: {ListTop,ListBottom,Cart},
@@ -896,12 +896,14 @@
           top: '0',
           left: '0'
         },
-        emptyContent: '套餐'
+        emptyContent: '套餐',
+        proId:1
       }
     },
     created: function () {
       var vm = this;
       //获取搜索数据
+      //FIXME 这里应该使用路由的参数
       this.getDataSearch();
 
       //获取购物车数据
@@ -1347,28 +1349,52 @@
           this.isComboError = true;
         }
         if (!this.isComboError&&name) {
-          //this.$router.push({ name: 'combo', params: { currentSec: 'combo'}})
-          alert('combo pass')
+          //set localstorage
+          let comboObj = {
+            currentSec: 'combo',
+            fromCity: this.comboFromContent,
+            toCity: this.comboToContent,
+            fromDate: this.comboFromDate,
+            toDate: this.comboToDate,
+            days: this.comboDays,
+            adultNum: this.comboAdultNum,
+            kidsNum: this.comboKidsNum
+          };
+          storage('searchCombo','set',comboObj);
+          //TODO
+          this.isShowChangeBox = false;
         }
       },
       cancelChange: function () {
         //回到defaultbox，重新拉取数据
-        this.isShowChangeBox = !this.isShowChangeBox
+        this.isShowChangeBox = !this.isShowChangeBox;
         this.getDataSearch();
       },
       getDataSearch: function () {
-        var vm = this;
-        axios.get('static/data/search-result.json')
-          .then(function (res) {
-              let comboData = res.data.comboData
-            vm.comboFromContent = comboData.fromCity;
-            vm.comboToContent = comboData.toCity;
-            vm.comboFromDate = comboData.fromDate;
-            vm.comboDateToStr = comboData.toDate;
-            vm.comboDays = comboData.days;
-            vm.comboAdultNum = comboData.adultNum;
-            vm.comboKidsNum = comboData.kidsNum;
-          });
+        //从localstorage中获取参数
+        let obj = storage('searchCombo','get');
+        this.comboFromContent = obj.fromCity;
+        this.comboToContent = obj.toCity;
+        this.comboFromDate = obj.fromDate;
+        this.comboDateToStr = obj.toDate;
+        this.comboDays = obj.days;
+        this.comboAdultNum = obj.adultNum;
+        this.comboKidsNum = obj.kidsNum;
+      },
+      //点击立即购买
+      butNow: function () {
+        //携带参数跳转填单页
+        let vm = this;
+        this.$router.push({
+          name:'form',
+          params:{
+            proId: vm.proId
+          }
+        })
+      },
+      //点击加入购物车
+      addToCart: function () {
+
       }
     }
 

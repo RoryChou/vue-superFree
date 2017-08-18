@@ -53,7 +53,7 @@
           </div>
           <div class="combo-days section-input">
             <div class="search-contents-title">游玩天数</div>
-            <div class="search-contents-info">{{comboFromDate | returnDateCalc(comboDays)}}</div>
+            <div class="search-contents-info">{{returnDateCalc(comboFromDate,comboDays)}}</div>
             <div class="num-minus"
                  @click="numCalc(-1,1,20) " :class="{disabled:parseInt(comboDays)===1}"></div>
             <div class="num-add"
@@ -357,6 +357,7 @@
                 comboFromContent: '上海',
                 comboToContent: '',
                 comboFromDate: '',
+                comboToDate:'',
                 comboDays: '4天',
                 comboAdultNum: 2,
                 comboKidsNum: 0,
@@ -488,17 +489,6 @@
                 let dateObj = new Date(date);
                 let weekDay = week[dateObj.getDay()];
                 return weekDay;
-            },
-            returnDateCalc: function (date, comboDays) {
-                let daysTime = parseInt(comboDays) * 86400000;
-                let dateObj = new Date(date);
-                let $date = new Date(dateObj.getTime() + daysTime);
-                let dateArr = [$date.getFullYear(), $date.getMonth() + 1, $date.getDate()];
-                //+0
-                dateArr[1] = dateArr[1] < 10 ? '0' + dateArr[1] : dateArr[1];
-                dateArr[2] = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2];
-                return dateArr.join('-');
-
             }
         },
         watch: {
@@ -871,7 +861,22 @@
                         this.isComboError = true;
                     }
                     if (!this.isComboError&&name) {
-                        this.$router.push({ name: 'combo', params: { currentSec: 'combo'}})
+                        this.$router.push({ name: 'combo', params: {
+                          currentSec: 'combo'
+                        }})
+                      let comboObj = {
+                        currentSec: 'combo',
+                        fromCity: this.comboFromContent,
+                        toCity: this.comboToContent,
+                        fromDate: this.comboFromDate,
+                        toDate: this.comboToDate,
+                        days: this.comboDays,
+                        adultNum: this.comboAdultNum,
+                        kidsNum: this.comboKidsNum
+                      };
+                        let comboStr = JSON.stringify(comboObj);
+                      //将搜索内容存入localstorage
+                      localStorage.setItem('searchCombo',comboStr);
                     }
                 }else if(this.currentLi === 'flight'){
                     if (this.flightFromContent === '') {
@@ -884,7 +889,14 @@
                     }
                     if (!this.isFlightError&&name) {
                       //发送搜索信息到后台
-                      this.$router.push({ name: 'flight', params: { currentSec: 'flight'}})
+                      this.$router.push({ name: 'flight', params: {
+                        currentSec: 'flight',
+                        fromCity: this.flightFromContent,
+                        toCity: this.flightToContent,
+                        fromDate: this.flightFromDate,
+                        toDate: this.flightToDate,
+                        days: this.flightDays,
+                      }})
                     }
                 }else {
                     if (this.hotelToContent === '') {
@@ -896,6 +908,17 @@
                       this.$router.push({ name: 'hotel', params: { currentSec: 'hotel'}})
                     }
                 }
+            },
+            returnDateCalc: function (date, comboDays) {
+              let daysTime = parseInt(comboDays) * 86400000;
+              let dateObj = new Date(date);
+              let $date = new Date(dateObj.getTime() + daysTime);
+              let dateArr = [$date.getFullYear(), $date.getMonth() + 1, $date.getDate()];
+              //+0
+              dateArr[1] = dateArr[1] < 10 ? '0' + dateArr[1] : dateArr[1];
+              dateArr[2] = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2];
+              this.comboToDate = dateArr.join('-');
+              return this.comboToDate;
             }
         }
     }

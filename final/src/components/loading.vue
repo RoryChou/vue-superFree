@@ -1,5 +1,5 @@
 <template>
-  <div class="loading_box">
+  <div class="loading_box" v-once>
     <i class="icon_loading"></i>
     <span>请稍候，正在为您查询</span>
   </div>

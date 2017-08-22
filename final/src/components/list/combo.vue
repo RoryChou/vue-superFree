@@ -60,7 +60,7 @@
               <div class="city">
                 <i class="icon"></i>
                 <div class="input-wrapper">
-                  <div class="combo-from section-input search-city">
+                  <!--<div class="combo-from section-input search-city">
                     <div class="search-contents-title">出发地</div>
                     <input type="text" class="input-city-from" placeholder="请输入出发地"
                            @focus="showSuggestBox('combo-from')"
@@ -75,7 +75,11 @@
                       <i class="error-icon"></i>
                       <p>出发地不能为空</p>
                     </div>
-                  </div>
+                  </div>-->
+                  <search-city
+                    :currentCity="comboFromContent"
+                    v-on:cityChange="changeCity"
+                    :suggestUrl="'static/data/citys.json'"></search-city>
                   <div class="combo-to section-input search-city">
                     <div class="search-contents-title">目的地</div>
                     <input type="text" class="input-city-to" placeholder="请输入目的地"
@@ -180,7 +184,7 @@
                   取消
                 </div>
               </div>
-              <div class="drop-suggestion-citys"
+              <!--<div class="drop-suggestion-citys"
                    v-show="isShowSuggestBox" :style="suggestBoxStyle">
                 <div class="drop-title">热门城市</div>
                 <ul class="city-hot clearfix">
@@ -211,7 +215,7 @@
                     </dl>
                   </li>
                 </ul>
-              </div>
+              </div>-->
             </div>
             <!--<ul class="drop-complete"></ul>-->
           </div>
@@ -836,12 +840,13 @@
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
   import Cart from '../cart.vue';
+  import SearchCity from '../search/search-city.vue';
   import axios from 'axios'
   import jsonp from 'jsonp'
   import {storage} from '../../assets/js/utils.js'
   export default {
     name: 'combo',
-    components: {ListTop,ListBottom,Cart},
+    components: {ListTop,ListBottom,Cart,SearchCity},
     props:['isShowNav'],
     data: function () {
       return {
@@ -916,59 +921,14 @@
       let vm = this;
       //let currentSec = this.$route.params.currentSec;
       //this.currentLi = currentSec;
-      document.addEventListener('mousedown', function (e) {
+      /*document.addEventListener('mousedown', function (e) {
         let classNames = e.target.className;
         if (!classNames.match(/no-blur/)) {
           vm.triggerBlur = true;
           vm.hideSuggestBox();
         }
         vm.isShowCompleteBox = false;
-      });
-      //下拉框内容选择
-      document.addEventListener('keydown', function (e) {
-        let which = e.which || e.keyCode;
-        if ((vm.isShowCompleteBox||vm.isShowSelections||vm.isShowSelectionsKids) && (which === 40 || which === 38)) {
-          e.preventDefault();
-        }
-      });
-      //键盘选中下拉框
-      document.addEventListener('keyup', function (e) {
-        if (!vm.isShowCompleteBox && !vm.isShowSelections && !vm.isShowSelectionsKids) {
-          return
-        }
-        let length = 0;
-        let which = e.which || e.keyCode;
-
-        e.preventDefault();
-        if (vm.isShowSelections) {
-          length = 9
-        } else if (vm.isShowSelectionsKids) {
-          length = 7
-        } else {
-          length = vm.completeResults.length;
-        }
-        //下
-        if (which === 40) {
-          vm.currentCompleteIndex++;
-          vm.currentCompleteIndex = vm.currentCompleteIndex % length;
-        }
-        //上
-        if (which === 38) {
-          vm.currentCompleteIndex--;
-          vm.currentCompleteIndex = vm.currentCompleteIndex === -1 ? length - 1 : vm.currentCompleteIndex;
-          vm.currentCompleteIndex = vm.currentCompleteIndex % length;
-        }
-        //enter
-        if (which === 13) {
-          if (vm.isShowCompleteBox) {
-            vm.chooseCity(vm.completeResults[vm.currentCompleteIndex].searchValue||vm.completeResults[vm.currentCompleteIndex].name);
-          } else if (vm.isShowSelections) {
-            vm.chooseSelections(vm.currentCompleteIndex + 1);
-          } else {
-            vm.chooseSelectionsKids(vm.currentCompleteIndex);
-          }
-        }
-      });
+      });*/
       //初始化日历
       this.calendarInit();
     },
@@ -1395,6 +1355,12 @@
       //点击加入购物车
       addToCart: function () {
 
+      },
+      showSuggestBoxComponent: function (e) {
+        console.log(e)
+      },
+      changeCity: function (city) {
+        this.comboFromContent = city
       }
     }
 

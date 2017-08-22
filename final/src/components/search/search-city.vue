@@ -1,76 +1,104 @@
 <template>
-  <div class="combo-from section-input search-city">
+  <div class="combo-from section-input search-city"
+       @click.stop>
     <div class="search-contents-title">出发地</div>
     <input type="text" class="input-city-from" placeholder="请输入出发地"
-           @focus="showSuggestBox('combo-from')"
-           @blur="hideSuggestBox()"
-           @input="showCompleteBox('combo-from')"
+           @focus="isShowSuggest = true;freshNum++"
+           @input="isShowComplete = true"
            v-model="cityName">
-    <error-box></error-box>
+    <!--<error-box></error-box>-->
+    <suggest-box
+      v-show="isShowSuggest"
+      :fresh="freshNum"
+      :suggestUrl="suggestUrl"
+      v-on:chooseCity="setCity"></suggest-box>
+
+    <complete-box
+      :currentCity="cityName"
+      :keySelect="keySelect"
+      v-show="isShowComplete"
+      v-on:chooseCity="setCity"
+      v-on:closeCompleteBox="isShowComplete = false"></complete-box>
   </div>
 </template>
 <script>
   import axios from 'axios'
   import ErrorBox from '../list/error-box.vue'
+  import SuggestBox from './suggest-box.vue'
+  import CompleteBox from './complete-box.vue'
+  import jsonp from 'jsonp'
   export  default {
     name: 'search-city',
-    components:{ErrorBox},
+    components:{ErrorBox,SuggestBox,CompleteBox},
     props:{
       currentCity:String,
       suggestUrl:String,
-      suggestCitysLi:Number,
-      isShowSuggestBox:Boolean,
-      currentSuggestBox:String,
-      currentCity:String,
-      currentCity:String,
     },
     data: function () {
       return {
-        currentCity:''
+        isShowSuggest:false,//FIXME 待优化
+        isShowComplete:false,
+        cityName:'',
+        freshNum: 1,
+        keySelect: null
       }
     },
     watch:{
-      currentCity: function () {
-        this.$emit('cityChange',this.currentCity)
+      cityName: function () {
+        this.$emit('cityChange',this.cityName)
+      },
+      isShowSuggest: function () {
+        if(this.isShowSuggest){
+          this.isShowComplete = false
+        }
+      },
+      isShowComplete: function () {
+        if(this.isShowComplete){
+          this.isShowSuggest = false
+        }
       }
     },
     created:function () {
       this.cityName = this.currentCity;
     },
-    methods:{
-      showSuggestBox: function (className) {
-        //发送ajax请求
-        var vm = this;
-        axios.get('static/data/citys.json').then(function (res) {
-          vm.citys = res.data;
-          //初始化tab切换
-          vm.suggestCitysLi = 0;
-          //计算位置
-          //vm.getPosition(className);
-          vm.$emit('getPosition',className)
-          //vm.isShowSuggestBox = true;
-          vm.$emit('getPosition',className)
-          vm.currentSuggestBox = className;
-        }, function (error) {
-          console.log('error', error)
-        })
-      },
-      hideSuggestBox: function () {
-        if (this.triggerBlur) {
-          this.isShowSuggestBox = false;
+    mounted: function () {
+      const vm = this;
+      document.addEventListener('click', function () {
+        vm.isShowSuggest = false;
+        vm.isShowComplete = false;
+      });
+      //下拉框内容选择
+      document.addEventListener('keydown', function (e) {
+        let which = e.which || e.keyCode;
+        if (vm.isShowComplete && (which === 40 || which === 38)) {
+          e.preventDefault();
         }
-        this.triggerBlur = true;
-      },
+      });
+      //键盘选中下拉框
+      document.addEventListener('keyup', function (e) {
+        if (!vm.isShowComplete) {
+          return
+        }
+        //操作下拉框
+        vm.keySelect = e;
+      });
+    },
+    methods:{
       showCompleteBox: function (className)  {
         //发送ajax请求
         var vm = this;
         //初始化index
         vm.currentCompleteIndex = 0;
-        let keyword = this.comboFromContent;
+        let keyword = this.cityName;
         let type = 'TICKET';
         let url = 'http://s.lvmama.com/autocomplete/autoCompleteNew.do';
         let districtId = '';
-        switch (className) {
+        if(className === 'hotel-keywords'){
+          type = 'HOTEL';
+          url = 'http://s.lvmama.com/autocomplete/autoCompleteHotel.do';
+          districtId = '&districtId='+vm.districtId;
+        }
+        /*switch (className) {
           case 'combo-from':
             keyword = this.comboFromContent;
             break;
@@ -94,7 +122,7 @@
             break;
           default:
             return
-        }
+        }*/
         //判断是否无内容
         if (keyword === '') {
           //关闭suggestBox,completeBOx
@@ -125,6 +153,17 @@
           });
         }
       },
+      setCity: function (city) {
+        this.cityName = city;
+        //隐藏suggestbox
+        this.isShowSuggest = false;
+        //隐藏completebox
+        this.isShowComplete = false;
+      }
     }
   }
 </script>
+<style lang="scss" scoped>
+  @import "../../assets/scss/var";
+
+</style>

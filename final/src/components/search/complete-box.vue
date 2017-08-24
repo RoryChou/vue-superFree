@@ -3,7 +3,7 @@
     <li class="drop-city"
         v-for="(item,index) in completeResults"
         :class="{current:currentCompleteIndex === index}"
-        @mousedown="chooseCity(item.searchValue||item.name)">{{item.searchValue}}
+        @click="chooseCity(item.searchValue||item.name)">{{item.searchValue}}
       <span class="name" v-show="jsonpType==='HOTEL'">{{item.name}}</span>
       <span class="hotelCount" v-show="jsonpType==='HOTEL'&&item.hotelCount!==0">约{{item.hotelCount}}家酒店</span>
       <span class="type" v-show="jsonpType==='HOTEL'">{{item.type}}</span>
@@ -99,108 +99,14 @@
 </script>
 <style lang="scss" scoped>
   @import "../../assets/scss/var";
-  .drop-suggestion-citys {
-    //display: none;
+  .drop-complete {
     position: absolute;
     border: 1px solid #ccc\9;
     box-shadow: 0px 2px 4px #999;
     top:32px;
     left: 0px;
     width: (536px - 21*2);
-    padding: 13px 21px;
     background-color: #fff;
-    z-index: 20;
-    .drop-title {
-      color: #999;
-      font-size: 14px;
-      height: 19px;
-      line-height: 19px;
-      margin-bottom: 10px;
-    }
-    .city-hot {
-      border-bottom: 1px dotted #ddd;
-      padding-bottom: 8px;
-      li {
-        cursor: pointer;
-        float: left;
-        color: #666;
-        font-size: 12px;
-        height: 16px;
-        line-height: 16px;
-        margin-right: 20px;
-        &:hover {
-          color: $color-hover-orange;
-        }
-      }
-    }
-    .letter-tabs {
-      border-bottom: 1px solid #ccc;
-      height: 36px;
-      li {
-        position: relative;
-        float: left;
-        cursor: pointer;
-        height: 35px;
-        width: 69px;
-        text-align: center;
-        line-height: 35px;
-        font-family:Arial;
-        font-size: 14px;
-        i {
-          display: none;
-          position: absolute;
-          bottom: -2px;
-          left: 30px;
-          background: url("../../assets/imgs/list/hotel/sprite/icon-arrow-current.png");
-          width: 11px;
-          height: 6px;
-        }
-        &.current {
-          font-family:Arial;
-          color: $color-lv-pink;
-          font-weight: 600;
-          border-bottom: 2px solid $color-lv-pink;
-          i {
-            display: inline;
-          }
-        }
-      }
-    }
-    .letter-city-contents {
-      padding: 8px 15px;
-      dl {
-        position: relative;
-        padding: 5px 0px;
-        padding-left: 12px;
-        min-height: 16px;
-        dt {
-          position: absolute;
-          top:8px;
-          left: 0;
-          font-family:Arial;
-          font-weight: 700;
-          float: left;
-          color: $color-lv-pink;
-          height: 16px;
-          font-size: 14px;
-          line-height: 16px;
-        }
-        dd {
-          cursor: pointer;
-          float: left;
-          margin: 2px 10px;
-          height: 16px;
-          font-size: 12px;
-          line-height: 16px;
-          &:hover {
-            color: $color-hover-orange;
-          }
-        }
-      }
-    }
-  }
-  .drop-complete {
-    @extend .drop-suggestion-citys;
     z-index: 30;
     padding: 10px 0;
     li {
@@ -209,6 +115,7 @@
       line-height: 30px;
       padding: 0 16px;
       color:#666666;
+      font-size: 14px;
       span {
         @include inlineblock;
         &.name {

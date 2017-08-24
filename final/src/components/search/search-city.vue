@@ -1,12 +1,15 @@
 <template>
-  <div class="combo-from section-input search-city"
+  <div class="section-input"
        @click.stop>
-    <div class="search-contents-title">出发地</div>
-    <input type="text" class="input-city-from" placeholder="请输入出发地"
+    <div class="search-contents-title">{{title}}</div>
+    <input type="text" class="input-city-from"
+           :placeholder="titleComputed"
            @focus="isShowSuggest = true;freshNum++"
            @input="isShowComplete = true"
            v-model="cityName">
-    <!--<error-box></error-box>-->
+    <error-box
+      v-show="isShowError"
+      :errorContent="errorContent"></error-box>
     <suggest-box
       v-show="isShowSuggest"
       :fresh="freshNum"
@@ -22,6 +25,7 @@
   </div>
 </template>
 <script>
+  //FIXME suggestBox与completeBox可以不作为组件使用
   import axios from 'axios'
   import ErrorBox from '../list/error-box.vue'
   import SuggestBox from './suggest-box.vue'
@@ -31,21 +35,30 @@
     name: 'search-city',
     components:{ErrorBox,SuggestBox,CompleteBox},
     props:{
-      currentCity:String,
+      title:String,
+      currentCity:Object,
       suggestUrl:String,
+      errorContent:String,
+      isShowError: Boolean,
+      closeBoxException:String
     },
     data: function () {
       return {
         isShowSuggest:false,//FIXME 待优化
         isShowComplete:false,
         cityName:'',
-        freshNum: 1,
+        freshNum: 1, //强制触发suggestBox的更新
         keySelect: null
+      }
+    },
+    computed: {
+      titleComputed: function(){
+        return '请输入'+ this.title
       }
     },
     watch:{
       cityName: function () {
-        this.$emit('cityChange',this.cityName)
+        this.$emit('cityChange',this.cityName,this.currentCity.name)
       },
       isShowSuggest: function () {
         if(this.isShowSuggest){
@@ -56,10 +69,17 @@
         if(this.isShowComplete){
           this.isShowSuggest = false
         }
+      },
+      closeBoxException: function () {
+        if(this.closeBoxException !== ''&&this.closeBoxException !== this.currentCity.name){
+          //关闭弹窗
+          this.isShowSuggest = false;
+          this.isShowComplete = false;
+        }
       }
     },
     created:function () {
-      this.cityName = this.currentCity;
+      this.cityName = this.currentCity.value;
     },
     mounted: function () {
       const vm = this;
@@ -159,6 +179,10 @@
         this.isShowSuggest = false;
         //隐藏completebox
         this.isShowComplete = false;
+      },
+      //分发错误信息
+      setError: function () {
+
       }
     }
   }

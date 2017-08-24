@@ -1,15 +1,22 @@
 <template>
-  <div class="error-box" v-show="isErrorComboFrom">
-    <div class="tip-arrow tip-arrow-left">
+  <div class="error-box">
+    <div class="tip-arrow" :class="arrowDirection">
       <em>◆</em>
       <i>◆</i>
     </div>
     <i class="error-icon"></i>
-    <p>出发地不能为空</p>
+    <p>{{errorContent}}</p>
   </div>
 </template>
 <script>
   export  default {
-    name:'error-box'
+    name:'error-box',
+    props: {
+      errorContent: String,
+      arrowDirection:{
+        type:String,
+        default: 'tip-arrow-left'
+      }
+    }
   }
 </script>

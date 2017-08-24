@@ -60,53 +60,31 @@
               <div class="city">
                 <i class="icon"></i>
                 <div class="input-wrapper">
-                  <!--<div class="combo-from section-input search-city">
-                    <div class="search-contents-title">出发地</div>
-                    <input type="text" class="input-city-from" placeholder="请输入出发地"
-                           @focus="showSuggestBox('combo-from')"
-                           @blur="hideSuggestBox()"
-                           @input="showCompleteBox('combo-from')"
-                           v-model="comboFromContent">
-                    <div class="error-box" v-show="isErrorComboFrom">
-                      <div class="tip-arrow tip-arrow-left">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>出发地不能为空</p>
-                    </div>
-                  </div>-->
                   <search-city
-                    :currentCity="comboFromContent"
-                    v-on:cityChange="changeCity"
-                    :suggestUrl="'static/data/citys.json'"></search-city>
-                  <div class="combo-to section-input search-city">
-                    <div class="search-contents-title">目的地</div>
-                    <input type="text" class="input-city-to" placeholder="请输入目的地"
-                           @focus="showSuggestBox('combo-to')"
-                           @blur="hideSuggestBox()"
-                           @input="showCompleteBox('combo-to')"
-                           v-model="comboToContent">
-                    <div class="error-box" v-show="isErrorComboTo">
-                      <div class="tip-arrow tip-arrow-left">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>目的地不能为空</p>
-                    </div>
-                  </div>
+                    title="出发地"
+                    :currentCity="currentMesObj('comboFromContent')"
+                    :closeBoxException="closeBoxException"
+                    v-on:cityChange="changeData"
+                    :suggestUrl="'static/data/citys.json'"
+                    errorContent="'出发地不能为空'"
+                    :isShowError="false"></search-city>
+                  <search-city
+                    title="目的地"
+                    :currentCity="currentMesObj('comboToContent')"
+                    :closeBoxException="closeBoxException"
+                    v-on:cityChange="changeData"
+                    suggestUrl="static/data/citys.json"
+                    errorContent="目的地不能为空"
+                    :isShowError="false"></search-city>
                 </div>
               </div>
               <div class="date">
                 <i class="icon"></i>
                 <div class="input-wrapper">
-                  <div class="combo-date section-input search-date search-calendar-common search-date-from">
-                    <div class="search-contents-title">出发日期</div>
-                    <div class="search-contents-info">{{comboFromDate | getWeekday}}</div>
-                    <input type="text" readonly="readonly" class="input-date-from"
-                           v-model="comboFromDate">
-                  </div>
+                  <search-date
+                    :dateObj="currentMesObj('comboFromDate')"
+                    v-on:dateChange="changeData"></search-date>
+
                   <div class="combo-days section-input">
                     <div class="search-contents-title">游玩天数</div>
                     <div class="search-contents-info">{{returnDateCalc(comboFromDate,comboDays)}}</div>
@@ -127,28 +105,13 @@
               <div class="persons-num">
                 <i class="icon"></i>
                 <div class="input-wrapper">
-                  <div class="combo-persons-adult section-input">
-                    <div class="search-contents-title">成人</div>
-                    <input class="search-contents-select" value="2" readonly="readonly"
-                           @click="isShowSelections = !isShowSelections;currentCompleteIndex = 0"
-                           @blur="isShowSelections = false"
-                           v-model="comboAdultNum">
-                    <b :class="{active:isShowSelections}"></b>
-                    <div class="error-box" v-show="isErrorComboAdults">
-                      <div class="tip-arrow tip-arrow-top">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>总人数不能超过9人哦</p>
-                    </div>
-                    <ul class="search-contents-selections" v-show="isShowSelections">
-                      <li v-for="n in 9"
-                          @mousedown="chooseSelections(n)"
-                          :class="{current:currentCompleteIndex === n-1}">{{n}}
-                        </li>
-                    </ul>
-                  </div>
+                  <search-select
+                    :title="'成人'"
+                    :currentNum="currentMesObj('comboAdultNum')"
+                    :maxNum="maxAdNum"
+                    :errorContent="'总人数不能超过'+ maxAdNum +'人哦'"
+                    v-on:numChange="changeData"
+                    v-on:closeBoxes="closeBoxes"></search-select>
                   <div class="combo-persons-children section-input">
                     <div class="search-contents-title">儿童</div>
                     <div class="search-contents-info">2-12岁</div>
@@ -841,12 +804,15 @@
   import ListBottom from './list-bottom.vue';
   import Cart from '../cart.vue';
   import SearchCity from '../search/search-city.vue';
+  import SearchDate from '../search/search-date.vue';
+  import SearchSelect from '../search/search-select.vue';
   import axios from 'axios'
   import jsonp from 'jsonp'
   import {storage} from '../../assets/js/utils.js'
+
   export default {
     name: 'combo',
-    components: {ListTop,ListBottom,Cart,SearchCity},
+    components: {ListTop,ListBottom,Cart,SearchCity,SearchDate,SearchSelect},
     props:['isShowNav'],
     data: function () {
       return {
@@ -858,6 +824,8 @@
         comboDays: '3天',
         comboAdultNum: 2,
         comboKidsNum: 1,
+        maxAdNum:9,
+        maxCldNum:9,
         cartNum:0,
         isFlightDouble: false,
         isShowChangeBox: false,
@@ -902,7 +870,8 @@
           left: '0'
         },
         emptyContent: '套餐',
-        proId:1
+        proId:1,
+        closeBoxException:''
       }
     },
     created: function () {
@@ -918,19 +887,9 @@
         })
     },
     mounted: function () {
-      let vm = this;
-      //let currentSec = this.$route.params.currentSec;
-      //this.currentLi = currentSec;
-      /*document.addEventListener('mousedown', function (e) {
-        let classNames = e.target.className;
-        if (!classNames.match(/no-blur/)) {
-          vm.triggerBlur = true;
-          vm.hideSuggestBox();
-        }
-        vm.isShowCompleteBox = false;
-      });*/
+      const vm = this;
       //初始化日历
-      this.calendarInit();
+      //this.calendarInit();
     },
     watch: {
       comboFromContent: function () {
@@ -945,6 +904,9 @@
       comboKidsNum: function () {
         this.isComboError ? this.checkForm() : '';
       }
+    },
+    computed:{
+
     },
     filters: {
       getWeekday: function (date) {
@@ -981,7 +943,7 @@
       tabSwitch: function (name) {
         this.currentLi = name;
       },
-      showSuggestBox: function (className) {
+      /*showSuggestBox: function (className) {
         //发送ajax请求
         var vm = this;
         axios.get('static/data/citys.json').then(function (res) {
@@ -1059,7 +1021,7 @@
             }
           });
         }
-      },
+      },*/
       showKeywordsBox: function (className) {
         //发送ajax请求
         var vm = this;
@@ -1075,7 +1037,7 @@
           }
         });
       },
-      getPosition: function (className) {
+      /*getPosition: function (className) {
         let targetBox = document.querySelector('.' + className);
         let top = targetBox.offsetTop + targetBox.clientHeight + 3;
         let left = targetBox.offsetLeft;
@@ -1104,8 +1066,8 @@
           this.isShowKeywordsBox = false;
         }
         this.triggerBlur = true;
-      },
-      joinLetters: function (index) {
+      },*/
+      /*joinLetters: function (index) {
         let newArr = this.citysArr.map(function (x) {
           let str = '';
           for (let i = 0; i < x.length; i++) {
@@ -1163,7 +1125,7 @@
           }
         }
 
-      },
+      },*/
       calendarRefresh: function (className) {
         //飞机日历,随时刷新cascadingNextAutoFlag
         let vm = this;
@@ -1356,14 +1318,20 @@
       addToCart: function () {
 
       },
-      showSuggestBoxComponent: function (e) {
-        console.log(e)
+      changeData: function (value,type) {
+        this[type] = value;
       },
-      changeCity: function (city) {
-        this.comboFromContent = city
+      currentMesObj: function (name) {
+        const vm = this;
+        return {
+          name:name,
+          value: vm[name]
+        };
+      },
+      closeBoxes: function (exception) {
+        this.closeBoxException = exception
       }
     }
-
   }
 </script>
 

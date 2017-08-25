@@ -17,7 +17,6 @@
           </li>
         </ul>
       </div>
-
       <div class="head-wrapper">
         <div class="main_search search-contents-flight">
           <div class="search-bar-wrapper">
@@ -49,7 +48,7 @@
               </div>
               </div>
             </div>
-            <!--<div class="change-box clearfix">
+            <div class="change-box clearfix">
               <div class="city">
                 <i class="icon"></i>
                 <div class="input-wrapper">
@@ -66,34 +65,10 @@
                   <div class="flight-from section-input search-city">
                     <div class="search-contents-title">出发地</div>
                     <input type="text" class="input-city-from" placeholder="请输入出发地">
-                    <div class="error-box">
-                      <div class="tip-arrow tip-arrow-left">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>总人数不能超过9人哦！</p>
-                    </div>
-                    &lt;!&ndash;<div class="error-box error-box-bottom">
-                        <div class="tip-arrow tip-arrow-top">
-                            <em>◆</em>
-                            <i>◆</i>
-                        </div>
-                        <i class="error-icon"></i>
-                        <p>总人数不能超过9人哦！</p>
-                    </div>&ndash;&gt;
                   </div>
                   <div class="flight-to section-input search-city">
                     <div class="search-contents-title">目的地</div>
                     <input type="text" class="input-city-to" placeholder="请输入目的地">
-                    <div class="error-box">
-                      <div class="tip-arrow tip-arrow-left">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>总人数不能超过9人哦！</p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -113,131 +88,11 @@
                 </div>
               </div>
               <div class="btn-wrapper">
-                <div class="btn btn-pink search-btn">
-                  搜索
-              </div>
-                <div class="btn cancle search-btn-cancle">
-                  取消
-              </div>
-              </div>
-              <div class="drop-suggestion-citys">
-                <div class="drop-title">支持中文/拼音/简拼/三字码输入</div>
-                <ul class="city-hot clearfix">
-                </ul>
-                <ul class="letter-tabs clearfix">
-                  <li class="current">
-                    ABCD
-                    <i></i>
-                  </li>
-                  <li>EFGH<i></i></li>
-                  <li>JKLM<i></i></li>
-                  <li>NPQRS<i></i></li>
-                  <li>TUVWX<i></i></li>
-                  <li>YZ<i></i></li>
-                </ul>
-                <ul class="letter-city-contents">
-                  <li>
-                    <dl class="clearfix">
-                      <dt>A</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>B</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>C</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>D</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>E</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>F</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>G</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>H</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>J</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>K</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>L</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>M</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>N</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>P</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>Q</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>R</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>S</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>T</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>U</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>V</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>W</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>S</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>Y</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>Z</dt>
-                    </dl>
-                  </li>
-                </ul>
-              </div>
-              <div class="drop-suggestion-keywords">
-                <div class="keywords-transport clearfix">
-                  <p class="keywords-title">交通枢纽</p>
-                  <p class="keywords-details">
-
-                  </p>
-                </div>
-                <div class="keywords-subway">
-                  <p class="keywords-title">地铁站</p>
-                  <p class="keywords-details">
-
-                  </p>
-                </div>
+                <div class="btn btn-pink search-btn">搜索</div>
+                <div class="btn cancle search-btn-cancle">取消</div>
               </div>
             </div>
-            <ul class="drop-complete"></ul>-->
+            <ul class="drop-complete"></ul>
           </div>
         </div>
 
@@ -876,7 +731,12 @@
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
   import Cart from '../cart.vue';
+  import SearchCity from '../search/search-city.vue';
+  import SearchDate from '../search/search-date.vue';
+  import {storage} from '../../assets/js/utils.js'
+  import {getDate} from '../../assets/js/utils.js'
   import axios from 'axios'
+
   export default {
     name: 'flight',
     components: {ListTop,ListBottom,Cart},
@@ -897,12 +757,25 @@
       }
     },
     created: function () {
-      var vm = this;
+      const vm = this;
+      //获取搜索数据
+      this.getDataSearch();
       //获取购物车数据
       axios.get('static/data/cart.json')
         .then(function (res) {
           vm.cartNum = res.data.proNum
         })
+    },
+    filters: {
+      getWeekday: function (date) {
+        const week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+        let dateObj = new Date(date);
+        let weekDay = week[dateObj.getDay()];
+        return weekDay;
+      }
+    },
+    methods: {
+
     }
   }
 </script>

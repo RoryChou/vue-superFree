@@ -790,9 +790,8 @@
       }
     },
     created: function () {
-      var vm = this;
+      const vm = this;
       //获取搜索数据
-      //FIXME 这里应该使用路由的参数
       this.getDataSearch();
 
       //获取购物车数据
@@ -800,11 +799,6 @@
         .then(function (res) {
           vm.cartNum = res.data.proNum
         })
-    },
-    mounted: function () {
-      const vm = this;
-      //初始化日历
-      //this.calendarInit();
     },
     watch: {
       comboFromContent: function () {

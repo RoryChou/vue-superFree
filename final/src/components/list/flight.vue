@@ -898,7 +898,6 @@
     },
     created: function () {
       var vm = this;
-
       //获取购物车数据
       axios.get('static/data/cart.json')
         .then(function (res) {

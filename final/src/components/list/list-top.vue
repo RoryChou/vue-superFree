@@ -351,39 +351,7 @@
         font-size: 12px;
         color: #999;
       }
-      .error-box {
-        position: absolute;
-        //display: none;
-        top: -4px;
-        left: 256px;
-        background:#ffffff;
-        border:1px solid #dddddd;
-        box-shadow:0 2px 4px 0 #aaa;
-        width:165px;
-        height:34px;
-        z-index: 20;
-        .error-icon {
-          @include inlineblock;
-          background: url('../../assets/imgs/list/hotel/sprite/icon-error.png') no-repeat center;
-          height: 14px;
-          width: 14px;
 
-          margin-left: 10px;
-          vertical-align: middle;
-        }
-        p {
-          @include inlineblock;
-          font-size:12px;
-          line-height: 34px;
-          text-align: right;
-        }
-      }
-      .error-box-bottom {
-        @extend .error-box;
-        display: block;
-        top: 38px;
-        left: 40px;
-      }
       .btn-wrapper {
         margin-top: 50px;
         div {

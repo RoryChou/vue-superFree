@@ -1,10 +1,9 @@
 <template>
-  <div class="section-input"
-       @click.stop>
+  <div class="section-input" :class="{'error':isShowError}">
     <div class="search-contents-title">{{title}}</div>
     <input type="text" class="input-city-from"
            :placeholder="titleComputed"
-           @focus="isShowSuggest = true;freshNum++"
+           @click.capture="isShowSuggest = true;freshNum++"
            @input="isShowComplete = true"
            v-model="cityName">
     <error-box
@@ -62,7 +61,7 @@
       },
       isShowSuggest: function () {
         if(this.isShowSuggest){
-          this.isShowComplete = false
+          this.isShowComplete = false;
         }
       },
       isShowComplete: function () {
@@ -78,15 +77,20 @@
         }
       }
     },
+    beforeUpdate: function () {
+      this.cityName = this.currentCity.value;
+    },
     created:function () {
       this.cityName = this.currentCity.value;
     },
     mounted: function () {
       const vm = this;
-      document.addEventListener('click', function () {
-        vm.isShowSuggest = false;
-        vm.isShowComplete = false;
-      });
+      document.addEventListener('click', function (e) {
+        if(!e.target.className.match(/no-blur/)){
+          vm.isShowSuggest = false;
+          vm.isShowComplete = false;
+        }
+      },true);
       //下拉框内容选择
       document.addEventListener('keydown', function (e) {
         let which = e.which || e.keyCode;
@@ -188,6 +192,7 @@
   }
 </script>
 <style lang="scss" scoped>
+  /*search-city.scss*/
   @import "../../assets/scss/var";
 
 </style>

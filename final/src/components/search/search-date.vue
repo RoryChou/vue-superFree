@@ -25,6 +25,9 @@
         date:''
       }
     },
+    beforeUpdate: function () {
+      this.date = this.dateObj.value;
+    },
     created: function () {
       this.date = this.dateObj.value;
     },

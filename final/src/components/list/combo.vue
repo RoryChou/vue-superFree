@@ -65,9 +65,9 @@
                     :currentCity="currentMesObj('comboFromContent')"
                     :closeBoxException="closeBoxException"
                     v-on:cityChange="changeData"
-                    :suggestUrl="'static/data/citys.json'"
-                    errorContent="'出发地不能为空'"
-                    :isShowError="false"></search-city>
+                    suggestUrl="static/data/citys.json"
+                    errorContent="出发地不能为空"
+                    :isShowError="isErrorComboFrom"></search-city>
                   <search-city
                     title="目的地"
                     :currentCity="currentMesObj('comboToContent')"
@@ -75,7 +75,7 @@
                     v-on:cityChange="changeData"
                     suggestUrl="static/data/citys.json"
                     errorContent="目的地不能为空"
-                    :isShowError="false"></search-city>
+                    :isShowError="isErrorComboTo"></search-city>
                 </div>
               </div>
               <div class="date">
@@ -84,10 +84,9 @@
                   <search-date
                     :dateObj="currentMesObj('comboFromDate')"
                     v-on:dateChange="changeData"></search-date>
-
                   <div class="combo-days section-input">
                     <div class="search-contents-title">游玩天数</div>
-                    <div class="search-contents-info">{{returnDateCalc(comboFromDate,comboDays)}}</div>
+                    <div class="search-contents-info">{{returnDateCalc}}</div>
                     <div class="num-minus"
                          @click="numCalc(-1,1,20)"
                          :class="{disabled:parseInt(comboDays)===1}"></div>
@@ -106,35 +105,20 @@
                 <i class="icon"></i>
                 <div class="input-wrapper">
                   <search-select
-                    :title="'成人'"
+                    title="成人"
                     :currentNum="currentMesObj('comboAdultNum')"
                     :maxNum="maxAdNum"
                     :errorContent="'总人数不能超过'+ maxAdNum +'人哦'"
                     v-on:numChange="changeData"
-                    v-on:closeBoxes="closeBoxes"></search-select>
-                  <div class="combo-persons-children section-input">
-                    <div class="search-contents-title">儿童</div>
-                    <div class="search-contents-info">2-12岁</div>
-                    <input class="search-contents-select" value="0" readonly="readonly"
-                           @click="isShowSelectionsKids = !isShowSelectionsKids;currentCompleteIndex = 0;"
-                           @blur="isShowSelectionsKids = false"
-                           v-model="comboKidsNum">
-                    <b :class="{active:isShowSelectionsKids}"></b>
-                    <div class="error-box" v-show="isErrorComboKids">
-                      <div class="tip-arrow tip-arrow-top">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>儿童数最多为{{comboAdultNum*2}}人哦</p>
-                    </div>
-                    <ul class="search-contents-selections" v-show="isShowSelectionsKids">
-                      <li v-for="n in 7"
-                          @mousedown="chooseSelectionsKids(n-1)"
-                          :class="{current:currentCompleteIndex === n-1}">{{n - 1}}
-                        </li>
-                    </ul>
-                  </div>
+                    :isShowError="isErrorComboAdults"></search-select>
+                  <search-select
+                    title="儿童"
+                    :currentNum="currentMesObj('comboKidsNum')"
+                    :maxNum="maxKidsNum"
+                    :errorContent="'儿童数不能超过'+ comboAdultNum*2 +'人哦'"
+                    v-on:numChange="changeData"
+                    info="2-12岁"
+                    :isShowError="isErrorComboKids"></search-select>
                 </div>
               </div>
               <div class="btn-wrapper">
@@ -147,40 +131,7 @@
                   取消
                 </div>
               </div>
-              <!--<div class="drop-suggestion-citys"
-                   v-show="isShowSuggestBox" :style="suggestBoxStyle">
-                <div class="drop-title">热门城市</div>
-                <ul class="city-hot clearfix">
-                  <li class="drop-city"
-                      v-for="city in citys.hot"
-                      @mousedown="chooseCity(city.districtName)">{{city.districtName}}
-                        </li>
-                </ul>
-                <ul class="letter-tabs clearfix">
-                  <li class="no-blur"
-                      v-for="n in citysArr.length"
-                      @mousedown="suggestCitysLi=(n-1);triggerBlur=false"
-                      :class="{current:suggestCitysLi===(n-1)}">
-                    {{joinLetters(n - 1)}}<i></i>
-                  </li>
-                </ul>
-                <ul class="letter-city-contents">
-                  <li v-for="n in citysArr.length"
-                      v-show="suggestCitysLi === (n-1)">
-                    <dl class="clearfix"
-                        v-for="item in citysArr[(n-1)]"
-                        v-show="isDlFilled(item)">
-                      <dt>{{item}}</dt>
-                      <dd class="drop-city"
-                          v-for="city in citys[item]"
-                          @mousedown="chooseCity(city.districtName)">{{city.districtName}}
-                                </dd>
-                    </dl>
-                  </li>
-                </ul>
-              </div>-->
             </div>
-            <!--<ul class="drop-complete"></ul>-->
           </div>
         </div>
         <div class="search_sort clearfix">
@@ -809,6 +760,7 @@
   import axios from 'axios'
   import jsonp from 'jsonp'
   import {storage} from '../../assets/js/utils.js'
+  import {getDate} from '../../assets/js/utils.js'
 
   export default {
     name: 'combo',
@@ -816,7 +768,6 @@
     props:['isShowNav'],
     data: function () {
       return {
-        currentLi:'combo',
         comboFromDate: '2017-08-14',
         comboDateToStr: '2017-08-17',
         comboFromContent: '上海',
@@ -825,53 +776,17 @@
         comboAdultNum: 2,
         comboKidsNum: 1,
         maxAdNum:9,
-        maxCldNum:9,
+        maxKidsNum:6,
         cartNum:0,
         isFlightDouble: false,
         isShowChangeBox: false,
-        currentSuggestBox: '',
-        currentCompleteBox: '',
-        currentKeywordsBox: '',
-        currentCompleteIndex: 0,
-        isShowSuggestBox: false,
-        isShowCompleteBox: false,
-        isShowKeywordsBox: false,
-        hotelToContent: '上海',
-        hotelFromDate: '',
-        hotelToDate: '',
-        districtId: 9,//hotel keywords专用
-        hotelKeywordsContent: '',
-        isShowSelections: false,
-        isShowSelectionsKids: false,
         isComboError: false,
-        isHotelError: false,
         isErrorComboFrom: false,
         isErrorComboTo: false,
         isErrorComboAdults: false,
         isErrorComboKids: false,
-        isErrorHotelTo: false,
-        citys: {},
-        completeResults: [],
-        keywordsObj: {},
-        suggestCitysLi: 0,
-        triggerBlur: true,
-        citysArr: [['A', 'B', 'C', 'D'], ['E', 'F', 'G', 'H'], ['J', 'K', 'L', 'M'], ['N', 'P', 'Q', 'R', 'S'], ['T', 'U', 'V', 'W', 'X'], ['Y', 'Z']],
-        suggestBoxStyle: {
-          top: '0',
-          left: '0'
-        },
-        compelteBoxStyle: {
-          top: '0',
-          left: '0',
-          width: '0'
-        },
-        keywordsBoxStyle: {
-          top: '0',
-          left: '0'
-        },
         emptyContent: '套餐',
         proId:1,
-        closeBoxException:''
       }
     },
     created: function () {
@@ -906,7 +821,10 @@
       }
     },
     computed:{
-
+      returnDateCalc: function () {
+        this.comboDateToStr = getDate(this.comboFromDate,this.comboDays);
+        return this.comboDateToStr
+      }
     },
     filters: {
       getWeekday: function (date) {
@@ -917,297 +835,8 @@
       }
     },
     methods: {
-      returnDateCalc: function (date, comboDays) {
-        let daysTime = parseInt(comboDays) * 86400000;
-        let dateObj = new Date(date);
-        let $date = new Date(dateObj.getTime() + daysTime);
-        let dateArr = [$date.getFullYear(), $date.getMonth() + 1, $date.getDate()];
-        //+0
-        dateArr[1] = dateArr[1] < 10 ? '0' + dateArr[1] : dateArr[1];
-        dateArr[2] = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2];
-        this.comboDateToStr = dateArr.join('-');
-        return this.comboDateToStr;
-      },
       changeRoute: function () {
         this.isShowChangeBox = !this.isShowChangeBox;
-      },
-      getDate: function (dateObj, daysAfter) {
-        let daysTime = parseInt(daysAfter) * 86400000;
-        let $date = new Date(dateObj.getTime() + daysTime);
-        let dateArr = [$date.getFullYear(), $date.getMonth() + 1, $date.getDate()];
-        //+0
-        dateArr[1] = dateArr[1] < 10 ? '0' + dateArr[1] : dateArr[1];
-        dateArr[2] = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2];
-        return dateArr.join('-');
-      },
-      tabSwitch: function (name) {
-        this.currentLi = name;
-      },
-      /*showSuggestBox: function (className) {
-        //发送ajax请求
-        var vm = this;
-        axios.get('static/data/citys.json').then(function (res) {
-          vm.citys = res.data;
-          //初始化tab切换
-          vm.suggestCitysLi = 0;
-          //计算位置
-          vm.getPosition(className);
-          vm.isShowSuggestBox = true;
-          vm.currentSuggestBox = className;
-        }, function (error) {
-          console.log('error', error)
-        })
-      },
-      showCompleteBox: function (className)  {
-        //发送ajax请求
-        var vm = this;
-        //初始化index
-        vm.currentCompleteIndex = 0;
-        let keyword = this.comboFromContent;
-        let type = 'TICKET';
-        let url = 'http://s.lvmama.com/autocomplete/autoCompleteNew.do';
-        let districtId = '';
-        switch (className) {
-          case 'combo-from':
-            keyword = this.comboFromContent;
-            break;
-          case 'combo-to':
-            keyword = this.comboToContent;
-            break;
-          case 'flight-from':
-            keyword = this.flightFromContent;
-            break;
-          case 'flight-to':
-            keyword = this.flightToContent;
-            break;
-          case 'hotel-to':
-            keyword = this.hotelToContent;
-            break;
-          case 'hotel-keywords':
-            keyword = this.hotelKeywordsContent;
-            type = 'HOTEL';
-            url = 'http://s.lvmama.com/autocomplete/autoCompleteHotel.do';
-            districtId = '&districtId='+vm.districtId;
-            break;
-          default:
-            return
-        }
-        //判断是否无内容
-        if (keyword === '') {
-          //关闭suggestBox,completeBOx
-          vm.isShowCompleteBox = false;
-          if(className === 'hotel-keywords'){
-            this.showKeywordsBox(className)
-          }else {
-            this.showSuggestBox(className)
-          }
-        } else {
-          jsonp(url + '?' + 'type='+ type +'&keyword=' + keyword + districtId, function (err, data) {
-            if (err) {
-              console.error(err.message);
-            } else {
-              vm.completeResults = data.matchList;
-              //判断是否有结果
-              if (vm.completeResults.length !== 0) {
-                //计算位置
-                vm.getPosition(className);
-                vm.isShowCompleteBox = true;
-                vm.currentCompleteBox = className;
-              } else {
-                vm.isShowCompleteBox = false;
-              }
-              //关闭suggestBox,completeBOx
-              vm.isShowSuggestBox = false;
-            }
-          });
-        }
-      },*/
-      showKeywordsBox: function (className) {
-        //发送ajax请求
-        var vm = this;
-        jsonp('http://s.lvmama.com/autocomplete/autoCompleteHotel.do?' + 'type=REC&districtId=' + vm.districtId, function (err, data) {
-          if (err) {
-            console.error(err.message);
-          } else {
-            vm.keywordsObj = data;
-            vm.currentKeywordsBox = className;
-            //计算位置
-            vm.getPosition(className);
-            vm.isShowKeywordsBox = true;
-          }
-        });
-      },
-      /*getPosition: function (className) {
-        let targetBox = document.querySelector('.' + className);
-        let top = targetBox.offsetTop + targetBox.clientHeight + 3;
-        let left = targetBox.offsetLeft;
-        let width=0;
-        if(className === 'hotel-keywords') {
-          width = 418;
-        }else {
-          width = targetBox.offsetWidth;
-        }
-        this.suggestBoxStyle.top = top + 'px';
-        this.suggestBoxStyle.left = left + 'px';
-        this.compelteBoxStyle.top = top + 'px';
-        this.compelteBoxStyle.left = left + 'px';
-        this.compelteBoxStyle.width = width + 'px';
-        this.keywordsBoxStyle.top = top + 'px';
-        this.keywordsBoxStyle.left = left + 'px';
-      },
-      hideSuggestBox: function () {
-        if (this.triggerBlur) {
-          this.isShowSuggestBox = false;
-        }
-        this.triggerBlur = true;
-      },
-      hideKeywordsBox: function () {
-        if (this.triggerBlur) {
-          this.isShowKeywordsBox = false;
-        }
-        this.triggerBlur = true;
-      },*/
-      /*joinLetters: function (index) {
-        let newArr = this.citysArr.map(function (x) {
-          let str = '';
-          for (let i = 0; i < x.length; i++) {
-            str += x[i]
-          }
-          return str
-        });
-        return newArr[index];
-      },
-      chooseCity: function (res,districtId) {
-        let targetBox = '';
-        if (this.isShowSuggestBox) {
-          targetBox = this.currentSuggestBox
-        } else if(this.isShowCompleteBox) {
-          targetBox = this.currentCompleteBox
-        }else {
-          targetBox = this.currentKeywordsBox
-        }
-        switch (targetBox) {
-          case 'combo-from':
-            this.comboFromContent = res;
-            break;
-          case 'combo-to':
-            this.comboToContent = res;
-            break;
-          case 'flight-from':
-            this.flightFromContent = res;
-            break;
-          case 'flight-to':
-            this.flightToContent = res;
-            break;
-          case 'hotel-to':
-            this.hotelToContent = res;
-            break;
-          case 'hotel-keywords':
-            this.hotelKeywordsContent = res;
-            break;
-          default:
-            return
-        }
-        //处理hotel keywords中的districtId
-        if(districtId){
-          this.districtId = districtId;
-        }
-        this.isShowCompleteBox = false;
-        this.isShowKeywordsBox = false;
-      },
-      isDlFilled: function (index) {
-        let arr = this.citys.hot && this.citys[index];
-        if (arr) {
-          if (arr.length === 0) {
-            return false;
-          } else {
-            return true;
-          }
-        }
-
-      },*/
-      calendarRefresh: function (className) {
-        //飞机日历,随时刷新cascadingNextAutoFlag
-        let vm = this;
-        this.calendarFlightReturn && this.calendarFlightReturn.destroy();
-        //判断单程还是返程
-        let cascadingNextAutoFlag = true;
-        if (vm.flightType === 'single') {
-          cascadingNextAutoFlag = false;
-        }
-        //初始化连级日历
-        this.calendarFlightReturn = lv.calendar({
-          autoRender: false,
-          trigger: ".search-cascading input",
-          triggerEvent: "click",
-          bimonthly: true,
-          //定位偏移
-          monthNext: 10,
-          monthPrev: 10,
-          dayPrev: 0,
-          template: "small",
-          cascading: true,
-          cascadingOffset: 4,
-          cascadingNextAuto: cascadingNextAutoFlag,
-          //点击选择日期后的回调函数 默认返回值: calendar对象
-          selectDateCallback: function () {
-            let self = this;
-            setTimeout(function () {
-              vm.flightFromhotelFromDateDate = self.cascadingSelected.start;
-              vm.hotelToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
-            },0);
-            if(className === 'flight-to'){
-              vm.changeFlightType('double')
-            }
-          }
-        });
-
-      },
-      calendarInit: function () {
-        var vm = this;
-        lv.calendar({
-          //date: self.dateNow(),
-          autoRender: false,
-          trigger: ".search-calendar-common",
-          triggerEvent: "click",
-          bimonthly: true,
-          //定位偏移
-          monthNext: 10,
-          monthPrev: 10,
-          dayPrev: 0,
-          template: "small",
-          //点击选择日期后的回调函数 默认返回值: calendar对象
-          selectDateCallback: function () {
-            for (var i in this.selected) {
-              vm.comboFromDate = i;
-            }
-          }
-        });
-        this.calendarRefresh();
-        //初始化连级日历-hotel
-        lv.calendar({
-          autoRender: false,
-          trigger: ".search-cascading-hotel input",
-          triggerEvent: "click",
-          bimonthly: true,
-          //定位偏移
-          monthNext: 10,
-          monthPrev: 10,
-          dayPrev: 0,
-          template: "small",
-          cascading: true,
-          cascadingNextAuto: true,
-          cascadingOffset: 2,
-          showNumberOfDays: true,
-          //点击选择日期后的回调函数 默认返回值: calendar对象
-          selectDateCallback: function () {
-            let self = this;
-            setTimeout(function () {
-              vm.hotelFromDate = self.cascadingSelected.start;
-              vm.hotelToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
-            },0);
-          }
-        })
       },
       numCalc: function (move, least, maximum) {
         let comboDaysNum = parseInt(this.comboDays);
@@ -1224,29 +853,6 @@
       focusComboDays: function () {
         this.comboDays = parseInt(this.comboDays)
       },
-      chooseSelections: function (num) {
-        this.comboAdultNum = num;
-        this.isShowSelections = false;
-      },
-      chooseSelectionsKids: function (num) {
-        this.comboKidsNum = num;
-        this.isShowSelectionsKids = false;
-      },
-      changeFlightType: function (type) {
-        this.flightType = type;
-        //处理日历
-        this.calendarRefresh(type);
-        if(type === 'double'){
-          this.flightToDate = this.getDate(new Date(this.flightFromDate),4);
-        }
-      },
-      switchFlightCity: function () {
-        let from = this.flightFromContent;
-        let to = this.flightToContent;
-        this.flightToContent = from;
-        this.flightFromContent = to;
-        //表单验证，更新错误信息
-      },
       checkForm: function (name) {
         //检查是否为空
         this.isComboError = false;
@@ -1262,7 +868,7 @@
           this.isErrorComboTo = true;
           this.isComboError = true;
         }
-        if ((this.comboAdultNum + this.comboKidsNum) >= 9) {
+        if ((this.comboAdultNum + this.comboKidsNum) >= this.maxAdNum) {
           this.isErrorComboAdults = true;
           this.isComboError = true;
         }
@@ -1314,10 +920,6 @@
           }
         })
       },
-      //点击加入购物车
-      addToCart: function () {
-
-      },
       changeData: function (value,type) {
         this[type] = value;
       },
@@ -1327,9 +929,6 @@
           name:name,
           value: vm[name]
         };
-      },
-      closeBoxes: function (exception) {
-        this.closeBoxException = exception
       }
     }
   }
@@ -1504,46 +1103,6 @@
         float: left;
         font-size:20px;
         font-weight: 700;
-        b {
-          position: absolute;
-          right: 12px;
-          top: 12px;
-          background: url('../../assets/imgs/list/combo/sprite/icon-arrow.png') no-repeat center;
-          height: 6px;
-          width: 9px;
-          transition: all 0.3s;
-          &.active {
-            transform: rotate(180deg);
-          }
-        }
-        .search-contents-selections {
-          //display: none;
-          position: absolute;
-          top: 31px;
-          background-color: #fff;
-          border: 1px solid #ccc\9;
-          *border: 1px solid #ccc;
-          box-shadow: 0px 2px 4px #999;
-          z-index: 21;
-          padding: 10px 0;
-          li {
-            cursor: pointer;
-            width: 126px;
-            height: 30px;
-            line-height: 30px;
-            padding: 0 17px;
-            font-size: 14px;
-            font-family:Arial;
-            &:hover {
-              background-color: #fef2f9;
-              color: $color-lv-pink;
-            }
-            &.current {
-              background-color: #fef2f9;
-              color: $color-lv-pink;
-            }
-          }
-        }
         .icon {
           @include inlineblock;
           background: url("../../assets/imgs/list/combo/sprite/icon-combo-persons.png") no-repeat center;
@@ -1552,39 +1111,7 @@
           vertical-align: top;
           margin-right: 12px;
         }
-        .section-input {
-          width: 160px;
-        }
-        input {
-          width: 48px;
-          padding-left: 12px;
-        }
-        .search-contents-title {
-          left: 92px;
-        }
-        .combo-persons-adult {
-          input {
-            padding-right: 100px;
-          }
-          .error-box {
-            left: 168px;
-          }
-        }
-        .combo-persons-children {
-          input {
-            padding-right: 100px;
-          }
-          .search-contents-title {
-            left: 48px;
-          }
-          .search-contents-info {
-            right: 32px;
-          }
-          .error-box {
-            left: 0px;
-            top: 38px;
-          }
-        }
+
       }
       .combo-days {
         input {

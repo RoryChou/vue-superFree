@@ -24,51 +24,41 @@
       <div class="head-wrapper">
         <div class="main_search search-contents-hotel">
           <div class="search-bar-wrapper">
-            <div class="default-box clearfix">
+            <div class="default-box clearfix"
+                 v-show="!isShowChangeBox">
               <div class="city">
                 <i class="icon"></i>
-                <span class="city-to-str">厦门</span>
+                <span class="city-to-str">{{city}}</span>
               </div>
               <div class="date">
                 <i class="icon"></i>
                 <span>
-                    <b class="hotel-days">3</b>天
+                    <b class="hotel-days">{{days}}</b>天
                 </span>
                 <p class="date-details">
-                  <span><b class="date-from-str">2017-08-01</b>入住</span>
-                  <span><b class="date-to-str">2017-08-03</b>退房</span>
+                  <span><b class="date-from-str">{{fromDate}}</b>入住</span>
+                  <span><b class="date-to-str">{{toDate}}</b>退房</span>
                 </p>
               </div>
               <div class="btn-wrapper">
-                <div class="btn btn-change btn-pink">
+                <div class="btn btn-change btn-pink"
+                     @click="isShowChangeBox = !isShowChangeBox;">
                   更改行程
                 </div>
               </div>
             </div>
-            <!--<div class="change-box clearfix">
+            <div class="change-box clearfix"
+                 v-show="isShowChangeBox">
               <div class="city">
                 <i class="icon"></i>
                 <div class="input-wrapper">
-                  <div class="hotel-to section-input search-city">
-                    <div class="search-contents-title">入住城市</div>
-                    <input type="text" class="input-city-to" placeholder="请输入入住城市">
-                    <div class="error-box">
-                      <div class="tip-arrow tip-arrow-left">
-                        <em>◆</em>
-                        <i>◆</i>
-                      </div>
-                      <i class="error-icon"></i>
-                      <p>总人数不能超过9人哦！</p>
-                    </div>
-                    &lt;!&ndash;<div class="error-box error-box-bottom">
-                        <div class="tip-arrow tip-arrow-top">
-                            <em>◆</em>
-                            <i>◆</i>
-                        </div>
-                        <i class="error-icon"></i>
-                        <p>总人数不能超过9人哦！</p>
-                    </div>&ndash;&gt;
-                  </div>
+                  <search-city
+                    title="出发地"
+                    :currentCity="currentMesObj('city')"
+                    v-on:cityChange="changeData"
+                    suggestUrl="static/data/citys.json"
+                    errorContent="出发地不能为空"
+                    :isShowError="isErrorFrom"></search-city>
                   <div class="hotel-keywords section-input search-keywords">
                     <div class="search-contents-title">关键字</div>
                     <input type="text" class="input-city-keywords" placeholder="酒店名/商圈/地标">
@@ -77,17 +67,15 @@
               </div>
               <div class="date">
                 <i class="icon"></i>
-                <div class="input-wrapper">
-                  <div class="hotel-date-start section-input search-date search-cascading-hotel search-date-from">
-                    <div class="search-contents-title">入住日期</div>
-                    <div class="search-contents-info"></div>
-                    <input type="text" readonly="readonly" class="input-date-from">
-                  </div>
-                  <div class="hotel-date-end section-input search-date search-cascading-hotel search-date-to">
-                    <div class="search-contents-title">退房日期</div>
-                    <div class="search-contents-info"></div>
-                    <input type="text" readonly="readonly" class="input-date-to">
-                  </div>
+                <div class="input-wrapper search-cascading">
+                  <search-date
+                    :dateObj="currentMesObj('fromDate')"
+                    titleText="入住日期"
+                    :isShowCalendar="false"></search-date>
+                  <search-date
+                    :dateObj="currentMesObj('toDate')"
+                    titleText="退房日期"
+                    :isShowCalendar="false"></search-date>
                 </div>
               </div>
               <div class="btn-wrapper">
@@ -98,109 +86,7 @@
                   取消
               </div>
               </div>
-              <div class="drop-suggestion-citys">
-                <div class="drop-title">热门城市</div>
-                <ul class="city-hot clearfix">
-                </ul>
-                <ul class="letter-tabs clearfix">
-                  <li class="current">
-                    ABCD
-                    <i></i>
-                  </li>
-                  <li>EFGH<i></i></li>
-                  <li>JKLM<i></i></li>
-                  <li>NPQRS<i></i></li>
-                  <li>TUVWX<i></i></li>
-                  <li>YZ<i></i></li>
-                </ul>
-                <ul class="letter-city-contents">
-                  <li>
-                    <dl class="clearfix">
-                      <dt>A</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>B</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>C</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>D</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>E</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>F</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>G</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>H</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>J</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>K</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>L</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>M</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>N</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>P</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>Q</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>R</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>S</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>T</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>U</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>V</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>W</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>S</dt>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl class="clearfix">
-                      <dt>Y</dt>
-                    </dl>
-                    <dl class="clearfix">
-                      <dt>Z</dt>
-                    </dl>
-                  </li>
-                </ul>
-              </div>
-              <div class="drop-suggestion-keywords">
+              <!--<div class="drop-suggestion-keywords">
                 <div class="keywords-transport clearfix">
                   <p class="keywords-title">交通枢纽</p>
                   <p class="keywords-details">
@@ -213,9 +99,8 @@
 
                   </p>
                 </div>
-              </div>
+              </div>-->
             </div>
-            <ul class="drop-complete"></ul>-->
           </div>
         </div>
 
@@ -1582,24 +1467,151 @@
   import ListTop from './list-top.vue';
   import ListBottom from './list-bottom.vue';
   import Cart from '../cart.vue';
+  import SearchCity from '../search/search-city.vue';
+  import SearchDate from '../search/search-date.vue';
+  import {storage} from '../../assets/js/utils.js'
+  import {getDate} from '../../assets/js/utils.js'
   import axios from 'axios'
   export default {
-      name: 'hotel',
-    components: {ListTop,ListBottom,Cart},
+    name: 'hotel',
+    components: {ListTop,ListBottom,Cart,SearchCity,SearchDate},
     data: function () {
       return {
+        isShowChangeBox:false,
+        city:'上海',
+        keywords:'',
+        fromDate: '',
+        toDate: '',
+        isError: false,
+        isErrorFrom: false,
+        isErrorTo: false,
         cartNum:0,
+        proId:1,
         emptyContent: '酒店'
       }
     },
     created: function () {
-      var vm = this;
-
+      const vm = this;
+      //获取搜索数据
+      //this.getDataSearch();
       //获取购物车数据
       axios.get('static/data/cart.json')
         .then(function (res) {
           vm.cartNum = res.data.proNum
         })
+      this.calendarRefresh()
+    },
+    filters: {
+      getWeekday: function (date) {
+        const week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+        let dateObj = new Date(date);
+        let weekDay = week[dateObj.getDay()];
+        return weekDay;
+      }
+    },
+    watch: {
+      fromContent: function () {
+        this.isError ? this.checkForm() : '';
+      },
+      toContent: function () {
+        this.isError ? this.checkForm() : '';
+      }
+    },
+    computed:{
+      days: function () {
+        let fromDateTime = new Date(this.fromDate);
+        let toDateTime = new Date(this.toDate);
+        return (toDateTime-fromDateTime)/86400000;
+      }
+    },
+    methods: {
+      checkForm: function (name) {
+        //检查是否为空
+        this.isError = false;
+        this.isErrorFrom = false;
+        this.isErrorTo = false;
+        if (this.fromContent === '') {
+          this.isErrorFrom = true;
+          this.isError = true;
+        }
+        if (this.toContent === '') {
+          this.isErrorTo = true;
+          this.isError = true;
+        }
+        if (!this.isError&&name) {
+          //set localstorage
+          let obj = {
+            currentSec: 'hotel',
+            fromCity: this.fromContent,
+            toCity: this.toContent,
+            fromDate: this.fromDate,
+            toDate: this.toDate,
+          };
+          storage('searchHotel','set',obj);
+          //TODO
+          this.isShowChangeBox = false;
+        }
+      },
+      cancelChange: function () {
+        //回到defaultbox，重新拉取数据
+        this.isShowChangeBox = !this.isShowChangeBox;
+        this.getDataSearch();
+      },
+      getDataSearch: function () {
+        //从localstorage中获取参数
+        let obj = storage('searchHotel','get');
+        this.fromContent = obj.fromCity;
+        this.toContent = obj.toCity;
+        this.fromDate = obj.fromDate;
+        this.toDate = obj.toDate;
+      },
+      butNow: function () {
+        //携带参数跳转填单页
+        let vm = this;
+        this.$router.push({
+          name:'form',
+          params:{
+            proId: vm.proId
+          }
+        })
+      },
+      changeData: function (value,type) {
+        this[type] = value;
+      },
+      currentMesObj: function (name) {
+        const vm = this;
+        return {
+          name:name,
+          value: vm[name]
+        };
+      },
+      calendarRefresh: function () {
+        const vm = this;
+        //初始化连级日历
+        this.calendarHotel = lv.calendar({
+          autoRender: false,
+          trigger: ".search-cascading .section-input",
+          triggerEvent: "click",
+          bimonthly: true,
+          //定位偏移
+          monthNext: 10,
+          monthPrev: 10,
+          dayPrev: 0,
+          template: "small",
+          cascading: true,
+          cascadingOffset: 1,
+          cascadingNextAuto: true,
+          //点击选择日期后的回调函数 默认返回值: calendar对象
+          selectDateCallback: function () {
+            let self = this;
+            setTimeout(function () {
+              vm.fromDate = self.cascadingSelected.start;
+              vm.toDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
+            },0);
+          }
+        });
+
+      },
     }
   }
 </script>

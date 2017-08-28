@@ -147,6 +147,7 @@ deletePro: function () {
 ##15.nova.dialog使用的content是复制过去的，然而复制过去的时候并没有复制到上面的事件。
 ##16.vue-router的命名很诡异
 ##17.使用时间捕获来解决各种input弹出框的问题，nice！
+##18.使用随机字符串class解决calendar组件的jq选择器问题
 ```js
 //跳转前页面
 this.$router

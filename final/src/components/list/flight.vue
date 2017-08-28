@@ -20,79 +20,92 @@
       <div class="head-wrapper">
         <div class="main_search search-contents-flight">
           <div class="search-bar-wrapper">
-            <div class="default-box clearfix">
+            <div class="default-box clearfix"
+                 v-show="!isShowChangeBox">
               <div class="city">
                 <i class="icon"></i>
                 <p class="flight-from">
-                  <span class="city-from-str">上海</span>
-                  <span><b class="date-from-str">2017-07-14</b>出发</span>
+                  <span class="city-from-str">{{fromContent}}</span>
+                  <span><b class="date-from-str">{{fromDate}}</b>出发</span>
                 </p>
                 <i class="icon-flight-single"></i>
                 <!--单程icon-->
                 <!--<i class="icon-flight-single"></i>-->
                 <!--单程icon END-->
                 <p class="flight-to">
-                  <span class="city-to-str">厦门</span>
-                  <span> <b class="date-to-str">2017-07-17</b>返回</span>
+                  <span class="city-to-str">{{toContent}}</span>
+                  <span> <b class="date-to-str">{{toDate}}</b>返回</span>
                 </p>
               </div>
               <div class="date">
                 <i class="icon"></i>
                 <span>
-                                <b class="hotel-days">3</b>天
+                                <b class="hotel-days">{{days}}</b>天
                             </span>
               </div>
               <div class="btn-wrapper">
-                <div class="btn btn-change btn-pink">
+                <div class="btn btn-change btn-pink"
+                     @click="isShowChangeBox = !isShowChangeBox;">
                   更改行程
               </div>
               </div>
             </div>
-            <div class="change-box clearfix">
+            <div class="change-box clearfix"
+                 v-show="isShowChangeBox">
               <div class="city">
                 <i class="icon"></i>
                 <div class="input-wrapper">
                   <div class="flight-tabs">
-                    <div class="flight-single current">
+                    <div class="flight-single"
+                         :class="{current:flightType==='single'}"
+                         @click="changeType('single')">
                       <span></span>
                       单程
-                  </div>
-                    <div class="flight-double">
+                    </div>
+                    <div class="flight-double"
+                         :class="{current:flightType==='double'}"
+                         @click="changeType('double')">
                       <span></span>
                       往返
+                    </div>
                   </div>
-                  </div>
-                  <div class="flight-from section-input search-city">
-                    <div class="search-contents-title">出发地</div>
-                    <input type="text" class="input-city-from" placeholder="请输入出发地">
-                  </div>
-                  <div class="flight-to section-input search-city">
-                    <div class="search-contents-title">目的地</div>
-                    <input type="text" class="input-city-to" placeholder="请输入目的地">
-                  </div>
+                  <search-city
+                    title="出发地"
+                    :currentCity="currentMesObj('fromContent')"
+                    v-on:cityChange="changeData"
+                    suggestUrl="static/data/citys.json"
+                    errorContent="出发地不能为空"
+                    :isShowError="isErrorFrom"></search-city>
+                  <search-city
+                    title="目的地"
+                    :currentCity="currentMesObj('toContent')"
+                    v-on:cityChange="changeData"
+                    suggestUrl="static/data/citys.json"
+                    errorContent="目的地不能为空"
+                    :isShowError="isErrorTo"></search-city>
                 </div>
               </div>
               <div class="date">
                 <i class="icon"></i>
-                <div class="input-wrapper">
-                  <div class="flight-date-start section-input search-date search-cascading search-date-from">
-                    <div class="search-contents-title">出发日期</div>
-                    <div class="search-contents-info"></div>
-                    <input type="text" readonly="readonly" class="input-date-from">
-                  </div>
-                  <div class="flight-date-return section-input search-date search-cascading search-date-to">
-                    <div class="search-contents-title">返回日期</div>
-                    <div class="search-contents-info"></div>
-                    <input type="text" readonly="readonly" class="input-date-to">
-                  </div>
+                <div class="input-wrapper search-cascading">
+                  <search-date
+                    :dateObj="currentMesObj('fromDate')"
+                    titleText="出发日期"
+                    :isShowCalendar="false"></search-date>
+                  <search-date
+                    :dateObj="currentMesObj('toDate')"
+                    titleText="返回日期"
+                    :isDisabled="isToDateDisabled"
+                    :isShowCalendar="false"></search-date>
                 </div>
               </div>
               <div class="btn-wrapper">
-                <div class="btn btn-pink search-btn">搜索</div>
-                <div class="btn cancle search-btn-cancle">取消</div>
+                <div class="btn btn-pink search-btn"
+                     @click="checkForm('flight')">搜索</div>
+                <div class="btn cancle search-btn-cancle"
+                     @click="cancelChange()">取消</div>
               </div>
             </div>
-            <ul class="drop-complete"></ul>
           </div>
         </div>
 
@@ -739,21 +752,25 @@
 
   export default {
     name: 'flight',
-    components: {ListTop,ListBottom,Cart},
+    components: {ListTop,ListBottom,Cart,SearchCity,SearchDate},
     data: function () {
       return {
+        isShowChangeBox:false,
         isFlightDouble: false,
-        flightFromContent: '上海',
-        flightToContent: '',
+        fromContent: '上海',
+        toContent: '',
         flightType: 'single',
-        flightFromDate: '',
-        flightToDate: '',
+        fromDate: '',
+        toDate: '',
         isFlightError: false,
-        isErrorFlightFrom: false,
-        isErrorFlightTo: false,
+        isError: false,
+        isErrorFrom: false,
+        isErrorTo: false,
         calendarFlightReturn: null,
         cartNum:0,
-        emptyContent: '航班'
+        emptyContent: '航班',
+        proId:1,
+        isToDateDisabled: true
       }
     },
     created: function () {
@@ -765,6 +782,14 @@
         .then(function (res) {
           vm.cartNum = res.data.proNum
         })
+      this.calendarRefresh()
+    },
+    computed:{
+      days: function () {
+        let fromDateTime = new Date(this.fromDate);
+        let toDateTime = new Date(this.toDate);
+        return (toDateTime-fromDateTime)/86400000;
+      }
     },
     filters: {
       getWeekday: function (date) {
@@ -774,8 +799,116 @@
         return weekDay;
       }
     },
+    watch: {
+      fromContent: function () {
+        this.isError ? this.checkForm() : '';
+      },
+      toContent: function () {
+        this.isError ? this.checkForm() : '';
+      }
+    },
     methods: {
+      checkForm: function (name) {
+        //检查是否为空
+        this.isError = false;
+        this.isErrorFrom = false;
+        this.isErrorTo = false;
+        if (this.fromContent === '') {
+          this.isErrorFrom = true;
+          this.isError = true;
+        }
+        if (this.toContent === '') {
+          this.isErrorTo = true;
+          this.isError = true;
+        }
+        if (!this.isError&&name) {
+          //set localstorage
+          let obj = {
+            currentSec: 'flight',
+            fromCity: this.fromContent,
+            toCity: this.toContent,
+            fromDate: this.fromDate,
+            toDate: this.toDate,
+          };
+          storage('searchFlight','set',obj);
+          //TODO
+          this.isShowChangeBox = false;
+        }
+      },
+      cancelChange: function () {
+        //回到defaultbox，重新拉取数据
+        this.isShowChangeBox = !this.isShowChangeBox;
+        this.getDataSearch();
+      },
+      getDataSearch: function () {
+        //从localstorage中获取参数
+        let obj = storage('searchFlight','get');
+        this.fromContent = obj.fromCity;
+        this.toContent = obj.toCity;
+        this.fromDate = obj.fromDate;
+        this.toDate = obj.toDate;
+      },
+      butNow: function () {
+        //携带参数跳转填单页
+        let vm = this;
+        this.$router.push({
+          name:'form',
+          params:{
+            proId: vm.proId
+          }
+        })
+      },
+      changeData: function (value,type) {
+        this[type] = value;
+      },
+      currentMesObj: function (name) {
+        const vm = this;
+        return {
+          name:name,
+          value: vm[name]
+        };
+      },
+      calendarRefresh: function () {
+        //飞机日历,随时刷新cascadingNextAutoFlag
+        let vm = this;
+        this.calendarFlightReturn && this.calendarFlightReturn.destroy();
+        //初始化连级日历
+        this.calendarFlightReturn = lv.calendar({
+          autoRender: false,
+          trigger: ".search-cascading .section-input",
+          triggerEvent: "click",
+          bimonthly: true,
+          //定位偏移
+          monthNext: 10,
+          monthPrev: 10,
+          dayPrev: 0,
+          template: "small",
+          cascading: true,
+          cascadingOffset: 1,
+          cascadingNextAuto: !this.isToDateDisabled,
+          //点击选择日期后的回调函数 默认返回值: calendar对象
+          selectDateCallback: function () {
+            let self = this;
+            setTimeout(function () {
+              vm.fromDate = self.cascadingSelected.start;
+              vm.toDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
+            },0);
+            if(self.$trigger.hasClass('disabled')){
+              vm.changeType('double')
+            }
+          }
+        });
 
+      },
+      changeType: function (currentType) {
+        this.flightType = currentType;
+        if(currentType === 'single'){
+          this.isToDateDisabled = true;
+        }else {
+          this.isToDateDisabled = false;
+        }
+        this.calendarRefresh();
+      }
     }
   }
 </script>
@@ -3577,6 +3710,16 @@
           padding-top: 36px;
         }
       }
+      .disabled {
+        input {
+          background-color: #eee;
+          @include opacity(0.5);
+        }
+        color: #999;
+        .search-contents-icon-calendar,.search-contents-info {
+          display: none;
+        }
+      }
       .flight-date-return {
         &.search-cascading {
           input {
@@ -3587,16 +3730,7 @@
             display: block;
           }
         }
-        &.disabled {
-          input {
-            background-color: #eee;
-            @include opacity(0.5);
-          }
-          color: #999;
-          .search-contents-icon-calendar,.search-contents-info {
-            display: none;
-          }
-        }
+
       }
     }
   }

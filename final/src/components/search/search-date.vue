@@ -1,16 +1,27 @@
 <template>
-  <div class="section-input search-calendar-common">
-    <div class="search-contents-title">出发日期</div>
+  <div class="section-input"
+       :class="[{disabled:isDisabled},randomClass]" >
+    <div class="search-contents-title">{{titleText}}</div>
     <div class="search-contents-info">{{date | getWeekday}}</div>
     <input type="text" readonly="readonly" class="input-date-from"
            v-model="date">
   </div>
 </template>
 <script>
+  import {randomString} from '../../assets/js/utils'
   export  default {
     name:'search-date',
     props: {
-      dateObj:Object
+      dateObj:Object,
+      titleText:'',
+      isDisabled:{
+        type: Boolean,
+        default: false
+      },
+      isShowCalendar:{
+        type: Boolean,
+        default: true
+      }
     },
     filters: {
       getWeekday: function (date) {
@@ -22,7 +33,8 @@
     },
     data: function () {
       return {
-        date:''
+        date:'',
+        randomClass:''
       }
     },
     beforeUpdate: function () {
@@ -30,10 +42,11 @@
     },
     created: function () {
       this.date = this.dateObj.value;
+      this.randomClass = randomString();
     },
     mounted: function () {
       //初始化日历
-      this.calendarInit();
+      this.isShowCalendar&& this.calendarInit();
     },
     watch: {
       date: function () {
@@ -43,10 +56,10 @@
     methods: {
       calendarInit: function () {
         const vm = this;
+        let triggerClass = "."+this.randomClass;
         lv.calendar({
-          //date: self.dateNow(),
           autoRender: false,
-          trigger: ".search-calendar-common",
+          trigger: triggerClass,
           triggerEvent: "click",
           bimonthly: true,
           //定位偏移
@@ -61,7 +74,8 @@
             }
           }
         });
-      }
+      },
+
     }
   }
 </script>

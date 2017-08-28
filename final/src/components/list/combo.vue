@@ -27,33 +27,33 @@
               <div class="city">
                 <i class="icon"></i>
                 <p class="flight-from">
-                  <span class="city-from-str">{{comboFromContent}}</span>
-                  <span><b class="date-from-str">{{comboFromDate}}</b>出发</span>
+                  <span class="city-from-str">{{fromContent}}</span>
+                  <span><b class="date-from-str">{{fromDate}}</b>出发</span>
                 </p>
                 <i class="icon-flight-double" :class="{'icon-flight-double':isFlightDouble,'icon-flight-single':!isFlightDouble}"></i>
                 <p class="flight-to">
-                  <span class="city-to-str">{{comboToContent}}</span>
-                  <span><b class="date-to-str">{{comboDateToStr}}</b>返回</span>
+                  <span class="city-to-str">{{toContent}}</span>
+                  <span><b class="date-to-str">{{dateToStr}}</b>返回</span>
                 </p>
               </div>
               <div class="date">
                 <i class="icon"></i>
                 <span>
-                    <b class="hotel-days">{{comboDays}}</b>
+                    <b class="hotel-days">{{days}}</b>
                   </span>
               </div>
               <div class="persons">
                 <i class="icon"></i>
                 <span>
-                    <b class="adult-num">{{comboAdultNum}}</b>成人
+                    <b class="adult-num">{{adultNum}}</b>成人
                   </span>
                 <span>
-                    <b class="kid-num">{{comboKidsNum}}</b>儿童
+                    <b class="kid-num">{{kidsNum}}</b>儿童
                   </span>
               </div>
               <div class="btn-wrapper">
                 <div class="btn btn-change btn-pink"
-                     @click="changeRoute()">更改行程</div>
+                     @click="isShowChangeBox = !isShowChangeBox;">更改行程</div>
               </div>
             </div>
             <div class="change-box clearfix" v-show="isShowChangeBox">
@@ -62,39 +62,38 @@
                 <div class="input-wrapper">
                   <search-city
                     title="出发地"
-                    :currentCity="currentMesObj('comboFromContent')"
-                    :closeBoxException="closeBoxException"
+                    :currentCity="currentMesObj('fromContent')"
                     v-on:cityChange="changeData"
                     suggestUrl="static/data/citys.json"
                     errorContent="出发地不能为空"
-                    :isShowError="isErrorComboFrom"></search-city>
+                    :isShowError="isErrorFrom"></search-city>
                   <search-city
                     title="目的地"
-                    :currentCity="currentMesObj('comboToContent')"
-                    :closeBoxException="closeBoxException"
+                    :currentCity="currentMesObj('toContent')"
                     v-on:cityChange="changeData"
                     suggestUrl="static/data/citys.json"
                     errorContent="目的地不能为空"
-                    :isShowError="isErrorComboTo"></search-city>
+                    :isShowError="isErrorTo"></search-city>
                 </div>
               </div>
               <div class="date">
                 <i class="icon"></i>
                 <div class="input-wrapper">
                   <search-date
-                    :dateObj="currentMesObj('comboFromDate')"
-                    v-on:dateChange="changeData"></search-date>
+                    :dateObj="currentMesObj('fromDate')"
+                    v-on:dateChange="changeData"
+                    titleText="出发日期"></search-date>
                   <div class="combo-days section-input">
                     <div class="search-contents-title">游玩天数</div>
                     <div class="search-contents-info">{{returnDateCalc}}</div>
                     <div class="num-minus"
                          @click="numCalc(-1,1,20)"
-                         :class="{disabled:parseInt(comboDays)===1}"></div>
+                         :class="{disabled:parseInt(days)===1}"></div>
                     <div class="num-add"
                          @click="numCalc(1,1,20)"
-                         :class="{disabled:comboDays==='20天'}"></div>
+                         :class="{disabled:days==='20天'}"></div>
                     <input type="text"
-                           v-model="comboDays"
+                           v-model="days"
                            @blur="numCalc(0,1,20)"
                            @input="inputComboDays(1,20)"
                            @focus="focusComboDays">
@@ -106,19 +105,19 @@
                 <div class="input-wrapper">
                   <search-select
                     title="成人"
-                    :currentNum="currentMesObj('comboAdultNum')"
+                    :currentNum="currentMesObj('adultNum')"
                     :maxNum="maxAdNum"
                     :errorContent="'总人数不能超过'+ maxAdNum +'人哦'"
                     v-on:numChange="changeData"
-                    :isShowError="isErrorComboAdults"></search-select>
+                    :isShowError="isErrorAdults"></search-select>
                   <search-select
                     title="儿童"
-                    :currentNum="currentMesObj('comboKidsNum')"
+                    :currentNum="currentMesObj('kidsNum')"
                     :maxNum="maxKidsNum"
-                    :errorContent="'儿童数不能超过'+ comboAdultNum*2 +'人哦'"
+                    :errorContent="'儿童数不能超过'+ adultNum*2 +'人哦'"
                     v-on:numChange="changeData"
                     info="2-12岁"
-                    :isShowError="isErrorComboKids"></search-select>
+                    :isShowError="isErrorKids"></search-select>
                 </div>
               </div>
               <div class="btn-wrapper">
@@ -768,23 +767,23 @@
     props:['isShowNav'],
     data: function () {
       return {
-        comboFromDate: '2017-08-14',
-        comboDateToStr: '2017-08-17',
-        comboFromContent: '上海',
-        comboToContent: '厦门',
-        comboDays: '3天',
-        comboAdultNum: 2,
-        comboKidsNum: 1,
+        fromDate: '2017-08-14',
+        dateToStr: '2017-08-17',
+        fromContent: '上海',
+        toContent: '厦门',
+        days: '3天',
+        adultNum: 2,
+        kidsNum: 1,
         maxAdNum:9,
         maxKidsNum:6,
         cartNum:0,
         isFlightDouble: false,
         isShowChangeBox: false,
-        isComboError: false,
-        isErrorComboFrom: false,
-        isErrorComboTo: false,
-        isErrorComboAdults: false,
-        isErrorComboKids: false,
+        isError: false,
+        isErrorFrom: false,
+        isErrorTo: false,
+        isErrorAdults: false,
+        isErrorKids: false,
         emptyContent: '套餐',
         proId:1,
       }
@@ -801,23 +800,23 @@
         })
     },
     watch: {
-      comboFromContent: function () {
-        this.isComboError ? this.checkForm() : '';
+      fromContent: function () {
+        this.isError ? this.checkForm() : '';
       },
-      comboToContent: function () {
-        this.isComboError ? this.checkForm() : '';
+      toContent: function () {
+        this.isError ? this.checkForm() : '';
       },
-      comboAdultNum: function () {
-        this.isComboError ? this.checkForm() : '';
+      adultNum: function () {
+        this.isError ? this.checkForm() : '';
       },
-      comboKidsNum: function () {
-        this.isComboError ? this.checkForm() : '';
+      kidsNum: function () {
+        this.isError ? this.checkForm() : '';
       }
     },
     computed:{
       returnDateCalc: function () {
-        this.comboDateToStr = getDate(this.comboFromDate,this.comboDays);
-        return this.comboDateToStr
+        this.dateToStr = getDate(this.fromDate,this.days);
+        return this.dateToStr
       }
     },
     filters: {
@@ -829,60 +828,57 @@
       }
     },
     methods: {
-      changeRoute: function () {
-        this.isShowChangeBox = !this.isShowChangeBox;
-      },
       numCalc: function (move, least, maximum) {
-        let comboDaysNum = parseInt(this.comboDays);
+        let comboDaysNum = parseInt(this.days);
         comboDaysNum = comboDaysNum + move;
         if (comboDaysNum >= maximum) comboDaysNum = maximum;
         if (comboDaysNum <= least) comboDaysNum = least;
-        this.comboDays = comboDaysNum + '天'
+        this.days = comboDaysNum + '天'
       },
       inputComboDays: function (least, maximum) {
-        this.comboDays = parseInt(this.comboDays) || 0;
-        if (this.comboDays >= maximum) this.comboDays = maximum;
-        if (this.comboDays <= 0) this.comboDays = 0;
+        this.days = parseInt(this.days) || 0;
+        if (this.days >= maximum) this.days = maximum;
+        if (this.days <= 0) this.days = 0;
       },
       focusComboDays: function () {
-        this.comboDays = parseInt(this.comboDays)
+        this.days = parseInt(this.days)
       },
       checkForm: function (name) {
         //检查是否为空
-        this.isComboError = false;
-        this.isErrorComboFrom = false;
-        this.isErrorComboTo = false;
-        this.isErrorComboAdults = false;
-        this.isErrorComboKids = false;
-        if (this.comboFromContent === '') {
-          this.isErrorComboFrom = true;
-          this.isComboError = true;
+        this.isError = false;
+        this.isErrorFrom = false;
+        this.isErrorTo = false;
+        this.isErrorAdults = false;
+        this.isErrorKids = false;
+        if (this.fromContent === '') {
+          this.isErrorFrom = true;
+          this.isError = true;
         }
-        if (this.comboToContent === '') {
-          this.isErrorComboTo = true;
-          this.isComboError = true;
+        if (this.toContent === '') {
+          this.isErrorTo = true;
+          this.isError = true;
         }
-        if ((this.comboAdultNum + this.comboKidsNum) >= this.maxAdNum) {
-          this.isErrorComboAdults = true;
-          this.isComboError = true;
+        if ((this.adultNum + this.kidsNum) >= this.maxAdNum) {
+          this.isErrorAdults = true;
+          this.isError = true;
         }
-        if (this.comboKidsNum > this.comboAdultNum * 2) {
-          this.isErrorComboKids = true;
-          this.isComboError = true;
+        if (this.kidsNum > this.adultNum * 2) {
+          this.isErrorKids = true;
+          this.isError = true;
         }
-        if (!this.isComboError&&name) {
+        if (!this.isError&&name) {
           //set localstorage
-          let comboObj = {
+          let obj = {
             currentSec: 'combo',
-            fromCity: this.comboFromContent,
-            toCity: this.comboToContent,
-            fromDate: this.comboFromDate,
+            fromCity: this.fromContent,
+            toCity: this.toContent,
+            fromDate: this.fromDate,
             toDate: this.comboToDate,
-            days: this.comboDays,
-            adultNum: this.comboAdultNum,
-            kidsNum: this.comboKidsNum
+            days: this.days,
+            adultNum: this.adultNum,
+            kidsNum: this.kidsNum
           };
-          storage('searchCombo','set',comboObj);
+          storage('searchCombo','set',obj);
           //TODO
           this.isShowChangeBox = false;
         }
@@ -895,13 +891,13 @@
       getDataSearch: function () {
         //从localstorage中获取参数
         let obj = storage('searchCombo','get');
-        this.comboFromContent = obj.fromCity;
-        this.comboToContent = obj.toCity;
-        this.comboFromDate = obj.fromDate;
-        this.comboDateToStr = obj.toDate;
-        this.comboDays = obj.days;
-        this.comboAdultNum = obj.adultNum;
-        this.comboKidsNum = obj.kidsNum;
+        this.fromContent = obj.fromCity;
+        this.toContent = obj.toCity;
+        this.fromDate = obj.fromDate;
+        this.dateToStr = obj.toDate;
+        this.days = obj.days;
+        this.adultNum = obj.adultNum;
+        this.kidsNum = obj.kidsNum;
       },
       //点击立即购买
       butNow: function () {

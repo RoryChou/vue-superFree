@@ -13,7 +13,8 @@
       v-show="isShowSuggest"
       :fresh="freshNum"
       :suggestUrl="suggestUrl"
-      v-on:chooseCity="setCity"></suggest-box>
+      v-on:chooseCity="setCity"
+      :mode="mode"></suggest-box>
 
     <complete-box
       :currentCity="cityName"
@@ -47,7 +48,8 @@
         isShowComplete:false,
         cityName:'',
         freshNum: 1, //强制触发suggestBox的更新
-        keySelect: null
+        keySelect: null,
+        mode:''
       }
     },
     computed: {
@@ -82,6 +84,11 @@
     },
     created:function () {
       this.cityName = this.currentCity.value;
+      if(this.currentCity.name.match(/flight/i)){
+        this.mode = 'flight'
+      }else {
+        this.mode = 'hot'
+      }
     },
     mounted: function () {
       const vm = this;

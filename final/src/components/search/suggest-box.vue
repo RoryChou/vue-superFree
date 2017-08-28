@@ -1,12 +1,17 @@
 <template>
   <div class="drop-suggestion-citys">
-    <div class="drop-title">热门城市</div>
-    <ul class="city-hot clearfix">
-      <li class="drop-city"
-          v-for="city in citys.hot"
-          @click="chooseCity(city.districtName)">{{city.districtName}}
-      </li>
-    </ul>
+    <div v-if="mode === 'hot'">
+      <div class="drop-title">热门城市</div>
+      <ul class="city-hot clearfix">
+        <li class="drop-city"
+            v-for="city in citys.hot"
+            @click="chooseCity(city.districtName)">{{city.districtName}}
+        </li>
+      </ul>
+    </div>
+   <div v-if="mode === 'flight'">
+     <div class="drop-title">支持中文/拼音/简拼/三字码输入</div>
+   </div>
     <ul class="letter-tabs clearfix">
       <li class="no-blur"
           v-for="n in citysArr.length"
@@ -36,6 +41,7 @@
   export default {
     name: 'suggest-box',
     props: {
+      mode:String,
       suggestUrl: String,
       fresh: Number
     },

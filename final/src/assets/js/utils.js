@@ -22,3 +22,14 @@ export function getDate (date, daysAfter){
   dateArr[2] = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2];
   return dateArr.join('-');
 }
+
+//生成随机字符串
+export function randomString(length = 10) {
+  const str = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz';
+  const maxPos = str.length;
+  let res = '';
+  for (let i = 0; i < length; i++) {
+    res += str.charAt(Math.floor(Math.random() * maxPos));
+  }
+  return res;
+}

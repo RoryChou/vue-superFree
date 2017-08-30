@@ -1131,30 +1131,6 @@
           background: url("../../assets/imgs/list/combo/sprite/icon-num-minus-not.png");
         }
       }
-      .drop-suggestion-keywords {
-        width: 250px;
-        .drop-suggestion-keywords-ul {
-          padding: 8px 20px;
-          li {
-            float: left;
-            cursor: pointer;
-            float: left;
-            color: #666;
-            font-size: 12px;
-            height: 16px;
-            line-height: 16px;
-            margin-right: 20px;
-            &:hover {
-              color: $color-hover-orange;
-            }
-          }
-        }
-        .drop-suggestion-keywords-info {
-          padding: 0 20px;
-          font-size: 12px;
-          color: #999;
-        }
-      }
     }
   }
 

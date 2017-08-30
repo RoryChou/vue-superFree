@@ -292,15 +292,15 @@
             <div class="keywords-transport clearfix">
               <p class="keywords-title">交通枢纽</p>
               <p class="keywords-details">
-                            <span v-for="item in keywordsObj.metro"
-                                  @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}</span>
+              <span v-for="item in keywordsObj.metro"
+                @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}</span>
               </p>
             </div>
             <div class="keywords-subway">
               <p class="keywords-title">地铁站</p>
               <p class="keywords-details">
-                            <span v-for="item in keywordsObj.traffic"
-                                  @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}</span>
+              <span v-for="item in keywordsObj.traffic"
+                @mousedown="chooseCity(item.searchValue)">{{item.searchValue}}</span>
               </p>
             </div>
           </div>
@@ -737,8 +737,8 @@
                     selectDateCallback: function () {
                         let self = this;
                         setTimeout(function () {
-                            vm.flightFromhotelFromDateDate = self.cascadingSelected.start;
-                            vm.hotelToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
+                            vm.flightFromDate = self.cascadingSelected.start;
+                            vm.flightToDate = self.cascadingSelected.end?self.cascadingSelected.end:'';
                         },0);
                         if(className === 'flight-to'){
                             vm.changeFlightType('double')
@@ -888,15 +888,19 @@
                         this.isFlightError = true;
                     }
                     if (!this.isFlightError&&name) {
-                      //发送搜索信息到后台
                       this.$router.push({ name: 'flight', params: {
+                        currentSec: 'flight'
+                      }})
+                      let flightObj = {
                         currentSec: 'flight',
                         fromCity: this.flightFromContent,
                         toCity: this.flightToContent,
                         fromDate: this.flightFromDate,
-                        toDate: this.flightToDate,
-                        days: this.flightDays,
-                      }})
+                        toDate: this.flightToDate
+                      };
+                      let flightStr = JSON.stringify(flightObj);
+                      //将搜索内容存入localstorage
+                      localStorage.setItem('searchFlight',flightStr);
                     }
                 }else {
                     if (this.hotelToContent === '') {
@@ -906,6 +910,16 @@
                     if (!this.isHotelError&&name) {
                       //发送搜索信息到后台
                       this.$router.push({ name: 'hotel', params: { currentSec: 'hotel'}})
+                      let hotelObj = {
+                        currentSec: 'hotel',
+                        toCity: this.hotelToContent,
+                        keywords: this.hotelKeywordsContent,
+                        fromDate: this.hotelFromDate,
+                        toDate: this.hotelToDate
+                      };
+                      let hotelStr = JSON.stringify(hotelObj);
+                      //将搜索内容存入localstorage
+                      localStorage.setItem('searchHotel',hotelStr);
                     }
                 }
             },

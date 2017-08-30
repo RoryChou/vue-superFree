@@ -38,9 +38,11 @@
       }
     },
     beforeUpdate: function () {
+      console.log('beforeUpdate')
       this.date = this.dateObj.value;
     },
     created: function () {
+      console.log('created')
       this.date = this.dateObj.value;
       this.randomClass = randomString();
     },

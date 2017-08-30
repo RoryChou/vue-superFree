@@ -411,7 +411,7 @@
       float: right;
       margin-right: 0;
     }
-    .drop-suggestion-citys {
+    /*.drop-suggestion-citys {
       //display: none;
       position: absolute;
       border: 1px solid #ccc\9;
@@ -511,40 +511,7 @@
         }
       }
     }
-    .drop-suggestion-keywords {
-      @extend .drop-suggestion-citys;
-      padding: 8px 0;
-      width: 409px;
-      .keywords-transport {
-        border-bottom: 1px dashed #ccc;
-        padding-bottom: 5px;
-        padding-top: 5px;
-      }
-      .keywords-title {
-        float: left;
-        width: 90px;
-        height: 36px;
-        font-size:12px;
-        color:#999999;
-        text-align: center;
-      }
-      .keywords-details {
-        float: left;
-        width: 309px;
-        span {
-          *white-space: nowrap;
-          margin-right: 20px;
-          cursor: pointer;
-          float: left;
-          height: 22px;
-          font-size: 12px;
-          line-height: 22px;
-          &:hover {
-            color: $color-hover-orange;
-          }
-        }
-      }
-    }
+
     .drop-complete {
       @extend .drop-suggestion-citys;
       z-index: 30;
@@ -590,7 +557,7 @@
         color: #f30;
         height: 28px;
       }
-    }
+    }*/
   }
 
   .search-num {

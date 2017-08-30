@@ -28,20 +28,18 @@
                   <span class="city-from-str">{{fromContent}}</span>
                   <span><b class="date-from-str">{{fromDate}}</b>出发</span>
                 </p>
-                <i class="icon-flight-single"></i>
-                <!--单程icon-->
-                <!--<i class="icon-flight-single"></i>-->
-                <!--单程icon END-->
+                <i :class="{'icon-flight-single':!isFlightDouble,'icon-flight-double':isFlightDouble}"></i>
                 <p class="flight-to">
                   <span class="city-to-str">{{toContent}}</span>
                   <span> <b class="date-to-str">{{toDate}}</b>返回</span>
                 </p>
               </div>
-              <div class="date">
+              <div class="date"
+                   v-show="isFlightDouble">
                 <i class="icon"></i>
                 <span>
-                                <b class="hotel-days">{{days}}</b>天
-                            </span>
+                    <b class="hotel-days">{{days}}</b>天
+                </span>
               </div>
               <div class="btn-wrapper">
                 <div class="btn btn-change btn-pink"
@@ -57,13 +55,13 @@
                 <div class="input-wrapper">
                   <div class="flight-tabs">
                     <div class="flight-single"
-                         :class="{current:flightType==='single'}"
+                         :class="{current:!isFlightDouble}"
                          @click="changeType('single')">
                       <span></span>
                       单程
                     </div>
                     <div class="flight-double"
-                         :class="{current:flightType==='double'}"
+                         :class="{current:isFlightDouble}"
                          @click="changeType('double')">
                       <span></span>
                       往返
@@ -87,7 +85,7 @@
               </div>
               <div class="date">
                 <i class="icon"></i>
-                <div class="input-wrapper search-cascading">
+                <div class="input-wrapper search-flight">
                   <search-date
                     :dateObj="currentMesObj('fromDate')"
                     titleText="出发日期"
@@ -95,7 +93,7 @@
                   <search-date
                     :dateObj="currentMesObj('toDate')"
                     titleText="返回日期"
-                    :isDisabled="isToDateDisabled"
+                    :isDisabled="!isFlightDouble"
                     :isShowCalendar="false"></search-date>
                 </div>
               </div>
@@ -759,7 +757,6 @@
         isFlightDouble: false,
         fromContent: '上海',
         toContent: '',
-        flightType: 'single',
         fromDate: '',
         toDate: '',
         isFlightError: false,
@@ -770,7 +767,6 @@
         cartNum:0,
         emptyContent: '航班',
         proId:1,
-        isToDateDisabled: true
       }
     },
     created: function () {
@@ -847,6 +843,12 @@
         this.toContent = obj.toCity;
         this.fromDate = obj.fromDate;
         this.toDate = obj.toDate;
+        //判断机票单程还是往返
+        if(this.toDate === ''){
+          this.isFlightDouble = false
+        }else {
+          this.isFlightDouble = true
+        }
       },
       butNow: function () {
         //携带参数跳转填单页
@@ -875,7 +877,7 @@
         //初始化连级日历
         this.calendarFlightReturn = lv.calendar({
           autoRender: false,
-          trigger: ".search-cascading .section-input",
+          trigger: ".search-flight .section-input",
           triggerEvent: "click",
           bimonthly: true,
           //定位偏移
@@ -885,7 +887,7 @@
           template: "small",
           cascading: true,
           cascadingOffset: 1,
-          cascadingNextAuto: !this.isToDateDisabled,
+          cascadingNextAuto: this.isFlightDouble,
           //点击选择日期后的回调函数 默认返回值: calendar对象
           selectDateCallback: function () {
             let self = this;
@@ -901,11 +903,10 @@
 
       },
       changeType: function (currentType) {
-        this.flightType = currentType;
         if(currentType === 'single'){
-          this.isToDateDisabled = true;
+          this.isFlightDouble = false;
         }else {
-          this.isToDateDisabled = false;
+          this.isFlightDouble = true;
         }
         this.calendarRefresh();
       }

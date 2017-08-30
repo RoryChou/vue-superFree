@@ -7,7 +7,7 @@ export function storage (itemName,moveType='get',obj){
   }
 }
 //根据日期对象和经过天数来返回一个date字符串
-export function getDate (date, daysAfter){
+export function getDate (date=(new Date()), daysAfter=0){
   let dateObj = null;
   if(typeof date === 'string'){
     dateObj = new Date(date);

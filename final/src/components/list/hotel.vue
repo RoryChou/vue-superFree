@@ -59,15 +59,20 @@
                     suggestUrl="static/data/citys.json"
                     errorContent="出发地不能为空"
                     :isShowError="isErrorFrom"></search-city>
-                  <div class="hotel-keywords section-input search-keywords">
+                  <search-city
+                    title="关键字"
+                    :currentCity="currentMesObj('keywords')"
+                    v-on:cityChange="changeData"
+                    suggestUrl="static/data/citys.json"></search-city>
+                  <!--<div class="hotel-keywords section-input search-keywords">
                     <div class="search-contents-title">关键字</div>
                     <input type="text" class="input-city-keywords" placeholder="酒店名/商圈/地标">
-                  </div>
+                  </div>-->
                 </div>
               </div>
               <div class="date">
                 <i class="icon"></i>
-                <div class="input-wrapper search-cascading">
+                <div class="input-wrapper search-hotel">
                   <search-date
                     :dateObj="currentMesObj('fromDate')"
                     titleText="入住日期"
@@ -79,27 +84,15 @@
                 </div>
               </div>
               <div class="btn-wrapper">
-                <div class="btn btn-pink search-btn">
+                <div class="btn btn-pink search-btn"
+                     @click="checkForm('hotel')">
                   搜索
-              </div>
-                <div class="btn cancle search-btn-cancle">
+                </div>
+                <div class="btn cancle search-btn-cancle"
+                     @click="cancelChange()">
                   取消
-              </div>
-              </div>
-              <!--<div class="drop-suggestion-keywords">
-                <div class="keywords-transport clearfix">
-                  <p class="keywords-title">交通枢纽</p>
-                  <p class="keywords-details">
-
-                  </p>
                 </div>
-                <div class="keywords-subway">
-                  <p class="keywords-title">地铁站</p>
-                  <p class="keywords-details">
-
-                  </p>
-                </div>
-              </div>-->
+              </div>
             </div>
           </div>
         </div>
@@ -1480,7 +1473,7 @@
         isShowChangeBox:false,
         city:'上海',
         keywords:'',
-        fromDate: '',
+        fromDate: '',//默认值
         toDate: '',
         isError: false,
         isErrorFrom: false,
@@ -1493,12 +1486,12 @@
     created: function () {
       const vm = this;
       //获取搜索数据
-      //this.getDataSearch();
+      this.getDataSearch();
       //获取购物车数据
       axios.get('static/data/cart.json')
         .then(function (res) {
           vm.cartNum = res.data.proNum
-        })
+        });
       this.calendarRefresh()
     },
     filters: {
@@ -1510,10 +1503,10 @@
       }
     },
     watch: {
-      fromContent: function () {
+      toContent: function () {
         this.isError ? this.checkForm() : '';
       },
-      toContent: function () {
+      keywords: function () {
         this.isError ? this.checkForm() : '';
       }
     },
@@ -1530,7 +1523,7 @@
         this.isError = false;
         this.isErrorFrom = false;
         this.isErrorTo = false;
-        if (this.fromContent === '') {
+        if (this.toContent === '') {
           this.isErrorFrom = true;
           this.isError = true;
         }
@@ -1542,8 +1535,8 @@
           //set localstorage
           let obj = {
             currentSec: 'hotel',
-            fromCity: this.fromContent,
-            toCity: this.toContent,
+            toCity: this.toCity,
+            keywords: this.keywords,
             fromDate: this.fromDate,
             toDate: this.toDate,
           };
@@ -1560,10 +1553,16 @@
       getDataSearch: function () {
         //从localstorage中获取参数
         let obj = storage('searchHotel','get');
-        this.fromContent = obj.fromCity;
-        this.toContent = obj.toCity;
-        this.fromDate = obj.fromDate;
-        this.toDate = obj.toDate;
+        //判断是否有值
+        if(obj !== null){
+          this.toContent = obj.toCity;
+          this.keywords = obj.keywords;
+          this.fromDate = obj.fromDate;
+          this.toDate = obj.toDate;
+        }else {
+          this.fromDate = getDate();
+          this.toDate = getDate((new Date()),2);
+        }
       },
       butNow: function () {
         //携带参数跳转填单页
@@ -1580,17 +1579,24 @@
       },
       currentMesObj: function (name) {
         const vm = this;
-        return {
+
+        let obj = {};
+        obj.name = name;
+        vm.$set(obj,'value',vm[name]);
+
+        return obj;
+
+        /*return {
           name:name,
           value: vm[name]
-        };
+        };*/
       },
       calendarRefresh: function () {
         const vm = this;
         //初始化连级日历
-        this.calendarHotel = lv.calendar({
+        lv.calendar({
           autoRender: false,
-          trigger: ".search-cascading .section-input",
+          trigger: ".search-hotel .section-input",
           triggerEvent: "click",
           bimonthly: true,
           //定位偏移

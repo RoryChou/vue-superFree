@@ -3,7 +3,7 @@
     <div class="search-contents-title">{{title}}</div>
     <input type="text" class="input-city-from"
            :placeholder="titleComputed"
-           @click.capture="isShowSuggest = true;freshNum++"
+           @click.capture="showSuggest  "
            @input="isShowComplete = true"
            v-model="cityName">
     <error-box
@@ -15,6 +15,10 @@
       :suggestUrl="suggestUrl"
       v-on:chooseCity="setCity"
       :mode="mode"></suggest-box>
+
+    <suggest-keywords
+      v-show="isShowSuggestKeywords"
+      v-on:chooseCity="setCity"></suggest-keywords>
 
     <complete-box
       :currentCity="cityName"
@@ -29,11 +33,12 @@
   import axios from 'axios'
   import ErrorBox from '../list/error-box.vue'
   import SuggestBox from './suggest-box.vue'
+  import SuggestKeywords from './suggest-keywords.vue'
   import CompleteBox from './complete-box.vue'
   import jsonp from 'jsonp'
   export  default {
     name: 'search-city',
-    components:{ErrorBox,SuggestBox,CompleteBox},
+    components:{ErrorBox,SuggestBox,CompleteBox,SuggestKeywords},
     props:{
       title:String,
       currentCity:Object,
@@ -45,6 +50,7 @@
     data: function () {
       return {
         isShowSuggest:false,//FIXME 待优化
+        isShowSuggestKeywords:false,
         isShowComplete:false,
         cityName:'',
         freshNum: 1, //强制触发suggestBox的更新
@@ -96,6 +102,7 @@
         if(!e.target.className.match(/no-blur/)){
           vm.isShowSuggest = false;
           vm.isShowComplete = false;
+          vm.isShowSuggestKeywords = false;
         }
       },true);
       //下拉框内容选择
@@ -115,6 +122,14 @@
       });
     },
     methods:{
+      showSuggest:function () {
+        //判断是普通box还是keywords
+        if(this.currentCity.name.match(/keywords/i)){
+          this.isShowSuggestKeywords = true;
+        }else {
+          this.isShowSuggest = true;this.freshNum++
+        }
+      },
       showCompleteBox: function (className)  {
         //发送ajax请求
         var vm = this;
@@ -178,8 +193,9 @@
               } else {
                 vm.isShowCompleteBox = false;
               }
-              //关闭suggestBox,completeBOx
+              //关闭suggestBox,keywordsBox
               vm.isShowSuggestBox = false;
+              vm.isShowSuggestKeywords = false;
             }
           });
         }
@@ -190,10 +206,6 @@
         this.isShowSuggest = false;
         //隐藏completebox
         this.isShowComplete = false;
-      },
-      //分发错误信息
-      setError: function () {
-
       }
     }
   }
